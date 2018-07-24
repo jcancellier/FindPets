@@ -57,7 +57,8 @@ class PetList extends Component {
 		//console.log(store.getState());
 		//TODO: when searching for a pet and no pets are received back then the next time you search for an animal this if-statement crashes the app
 		// the error it gives is "undefined is not an object (evaluating 'this.props.pets.length'"
-		if (this.props.isLoading && this.props.pets.length == 0) {
+		// if (this.props.isLoading && this.props.pets.length == 0) {
+		if (this.props.isLoading) {
 			return (
 				<View style={{ flex: 1, justifyContent: 'center' }}>
 					<DotIndicator count={5} color={Colors.primary} />
@@ -74,8 +75,8 @@ class PetList extends Component {
 					data={this.props.pets}
 					renderItem={this._renderPet}
 					keyExtractor={item => item.id.$t.toString()}
-					onRefresh={() => this._fetchData()}
-					refreshing={this.props.isLoading}
+					// onRefresh={() => this._fetchData()}
+					// refreshing={this.props.isLoading}
 					//TODO: possibly enable this line to prevent console warning: 'virtualizedList ...etc'
 					// disableVirtualization={false}
 				/>

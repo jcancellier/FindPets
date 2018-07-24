@@ -3,6 +3,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { store } from './src/store';
 import { AppLoading, Font } from 'expo';
+import { initializeAnimations } from './src/animations';
 import { createRootNavigator } from './src/navigation'
 
 //1st argument is list of reducers
@@ -19,6 +20,7 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
+    initializeAnimations();
     console.log(store.getState());
   }
 

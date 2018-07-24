@@ -61,9 +61,9 @@ const Primary = createStackNavigator({
                 fontFamily: Fonts.primary,
                 color: Colors.flat.clouds
             },
-            headerLeft: (
-                null
-            ),
+            // headerLeft: (
+            //     null
+            // ),
         }
     }
 }, {

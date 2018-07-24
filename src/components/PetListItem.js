@@ -11,8 +11,13 @@ var { height, width } = Dimensions.get('window');
 //functional component
 class PetListItem extends React.Component {
     handleViewRef = ref => this.view = ref;
-    zoomOut = () => this.view.zoomOut(75)
-    zoomIn = () => this.view.zoomIn(75)
+    
+    //Zooms item out on click
+    zoomOut = () => this.view.zoomOutBoi(75)
+    
+    //Zooms item in on clickRelease
+    zoomIn = () => this.view.zoomInBoi(75);//this.view.zoomIn(75)
+
     render() {
         return (
             <TouchableWithoutFeedback
