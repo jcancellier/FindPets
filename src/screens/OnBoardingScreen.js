@@ -34,7 +34,7 @@ const slides = [
     imageStyle: styles.image,
     titleStyle: styles.title,
     textStyle: styles.text,
-    backgroundColor: '#59b2ab',
+    backgroundColor: Colors.primary // '#59b2ab'
   },
   {
     key: 'Favorites',

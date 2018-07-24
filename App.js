@@ -11,7 +11,7 @@ import { createRootNavigator } from './src/navigation'
 //3rd argument is middleware (store enhancers)
 //const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 
-const initialLaunch = false;
+const initialLaunch = true;
 
 // create a component
 export default class App extends React.Component {
