@@ -9,6 +9,4 @@ let middleware = [ReduxThunk];
 //3rd argument is middleware (store enhancers)
 const store = createStore(reducers, {}, applyMiddleware(...middleware));
 
-export {
-    store
-}
+export { store };

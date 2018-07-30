@@ -29,24 +29,24 @@ class FilterScreen extends React.Component {
 		};
 	};
 
-
 	constructor(props) {
 		super(props);
 		this.inputRefs = {};
+
 		this.state = {
-			animal: this.props.animal,
+			animal: props.animal,
 			animals: [
 				...filterData["animals"]
 			],
-			size: this.props.size,
+			size: props.size,
 			sizes: [
 				...filterData["sizes"]
 			],
-			breed: this.props.breed,
-			breeds: [
-				...filterData.breeds[this.props.animal]
-			],
-			age: this.props.age,
+			breed: props.breed,
+			breeds:
+				//prevents accessing an index of null 
+				props.animal ? [...filterData.breeds[props.animal]] : [],
+			age: props.age,
 			ages: [
 				...filterData["ages"],
 			]

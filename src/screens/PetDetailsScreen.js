@@ -95,7 +95,6 @@ export default class PetDetailsScreen extends Component {
 						<ImageBackground
 							resizeMode="cover"
 							style={styles.petImage}
-							source={{ uri: image }}
 							source={image ? { uri: image } : require('../../assets/icons/no-photo.png')}
 						>
 							<TouchableOpacity onPress={this._handleShareButtonPress}>
