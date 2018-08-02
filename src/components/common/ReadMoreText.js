@@ -1,48 +1,32 @@
 import React from 'react';
 import { Text, View, LayoutAnimation } from 'react-native';
+import ReadMore from 'react-native-read-more-text';
 import { LinkedText } from './LinkedText';
 
-
-const maxLines = 1000;
-const minLines = 8;
-
 class ReadMoreText extends React.Component {
-  state = {
-    lines: minLines
-  }
-
   componentWillUpdate() {
     LayoutAnimation.spring();
   }
 
-  _shouldRenderShowMoreText() {
-    if (this.state.lines == minLines) {
-      return (
-        <LinkedText
-          style={this.props.linkTextStyle}
-          onPress={() => {
-            this.setState({ lines: maxLines })
-            LayoutAnimation.spring();
-          }}>
-          Read More
-        </LinkedText>
-      );
-    } else {
-      return null;
-    }
+  _renderReadMoreTextFooter = (handlePress) => {
+    return (
+      <LinkedText style={this.props.readMoreTextStyle} onPress={handlePress}>
+        Read more
+		  </LinkedText>
+    );
   }
 
   render() {
     return (
-      <View>
-        <Text
-          {...this.props}
-          numberOfLines={this.state.lines}
-        >
+      <ReadMore
+        numberOfLines={this.props.numberOfLines || 0}
+        renderTruncatedFooter={this.props.renderTruncatedFooter || this._renderReadMoreTextFooter}
+        renderRevealedFooter={this.props.renderRevealedFooter || (() => null)}
+      >
+        <Text style={this.props.contentTextStyle}>
           {this.props.children}
         </Text>
-        {this._shouldRenderShowMoreText()}
-      </View>
+      </ReadMore>
     );
   }
 }

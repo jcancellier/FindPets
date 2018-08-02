@@ -5,9 +5,6 @@ const zoomInBoi = {
     opacity: 1,
     scale: 0.95,
   },
-  // 0.5: {
-  //   opacity: 1,
-  // },
   to: {
     opacity: 1,
     scale: 1,
@@ -19,9 +16,6 @@ const zoomOutBoi = {
     opacity: 1,
     scale: 1,
   },
-  // 0.5: {
-  //   opacity: 1,
-  // },
   to: {
     opacity: 1,
     scale: 0.95,

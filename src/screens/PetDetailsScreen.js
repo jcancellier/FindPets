@@ -13,18 +13,15 @@ import {
 	Share
 } from 'react-native';
 import { Fonts, Colors } from '../global';
-import { Ionicons } from '@expo/vector-icons'
-import { Transition } from 'react-navigation-fluid-transitions';
 import FullWidthImage from 'react-native-fullwidth-image'
 import AutoHeightImage from 'react-native-auto-height-image';
 import { Button, ReadMoreText } from '../components/common';
-import EvilIcons from '@expo/vector-icons/EvilIcons';
 import Feather from '@expo/vector-icons/Feather';
 
 var { height, width } = Dimensions.get('window');
 
 export default class PetDetailsScreen extends Component {
-	constructor(props){
+	constructor(props) {
 		super(props);
 		id = this.props.navigation.getParam('id', '');
 		name = this.props.navigation.getParam('name', '');
@@ -33,6 +30,13 @@ export default class PetDetailsScreen extends Component {
 		description = this.props.navigation.getParam('description', '');
 	}
 
+	_renderReadMoreTextFooter = (handlePress) => {
+		return (
+			<Text style={styles.readMoreText} onPress={handlePress}>
+				Read more
+		  </Text>
+		);
+	}
 
 	_renderFooter() {
 		const email = this.props.navigation.getParam('email', '');
@@ -66,13 +70,13 @@ export default class PetDetailsScreen extends Component {
 
 	_handleShareButtonPress() {
 		Share.share({
-			message: 'Check out this ' + breed + ' I found on Pet Locator!', 
-			title: 'Pet Locator App', 
+			message: 'Check out this ' + breed + ' I found on Pet Locator!',
+			title: 'Pet Locator App',
 			url: image
 		}, {
-			subject: 'I found an awesome pet on Pet Locator!',
-			tintColor: 'black'
-		});
+				subject: 'I found an awesome pet on Pet Locator!',
+				tintColor: 'black'
+			});
 	}
 
 	render() {
@@ -109,15 +113,16 @@ export default class PetDetailsScreen extends Component {
 							<View style={styles.divider} />
 							<View style={styles.descriptionContainer}>
 								<ReadMoreText
-									style={styles.description}
-									linkTextStyle={styles.readMoreText}
+									numberOfLines={6}
+									contentTextStyle={styles.description}
+									readMoreTextStyle={styles.readMoreText}
 								>
 									{description}
 								</ReadMoreText>
 							</View>
 						</View>
-					</View >
-				</ScrollView >
+					</View>
+				</ScrollView>
 				{this._renderFooter()}
 			</SafeAreaView>
 		);
@@ -161,7 +166,7 @@ const styles = StyleSheet.create({
 	readMoreText: {
 		color: Colors.primary,
 		fontFamily: Fonts.primary,
-		fontSize: 18
+		fontSize: 15
 	},
 	descriptionContainer: {
 		margin: 15,

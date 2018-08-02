@@ -28,7 +28,6 @@ class PetListItem extends React.Component {
                 <Animatable.View ref={this.handleViewRef}>
                     <Card>
                         <View style={styles.cardContainer}>
-                            {/* <Transition shared={this.props.pet.id.$t}> */}
                             <Image
                                     style={styles.petImage}
                                     source={this.props.pet.media.photos ? { uri: this.props.pet.media.photos.photo[2].$t } : require('../../assets/icons/no-photo.png')}
@@ -37,7 +36,6 @@ class PetListItem extends React.Component {
                                 ratio={3/4}
                                 source={this.props.pet.media.photos ? { uri: this.props.pet.media.photos.photo[2].$t } : require('../../assets/icons/no-photo.png')}
                             /> */}
-                            {/* </Transition> */}
                             <View style={styles.petInfo}>
                                 <Text style={styles.headerText}>{this.props.pet.name.$t}</Text>
                                 <Text style={styles.subHeaderText}>{this.props.pet.breeds.breed.$t || this.props.pet.animal.$t}</Text>
@@ -89,7 +87,7 @@ const styles = StyleSheet.create({
     cardContainer: {
         borderRadius: 20,
         justifyContent: 'flex-start',
-        flexDirection: 'column',   // 'column' is default direction
+        flexDirection: 'column',   
         position: 'relative',
         overflow: 'hidden'
     },

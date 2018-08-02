@@ -7,30 +7,10 @@ import { CenteredView, LinkedText } from '../components/common';
 import { Colors } from '../global'
 import PetListItem from './PetListItem';
 import { fetchPets } from '../actions';
-import { url } from '../api'
-import { store } from '../store';
-
-var CustomLayoutSpring = {
-	duration: 500,
-	create: {
-		type: LayoutAnimation.Types.easeOut,
-		property: LayoutAnimation.Properties.opacity,
-		springDamping: 0.1,
-	},
-	delete: {
-		type: LayoutAnimation.Types.easeOut,
-		property: LayoutAnimation.Properties.opacity,
-	}
-};
 
 //class component
 class PetList extends Component {
-
-	componentWillUpdate() {
-		//LayoutAnimation.linear();
-		//LayoutAnimation.configureNext(CustomLayoutSpring);
-	}
-
+	
 	componentDidMount() {
 		this._fetchData();
 	}
