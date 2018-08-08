@@ -12,6 +12,7 @@ import FilterScreen from '../screens/FilterScreen';
 import FavoritesScreen from '../screens/FavoritesScreen';
 import OnboardingScreen from '../screens/OnBoardingScreen';
 import PetDetailsScreen from '../screens/PetDetailsScreen';
+import SetLocationScreen from '../screens/SetLocationScreen';
 
 //Stack navigator (consists of petlist and filter screen)
 const Primary = createStackNavigator({
@@ -33,13 +34,14 @@ const Primary = createStackNavigator({
                 color: Colors.flat.clouds
             },
             headerLeft: (
-                <HeaderButtons IconComponent={Ionicons} iconSize={32} color={Colors.flat.clouds}>
-                    <HeaderButtons.Item title="drawer" iconName="ios-paw" onPress={() => navigation.toggleDrawer()} />
+                <HeaderButtons IconComponent={Ionicons} iconSize={27} color={Colors.flat.clouds}>
+                    <HeaderButtons.Item title="drawer" iconName="md-menu" onPress={() => navigation.toggleDrawer()} />
                 </HeaderButtons>
             ),
             headerRight: (
-                <HeaderButtons IconComponent={MaterialCommunityIcons} iconSize={27} color={Colors.flat.clouds}>
-                    <HeaderButtons.Item title="filter" iconName="filter" onPress={() => navigation.navigate('Filter')} />
+                <HeaderButtons IconComponent={Ionicons} iconSize={27} color={Colors.flat.clouds}>
+                    <HeaderButtons.Item title="location" iconName="md-pin" onPress={() => navigation.navigate('SetLocation')} />
+                    <HeaderButtons.Item title="filter" iconName="ios-funnel" onPress={() => navigation.navigate('Filter')} />
                 </HeaderButtons>
             ),
         }),
@@ -61,9 +63,27 @@ const Primary = createStackNavigator({
                 fontFamily: Fonts.primary,
                 color: Colors.flat.clouds
             },
-            // headerLeft: (
-            //     null
-            // ),
+            gesturesEnabled: false
+        }
+    },
+    SetLocation: {
+        screen: SetLocationScreen,
+        navigationOptions: {
+            title: 'Set Location',
+            headerStyle: {
+                //TODO: Add android shadows
+                shadowOpacity: 0.4,
+                shadowOffset: { width: 0, height: 1 },
+                shadowRadius: 5,
+                borderBottomWidth: 0,
+                backgroundColor: Colors.primary
+            },
+            headerTitleStyle: {
+                fontSize: 21,
+                fontFamily: Fonts.primary,
+                color: Colors.flat.clouds
+            },
+            gesturesEnabled: false
         }
     }
 }, {
@@ -108,8 +128,8 @@ const FavoritesNavigation = createStackNavigator({
                 color: Colors.flat.clouds
             },
             headerLeft: (
-                <HeaderButtons IconComponent={Ionicons} OverflowIcon={<Ionicons name="ios-more" size={23} color="blue" />} iconSize={32} color={Colors.flat.clouds}>
-                    <HeaderButtons.Item title="add" iconName="ios-paw" onPress={() => navigation.toggleDrawer()} />
+                <HeaderButtons IconComponent={Ionicons} iconSize={27} color={Colors.flat.clouds}>
+                    <HeaderButtons.Item title="drawer" iconName="md-menu" onPress={() => navigation.toggleDrawer()} />
                 </HeaderButtons>
             ),
         }),
@@ -144,7 +164,7 @@ const MainDrawerNavigator = createDrawerNavigator({
                 fontSize: 25
             }
         }
-    });
+});
 
 export const createRootNavigator = (initialLaunch = true) => {
     return createSwitchNavigator(

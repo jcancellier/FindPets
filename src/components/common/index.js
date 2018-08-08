@@ -6,3 +6,4 @@ export * from './Header';
 export * from './LinkedText';
 export * from './ButtonSelect';
 export * from './ReadMoreText';
+export * from './Footer';

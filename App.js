@@ -1,19 +1,12 @@
-// import a library to help create a component
 import React from 'react';
 import { Provider } from 'react-redux';
 import { store } from './src/store';
-import { AppLoading, Font } from 'expo';
+import { AppLoading, Font, Asset } from 'expo';
 import { initializeAnimations } from './src/animations';
 import { createRootNavigator } from './src/navigation'
 
-//1st argument is list of reducers
-//2nd argument is initial state
-//3rd argument is middleware (store enhancers)
-//const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
+const initialLaunch = false;
 
-const initialLaunch = true;
-
-// create a component
 export default class App extends React.Component {
   state = {
     isLoadingComplete: false,
@@ -45,11 +38,15 @@ export default class App extends React.Component {
 
   _loadResourcesAsync = async () => {
     return Promise.all([
+      Asset.loadAsync([
+        require('./assets/icons/location.png'),
+        require('./assets/city.png')
+      ]),
       Font.loadAsync({
         'somatic-rounded': require('./assets/fonts/Somatic-Rounded.otf'),
         'bebas-neue': require('./assets/fonts/BebasNeue-Regular.ttf'),
         'bariol': require('./assets/fonts/Bariol-Regular.otf')
-      }),
+      })
     ]);
   };
 

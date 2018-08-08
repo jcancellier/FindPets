@@ -20,15 +20,7 @@ const Button = (props) => {
 const styles = StyleSheet.create({
     button: {
         flex: 1, 
-        //fill parent
-        // alignSelf: 'stretch',
-        // backgroundColor: '#fff',
-        // borderRadius: 5,
-        // borderWidth: 1,
         borderColor: 'rgba(0,0,0,0.2)',
-        // marginLeft: 5,
-        // marginRight: 5
-        // borderRightWidth: StyleSheet.hairlineWidth,
         justifyContent: 'center'
     },
     buttonSelected: {
@@ -39,7 +31,6 @@ const styles = StyleSheet.create({
     },
     text: {
         alignSelf: 'center',
-        // color: '#007aff',
         fontSize: 16,
         fontWeight: '600',
         paddingTop: 10,

@@ -20,7 +20,7 @@ class FilterScreen extends React.Component {
 		return {
 			headerLeft: (
 				<LinkedText
-					style={{ color: Colors.material.gray400, fontFamily: Fonts.primary, fontSize: 15, paddingLeft: 10}}
+					style={{ color: Colors.flat.clouds, fontSize: 16, paddingLeft: 10 }}
 					onPress={() => navigation.goBack()}
 				>
 					Cancel
@@ -153,32 +153,8 @@ class FilterScreen extends React.Component {
 						this.inputRefs.picker2 = el;
 					}}
 				/>
+				
 				<View style={{ paddingVertical: 5 }} />
-				{/* <Text style={styles.inputLabel}>Size</Text>
-                <RNPickerSelect
-                    placeholder={{
-                        label: 'Any',
-                        value: null,
-                    }}
-                    items={this.state.sizes}
-                    onValueChange={(value) => {
-                        this.setState({
-                            size: value,
-                        });
-                    }}
-                    onUpArrow={() => {
-                        this.inputRefs.picker2.togglePicker();
-                    }}
-                    // onDownArrow={() => {
-                    //     this.inputRefs.picker3.togglePicker();
-                    // }}
-                    style={{ ...pickerSelectStyles }}
-                    value={this.state.size}
-                    ref={(el) => {
-                        this.inputRefs.picker3 = el;
-                    }}
-                />
-                <View style={{ paddingVertical: 5 }} /> */}
 
 				<Text style={styles.inputLabel}>Size</Text>
 				<ButtonSelect
@@ -231,7 +207,7 @@ class FilterScreen extends React.Component {
 						style={styles.submitButton}
 					>
 						Submit
-                </Button>
+          </Button>
 				</View>
 			</ScrollView>
 		);
@@ -259,7 +235,7 @@ const styles = StyleSheet.create({
 		fontSize: 20
 	},
 	submitButton: {
-		backgroundColor: Colors.material.green700,
+		backgroundColor: Colors.material.green600,
 		borderRadius: 5,
 	},
 	resetButton: {

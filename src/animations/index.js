@@ -22,9 +22,19 @@ const zoomOutBoi = {
   },
 };
 
+const fadeIn = {
+  from: {
+    opacity: 0
+  },
+  to: {
+    opacity: 1
+  }
+}
+
 export const initializeAnimations = () => {
   Animatable.initializeRegistryWithDefinitions({
     zoomInBoi,
-    zoomOutBoi
+    zoomOutBoi,
+    fadeIn
   });
 }

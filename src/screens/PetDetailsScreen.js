@@ -3,7 +3,6 @@ import {
 	View,
 	Text,
 	StyleSheet,
-	Image,
 	Dimensions,
 	ScrollView,
 	SafeAreaView,
@@ -15,7 +14,7 @@ import {
 import { Fonts, Colors } from '../global';
 import FullWidthImage from 'react-native-fullwidth-image'
 import AutoHeightImage from 'react-native-auto-height-image';
-import { Button, ReadMoreText } from '../components/common';
+import { Button, ReadMoreText, Footer } from '../components/common';
 import Feather from '@expo/vector-icons/Feather';
 
 var { height, width } = Dimensions.get('window');
@@ -47,23 +46,23 @@ export default class PetDetailsScreen extends Component {
 
 		if (phone && email) {
 			return (
-				<View style={styles.footer}>
+				<Footer>
 					{callButton}
 					<View style={{ paddingHorizontal: 5 }} />
 					{emailButton}
-				</View>
+				</Footer>
 			);
 		} else if (phone) {
 			return (
-				<View style={styles.footer}>
+				<Footer style={styles.footer}>
 					{callButton}
-				</View>
+				</Footer>
 			);
 		} else if (email) {
 			return (
-				<View style={styles.footer}>
+				<Footer style={styles.footer}>
 					{emailButton}
-				</View>
+				</Footer>
 			);
 		} else return null;
 	}
@@ -101,8 +100,8 @@ export default class PetDetailsScreen extends Component {
 							style={styles.petImage}
 							source={image ? { uri: image } : require('../../assets/icons/no-photo.png')}
 						>
-							<TouchableOpacity onPress={this._handleShareButtonPress}>
-								<Feather name="share" size={28} color={Colors.flat.clouds} />
+							<TouchableOpacity onPress={this._handleShareButtonPress} style={styles.imageIconButton}>
+								<Feather name="share" size={20} color={Colors.flat.clouds} style={styles.imageIcon}/>
 							</TouchableOpacity>
 						</ImageBackground>
 						<View style={styles.body}>
@@ -186,10 +185,8 @@ const styles = StyleSheet.create({
 	divider: {
 		borderBottomWidth: 0.5,
 		borderColor: 'rgba(0,0,0,0.2)',
-		//width: '100%'
 	},
 	footer: {
-		// flex: 0.1,
 		flexDirection: 'row',
 		padding: 10,
 		backgroundColor: Colors.flat.clouds,
@@ -213,6 +210,13 @@ const styles = StyleSheet.create({
 	emailButtonText: {
 		fontFamily: Fonts.primary,
 		color: Colors.flat.clouds
+	},
+	imageIconButton: {
+		backgroundColor: 'rgba(0,0,0,0.5)',
+		borderRadius: 30,
+		justifyContent: 'center'
+	},
+	imageIcon: {
+		padding: 8
 	}
-
 });

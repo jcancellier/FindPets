@@ -5,7 +5,8 @@ import {
     SET_ANIMAL_FILTER,
     SET_SIZE_FILTER,
     SET_BREED_FILTER,
-    SET_AGE_FILTER
+    SET_AGE_FILTER,
+    SET_ZIPCODE_FILTER
 } from './types';
 
 import { urlArgumentBuilder } from '../utils';
@@ -99,5 +100,12 @@ export const setAgeFilter = (age) => {
     return {
         type: SET_AGE_FILTER,
         payload: age
+    }
+}
+
+export const setZipcodeFilter = (zipcode) => {
+    return {
+        type: SET_ZIPCODE_FILTER,
+        payload: zipcode
     }
 }

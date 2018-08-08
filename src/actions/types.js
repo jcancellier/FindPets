@@ -6,3 +6,4 @@ export const SET_ANIMAL_FILTER = "set_animal_filter";
 export const SET_SIZE_FILTER = "set_size_filter";
 export const SET_BREED_FILTER = "set_breed_filter";
 export const SET_AGE_FILTER = "set_age_filter";
+export const SET_ZIPCODE_FILTER = "set_zipcode_filter";
