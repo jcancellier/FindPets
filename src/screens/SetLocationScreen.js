@@ -9,10 +9,10 @@ import {
 	Image,
 	Keyboard,
 } from 'react-native';
-import { Location, Permissions } from 'expo';
 import { connect } from 'react-redux';
-import { setZipcodeFilter, fetchPets } from '../actions';
+import { setZipcodeFilter, fetchPets, fetchLocation, clearLocationInfo } from '../actions';
 import { Ionicons } from '@expo/vector-icons';
+import { BallIndicator } from 'react-native-indicators';
 import { Header } from 'react-navigation';
 import { Colors, Fonts } from '../global';
 import { LinkedText, Footer, Button } from '../components/common';
@@ -40,37 +40,24 @@ class SetLocationScreen extends Component {
 		};
 	};
 
-	_getLocationAsync = async () => {
-		//TODO: handle location retrieval on app start
-		let { status } = await Permissions.askAsync(Permissions.LOCATION);
-		if (status !== 'granted') {
-			this.setState({
-				errorMessage: 'Permission to access location was denied',
-			});
-		}
-
-		let location = await Location.getCurrentPositionAsync({});
-		const toSend = {
-			latitude: location.coords.latitude,
-			longitude: location.coords.longitude
-		}
-
-		Location.reverseGeocodeAsync(toSend)
-			.then((res) => {
-				console.log(res)
-				this.setState({ 
-					zipcode: res[0].postalCode,
-					city: res[0].city,
-					country: res[0].region
-				})
-			})
-			.catch((err) => console.log(err))
-	};
-
 	_onSaveLocationPress = () => {
 		this.props.setZipcodeFilter(this.state.zipcode);
 		this.props.fetchPets();
 		this.props.navigation.navigate('Pets');
+		this.props.clearLocationInfo();
+	}
+
+	_renderSpinnerOrText = () => {
+		if (!this.props.isLoading) {
+			return (
+				<Text style={styles.cityAndCountryText}>{(this.props.city && this.props.country) ? `${this.props.city}, ${this.props.country}` : ''}</Text>
+			);
+		}
+		else {
+			return (
+				<BallIndicator color={Colors.primary} size={16} style={styles.loadingLocationSpinner}/>
+			);
+		}
 	}
 
 	render() {
@@ -90,7 +77,7 @@ class SetLocationScreen extends Component {
 						<View>
 							<TouchableOpacity
 								style={styles.getLocationButton}
-								onPress={this._getLocationAsync}
+								onPress={this.props.fetchLocation}
 							>
 								<Ionicons name='md-pin' size={20} color={Colors.flat.clouds} style={styles.getLocationButtonIcon} />
 								<Text style={styles.getLocationButtonText}>Get Location</Text>
@@ -102,8 +89,9 @@ class SetLocationScreen extends Component {
 								value={this.state.zipcode}
 								keyboardType='number-pad'
 								maxLength={5}
+								underlineColorAndroid='transparent'
 							/>
-							<Text style={styles.cityAndCountryText}>{(this.state.city && this.state.country) ? `${this.state.city}, ${this.state.country}` : ''}</Text>
+							{this._renderSpinnerOrText()}
 						</View>
 					</View>
 					<Footer style={{ backgroundColor: 'white' }}>
@@ -183,16 +171,27 @@ const styles = StyleSheet.create({
 		textAlign: 'center',
 		fontFamily: Fonts.primary,
 		fontSize: 16
+	},
+	loadingLocationSpinner: {
+		justifyContent: 'center',
+    alignItems: 'center',
+		flexDirection: 'row',
+		flex: 0
 	}
 })
 
 const mapStateToProps = (state) => {
 	return {
-		zipcode: state.filters.location
+		zipcode: state.filters.location,
+		city: state.location.city,
+		country: state.location.country,
+		isLoading: state.location.isLoading
 	}
 }
 
 export default connect(mapStateToProps, {
 	setZipcodeFilter,
-	fetchPets
+	fetchPets,
+	fetchLocation,
+	clearLocationInfo
 })(SetLocationScreen);

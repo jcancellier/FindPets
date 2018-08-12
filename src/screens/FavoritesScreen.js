@@ -1,8 +1,14 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { connect } from 'react-redux';
+import PetFavoritesList from '../components/PetFavoritesList';
 import { Fonts, Colors } from '../global';
 
-export default class FavoritesScreen extends React.Component {
+class FavoritesScreen extends React.Component {
+
+    componentDidMount() {
+        console.log(this.props.favorites.length)
+    }
 
     _renderNoFavorites = () => {
         return (
@@ -23,10 +29,18 @@ export default class FavoritesScreen extends React.Component {
         );
     }
 
+    _renderFavorites = () => {
+        return (
+            <View style={{ flex: 1}}>
+                <PetFavoritesList navigation={this.props.navigation} pets={this.props.favorites}/>
+            </View>
+        )
+    }
+
     render() {
         return (
-            this._renderNoFavorites()
-        );
+            this.props.favorites.length == 0 ? this._renderNoFavorites() : this._renderFavorites()
+        )
     }
 }
 
@@ -43,7 +57,8 @@ const noFavoritesStyles = StyleSheet.create({
     header: {
         fontFamily: Fonts.primary,
         fontSize: 24,
-        paddingBottom: 5
+        paddingBottom: 5,
+        textAlign: 'center',
     },
     subHeader: {
         fontFamily: Fonts.primary,
@@ -63,3 +78,11 @@ const noFavoritesStyles = StyleSheet.create({
         fontSize: 18
     }
 })
+
+const mapStateToProps = (state) => {
+    return {
+        favorites: state.favorites.pets
+    }
+}
+
+export default connect(mapStateToProps)(FavoritesScreen);

@@ -16,8 +16,8 @@ export default (state = INITIAL_STATE, action) => {
         case FETCH_PETS_SUCCESS:
             return {...state, posts: action.payload, isLoading: false}
         case FETCH_PETS_FAIL:
-            alert('error fetching pets!');
-            return {...state, isLoading: false}
+            // alert(action.payload);
+            return {...state, isLoading: false, posts: {}}
         default:
             return state;
     }

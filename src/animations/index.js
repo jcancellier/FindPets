@@ -1,9 +1,9 @@
 import * as Animatable from 'react-native-animatable';
 
-const zoomInBoi = {
+const zoomIn = {
   from: {
     opacity: 1,
-    scale: 0.95,
+    scale: 0.98,
   },
   to: {
     opacity: 1,
@@ -11,14 +11,14 @@ const zoomInBoi = {
   },
 };
 
-const zoomOutBoi = {
+const zoomOut = {
   from: {
     opacity: 1,
     scale: 1,
   },
   to: {
     opacity: 1,
-    scale: 0.95,
+    scale: 0.98,
   },
 };
 
@@ -27,14 +27,14 @@ const fadeIn = {
     opacity: 0
   },
   to: {
-    opacity: 1
+    opacity: 1.0
   }
 }
 
 export const initializeAnimations = () => {
   Animatable.initializeRegistryWithDefinitions({
-    zoomInBoi,
-    zoomOutBoi,
+    zoomIn,
+    zoomOut,
     fadeIn
   });
 }

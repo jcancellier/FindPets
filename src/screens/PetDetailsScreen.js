@@ -11,22 +11,31 @@ import {
 	TouchableOpacity,
 	Share
 } from 'react-native';
+import { connect } from 'react-redux';
+import { addPetToFavorites, removePetFromFavorites } from '../actions';
 import { Fonts, Colors } from '../global';
 import FullWidthImage from 'react-native-fullwidth-image'
 import AutoHeightImage from 'react-native-auto-height-image';
 import { Button, ReadMoreText, Footer } from '../components/common';
 import Feather from '@expo/vector-icons/Feather';
+import { Ionicons } from '@expo/vector-icons'
+import { Constants } from 'expo';
+import ToggleIcon from '../components/common/ToggleIcon';
 
 var { height, width } = Dimensions.get('window');
 
-export default class PetDetailsScreen extends Component {
+class PetDetailsScreen extends React.Component {
 	constructor(props) {
 		super(props);
 		id = this.props.navigation.getParam('id', '');
 		name = this.props.navigation.getParam('name', '');
 		breed = this.props.navigation.getParam('breed', '');
 		image = this.props.navigation.getParam('image', '');
-		description = this.props.navigation.getParam('description', '');
+		description = this.props.navigation.getParam('description', 'No Description');
+	
+		this.state={
+			favoritesToggled: this.props.favoritePets.some(pet => pet.id.$t === id) ? true : false
+		}
 	}
 
 	_renderReadMoreTextFooter = (handlePress) => {
@@ -78,6 +87,21 @@ export default class PetDetailsScreen extends Component {
 			});
 	}
 
+	_handleBackButtonPress() {
+		this.props.navigation.goBack();
+	}
+
+	_handleFavoriteButtonPress() {
+		this.setState((prevState) => { return {favoritesToggled: !prevState.favoritesToggled}}, () => {
+			console.log(this.state.favoritesToggled);
+			if(this.state.favoritesToggled) {
+				this.props.addPetToFavorites(id);
+			} else {
+				this.props.removePetFromFavorites(id);
+			}
+		})
+	}
+
 	render() {
 		// const {id} = this
 		// const {name} = this
@@ -100,9 +124,24 @@ export default class PetDetailsScreen extends Component {
 							style={styles.petImage}
 							source={image ? { uri: image } : require('../../assets/icons/no-photo.png')}
 						>
-							<TouchableOpacity onPress={this._handleShareButtonPress} style={styles.imageIconButton}>
-								<Feather name="share" size={20} color={Colors.flat.clouds} style={styles.imageIcon}/>
-							</TouchableOpacity>
+							<View style={styles.petImageTopButtonsContainer}>
+								<TouchableOpacity onPress={this._handleBackButtonPress.bind(this)} style={styles.imageIconButton}>
+									<Ionicons name="md-arrow-back" size={22} color={Colors.flat.clouds} style={styles.backIcon} />
+								</TouchableOpacity>
+							</View>
+							<View style={styles.petImageBottomButtonsContainer}>
+								<ToggleIcon
+									activeIconName='ios-heart'
+									inactiveIconName='ios-heart'
+									toggled={this.state.favoritesToggled}
+									activeOpacity={Colors.material.red500}
+									inactiveOpacity={Colors.flat.clouds}
+									onPress={this._handleFavoriteButtonPress.bind(this)}
+								/>
+								<TouchableOpacity onPress={this._handleShareButtonPress} style={[styles.imageIconButton, styles.shareIconButton]}>
+									<Feather name="share" size={20} color={Colors.flat.clouds} style={styles.shareIcon} />
+								</TouchableOpacity>
+							</View>
 						</ImageBackground>
 						<View style={styles.body}>
 							<View style={styles.header}>
@@ -144,9 +183,20 @@ const styles = StyleSheet.create({
 		//allows image to fit the width of screen
 		//flex: 1,
 		width: width,
-		alignItems: 'flex-end',
+		padding: 10,
+		paddingTop: Constants.statusBarHeight
+	},
+	petImageTopButtonsContainer: {
+		flex:1, 
+		alignItems: 'flex-start', 
+		justifyContent: 'flex-start',
+		paddingTop: 5
+	},
+	petImageBottomButtonsContainer: {
+		flex:1, 
+		alignItems: 'flex-end', 
 		justifyContent: 'flex-end',
-		padding: 10
+		flexDirection: 'row'
 	},
 	body: {
 		// margin: 7
@@ -213,10 +263,29 @@ const styles = StyleSheet.create({
 	},
 	imageIconButton: {
 		backgroundColor: 'rgba(0,0,0,0.5)',
-		borderRadius: 30,
-		justifyContent: 'center'
+		borderRadius: 100,
+		justifyContent: 'center',
+		alignItems: 'center'
 	},
-	imageIcon: {
-		padding: 8
+	shareIconButton: {
+		marginLeft: 10
+	},
+	shareIcon: {
+		padding: 8,
+	},
+	backIcon: {
+		padding: 8,
+		paddingHorizontal: 13
 	}
 });
+
+const mapStateToProps = (state) => {
+	return {
+		favoritePets: state.favorites.pets
+	}
+}
+
+export default connect(mapStateToProps, {
+	addPetToFavorites,
+	removePetFromFavorites
+})(PetDetailsScreen);

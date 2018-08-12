@@ -7,3 +7,4 @@ export * from './LinkedText';
 export * from './ButtonSelect';
 export * from './ReadMoreText';
 export * from './Footer';
+export * from './ToggleIcon';

@@ -21,6 +21,7 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "com.jcancellier.petlocator",
       "supportsTablet": true
     }
   }

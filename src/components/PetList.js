@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, FlatList, LayoutAnimation, Text, StyleSheet } from 'react-native';
 import { Fonts } from '../global';
 import { connect } from 'react-redux';
+import * as Animatable from 'react-native-animatable';
 import { DotIndicator } from 'react-native-indicators';
 import { CenteredView, LinkedText } from '../components/common';
 import { Colors } from '../global'
@@ -26,7 +27,7 @@ class PetList extends Component {
 				name: item.name.$t,
 				breed: item.breeds.breed.$t || item.animal.$t,	
 				image: (item.media.photos) ? item.media.photos.photo[2].$t : '',
-				description: item.description.$t,
+				description: item.description.$t || 'No description :(',
 				email: item.contact.email.$t,
 				phone: item.contact.phone.$t
 			})}
@@ -37,8 +38,7 @@ class PetList extends Component {
 		//console.log(store.getState());
 		//TODO: when searching for a pet and no pets are received back then the next time you search for an animal this if-statement crashes the app
 		// the error it gives is "undefined is not an object (evaluating 'this.props.pets.length'"
-		// if (this.props.isLoading && this.props.pets.length == 0) {
-		if (this.props.isLoading) {
+		if (this.props.isLoading && this.props.pets.length == 0) {
 			return (
 				<View style={{ flex: 1, justifyContent: 'center' }}>
 					<DotIndicator count={5} color={Colors.primary} />
@@ -51,15 +51,17 @@ class PetList extends Component {
 			//then nothing will show
 		} else if (Array.isArray(this.props.pets)) {
 			return (
+				<Animatable.View animation="fadeIn">
 				<FlatList
 					data={this.props.pets}
 					renderItem={this._renderPet}
 					keyExtractor={item => item.id.$t.toString()}
-					// onRefresh={() => this._fetchData()}
-					// refreshing={this.props.isLoading}
+					onRefresh={() => this._fetchData()}
+					refreshing={this.props.isLoading}
 					//TODO: possibly enable this line to prevent console warning: 'virtualizedList ...etc'
 					// disableVirtualization={false}
 				/>
+				</Animatable.View>
 			);
 		} else if(!this.props.isLoading) {
 			return (
@@ -95,7 +97,7 @@ const styles = StyleSheet.create({
 const mapStateToProps = (state) => {
 	return {
 		isLoading: state.pets.isLoading,
-		pets: state.pets.posts
+		pets: state.pets.posts,
 	}
 }
 

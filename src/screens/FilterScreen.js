@@ -126,8 +126,7 @@ class FilterScreen extends React.Component {
 						this.inputRefs.picker = el;
 					}}
 				/>
-				<View style={{ paddingVertical: 5 }} />
-
+				<View style={{ paddingVertical: 10 }} />
 
 				<Text style={styles.inputLabel}>Breed</Text>
 				<RNPickerSelect
@@ -154,7 +153,7 @@ class FilterScreen extends React.Component {
 					}}
 				/>
 				
-				<View style={{ paddingVertical: 5 }} />
+				<View style={{ paddingVertical: 10 }} />
 
 				<Text style={styles.inputLabel}>Size</Text>
 				<ButtonSelect
@@ -172,7 +171,7 @@ class FilterScreen extends React.Component {
 					value={this.state.size}
 				/>
 
-				<View style={{ paddingVertical: 5 }} />
+				<View style={{ paddingVertical: 10 }} />
 
 				<Text style={styles.inputLabel}>Age</Text>
 				<ButtonSelect
@@ -260,6 +259,9 @@ const pickerSelectStyles = StyleSheet.create({
 		backgroundColor: 'white',
 		color: 'black',
 		fontFamily: Fonts.primary
+	},
+	underline: {
+		borderTopWidth: 0
 	}
 });
 

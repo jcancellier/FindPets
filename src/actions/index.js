@@ -6,11 +6,16 @@ import {
     SET_SIZE_FILTER,
     SET_BREED_FILTER,
     SET_AGE_FILTER,
-    SET_ZIPCODE_FILTER
+    SET_ZIPCODE_FILTER,
+    FETCH_LOCATION_START,
+    FETCH_LOCATION_FAIL,
+    FETCH_LOCATION_SUCCESS,
+    CLEAR_LOCATION_INFO,
+    ADD_PET_TO_FAVORITES,
+    REMOVE_PET_FROM_FAVORITES
 } from './types';
-
+import { Location, Permissions } from 'expo';
 import { urlArgumentBuilder } from '../utils';
-
 import { store } from '../store';
 import { apiKey, apiUrl } from '../api';
 
@@ -30,7 +35,7 @@ export const fetchPets = () => {
                 // this.setState({ finishedLoading: true });
                 //console.log(this.state.pets[0].id.$t)
                 let pets;
-                if(responseData.petfinder.pets.pet)
+                if (responseData.petfinder.pets.pet)
                     pets = responseData.petfinder.pets.pet
                 else
                     pets = {}
@@ -68,13 +73,15 @@ const buildUrl = () => {
     var result = Object.keys(filters).map(key => {
         return [key, filters[key]];
     });
-    
+
     result.push(['key', apiKey]);
     // console.log('this is about to be sent to urlArgumentBuilder');
     // console.log(result);
     return urlArgumentBuilder(result);
 }
 
+
+//FilterReducer.js Actions
 export const setAnimalFilter = (animal) => {
     return {
         type: SET_ANIMAL_FILTER,
@@ -107,5 +114,96 @@ export const setZipcodeFilter = (zipcode) => {
     return {
         type: SET_ZIPCODE_FILTER,
         payload: zipcode
+    }
+}
+
+export const fetchLocation = () => {
+    return async (dispatch) => {
+        //TODO: handle location retrieval on app start
+        dispatch({ type: FETCH_LOCATION_START })
+        let { status } = await Permissions.askAsync(Permissions.LOCATION);
+        if (status !== 'granted') {
+            alert('Permission to access location was denied.\nEnable location services in settings');
+            dispatch({ type: FETCH_LOCATION_FAIL });
+            return;
+        }
+
+        let toSend;
+        try {
+            let location = await Location.getCurrentPositionAsync({});
+            toSend = {
+                latitude: location.coords.latitude,
+                longitude: location.coords.longitude
+            }
+        } catch (err) {
+            alert(err);
+            dispatch({ type: FETCH_LOCATION_FAIL });
+            return;
+        }
+
+        // let location = await Location.getCurrentPositionAsync({});
+        // const toSend = {
+        //     latitude: location.coords.latitude,
+        //     longitude: location.coords.longitude
+        // }
+
+        Location.reverseGeocodeAsync(toSend)
+            .then((res) => {
+                console.log(res)
+                dispatch({
+                    type: FETCH_LOCATION_SUCCESS,
+                    city: res[0].city,
+                    country: res[0].region
+                })
+                dispatch({
+                    type: SET_ZIPCODE_FILTER,
+                    payload: res[0].postalCode
+                })
+            })
+            .catch((err) => {
+                console.log(err)
+                dispatch({ type: FETCH_LOCATION_FAIL })
+            })
+    }
+}
+
+//LocationReducer.js actions
+export const clearLocationInfo = () => {
+    return {
+        type: CLEAR_LOCATION_INFO
+    }
+}
+
+//FavoritesReducer.js actions
+// export const addPetToFavorites = (id) => {
+//     return {
+//         type: ADD_PET_TO_FAVORITES,
+//         payload: id
+//     }
+// }
+
+// export const removePetFromFavorites = (id) => {
+//     return {
+//         type: REMOVE_PET_FROM_FAVORITES,
+//         payload: id
+//     }
+// }
+
+export const addPetToFavorites = (id) => {
+    return (dispatch) => {
+        // let petToAdd = store.getState.pets.posts.find(pet => pet.id.$t === id);
+        // console.log(petToAdd);
+        let petToAdd = store.getState().pets.posts.find(pet => pet.id.$t === id);
+        dispatch({
+            type: ADD_PET_TO_FAVORITES,
+            payload: petToAdd
+        })
+    }
+}
+
+export const removePetFromFavorites = (id) => {
+    return{
+        type: REMOVE_PET_FROM_FAVORITES,
+        payload: id
     }
 }

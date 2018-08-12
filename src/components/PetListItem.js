@@ -9,14 +9,14 @@ import FullWidthImage from 'react-native-fullwidth-image';
 var { height, width } = Dimensions.get('window');
 
 //functional component
-class PetListItem extends React.Component {
+class PetListItem extends React.PureComponent {
     handleViewRef = ref => this.view = ref;
     
     //Zooms item out on click
-    zoomOut = () => this.view.zoomOutBoi(75)
+    zoomOut = () => this.view.zoomOut(75)
     
     //Zooms item in on clickRelease
-    zoomIn = () => this.view.zoomInBoi(75);//this.view.zoomIn(75)
+    zoomIn = () => this.view.zoomIn(75);//this.view.zoomIn(75)
 
     render() {
         return (

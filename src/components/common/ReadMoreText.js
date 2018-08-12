@@ -4,10 +4,6 @@ import ReadMore from 'react-native-read-more-text';
 import { LinkedText } from './LinkedText';
 
 class ReadMoreText extends React.Component {
-  componentWillUpdate() {
-    LayoutAnimation.spring();
-  }
-
   _renderReadMoreTextFooter = (handlePress) => {
     return (
       <LinkedText style={this.props.readMoreTextStyle} onPress={handlePress}>

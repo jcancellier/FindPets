@@ -3,7 +3,7 @@ import {
     SET_SIZE_FILTER,
     SET_BREED_FILTER,
     SET_AGE_FILTER,
-    SET_ZIPCODE_FILTER
+    SET_ZIPCODE_FILTER,
 } from '../actions/types';
 
 const INITIAL_STATE = {
