@@ -21,7 +21,7 @@ class SetLocationScreen extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			zipcode: this.props.zipcode,
+			zipcode: '',
 			city: '',
 			country: ''
 		}
@@ -40,11 +40,19 @@ class SetLocationScreen extends Component {
 		};
 	};
 
+	static getDerivedStateFromProps(props, state) {
+		return {
+			zipcode: props.zipcode
+		}
+	}
+
 	_onSaveLocationPress = () => {
+		console.log(this.props.navigation)
 		this.props.setZipcodeFilter(this.state.zipcode);
-		this.props.fetchPets();
-		this.props.navigation.navigate('Pets');
+		this.props.fetchPets(true, true);
 		this.props.clearLocationInfo();
+		this.props.navigation.goBack();
+
 	}
 
 	_renderSpinnerOrText = () => {

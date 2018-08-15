@@ -4,6 +4,7 @@ import {
     SET_BREED_FILTER,
     SET_AGE_FILTER,
     SET_ZIPCODE_FILTER,
+    SET_OFFSET_FILTER,
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -13,7 +14,8 @@ const INITIAL_STATE = {
     age: null,
     location: '93307',
     format: "json",
-    count: null
+    count: 50,
+    offset: 0
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -28,6 +30,8 @@ export default (state = INITIAL_STATE, action) => {
             return {...state, breed: action.payload};
         case SET_ZIPCODE_FILTER:
             return {...state, location: action.payload};
+        case SET_OFFSET_FILTER:
+            return {...state, offset: action.payload};
         default:
             return state;
     }

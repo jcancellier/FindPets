@@ -10,14 +10,19 @@ import PetListItem from './PetListItem';
 import { fetchPets } from '../actions';
 
 //class component
-class PetList extends Component {
-	
+class PetList extends React.PureComponent {
+
 	componentDidMount() {
 		this._fetchData();
 	}
 
 	_fetchData = () => {
-		this.props.fetchPets();
+		this.props.fetchPets(true);
+	}
+
+	_onScrollEndReached = () => {
+		if (!this.props.isMorePetsLoading)
+			this.props.fetchPets(false)
 	}
 
 	_renderPet = ({ item, index }) => {
@@ -25,7 +30,7 @@ class PetList extends Component {
 			onPress={() => this.props.navigation.navigate('PetDetails', {
 				id: item.id.$t.toString(),
 				name: item.name.$t,
-				breed: item.breeds.breed.$t || item.animal.$t,	
+				breed: item.breeds.breed.$t || item.animal.$t,
 				image: (item.media.photos) ? item.media.photos.photo[2].$t : '',
 				description: item.description.$t || 'No description :(',
 				email: item.contact.email.$t,
@@ -52,24 +57,27 @@ class PetList extends Component {
 		} else if (Array.isArray(this.props.pets)) {
 			return (
 				<Animatable.View animation="fadeIn">
-				<FlatList
-					data={this.props.pets}
-					renderItem={this._renderPet}
-					keyExtractor={item => item.id.$t.toString()}
-					onRefresh={() => this._fetchData()}
-					refreshing={this.props.isLoading}
+					<FlatList
+						data={this.props.pets}
+						renderItem={this._renderPet}
+						extraData={this.props.pets}
+						keyExtractor={item => item.id.$t.toString()}
+						onRefresh={() => this._fetchData()}
+						refreshing={this.props.isLoading}
+						onEndReached={this._onScrollEndReached}
+						onEndReachedThreshold={0}
 					//TODO: possibly enable this line to prevent console warning: 'virtualizedList ...etc'
 					// disableVirtualization={false}
-				/>
+					/>
 				</Animatable.View>
 			);
-		} else if(!this.props.isLoading) {
+		} else if (!this.props.isLoading) {
 			return (
 				<CenteredView>
 					<Text style={styles.noPetsText}>
 						No Pets Found :(
           </Text>
-					<LinkedText 
+					<LinkedText
 						onPress={() => this.props.navigation.navigate('Filter')}
 						style={styles.linkedText}
 					>
@@ -83,7 +91,7 @@ class PetList extends Component {
 
 const styles = StyleSheet.create({
 	noPetsText: {
-		fontFamily: Fonts.primary, 
+		fontFamily: Fonts.primary,
 		fontSize: 25
 	},
 	linkedText: {
@@ -98,6 +106,7 @@ const mapStateToProps = (state) => {
 	return {
 		isLoading: state.pets.isLoading,
 		pets: state.pets.posts,
+		isMorePetsLoading: state.pets.isMorePetsLoading
 	}
 }
 

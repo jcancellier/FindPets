@@ -32,8 +32,8 @@ class PetDetailsScreen extends React.Component {
 		breed = this.props.navigation.getParam('breed', '');
 		image = this.props.navigation.getParam('image', '');
 		description = this.props.navigation.getParam('description', 'No Description');
-	
-		this.state={
+
+		this.state = {
 			favoritesToggled: this.props.favoritePets.some(pet => pet.id.$t === id) ? true : false
 		}
 	}
@@ -92,9 +92,9 @@ class PetDetailsScreen extends React.Component {
 	}
 
 	_handleFavoriteButtonPress() {
-		this.setState((prevState) => { return {favoritesToggled: !prevState.favoritesToggled}}, () => {
+		this.setState((prevState) => { return { favoritesToggled: !prevState.favoritesToggled } }, () => {
 			console.log(this.state.favoritesToggled);
-			if(this.state.favoritesToggled) {
+			if (this.state.favoritesToggled) {
 				this.props.addPetToFavorites(id);
 			} else {
 				this.props.removePetFromFavorites(id);
@@ -151,7 +151,7 @@ class PetDetailsScreen extends React.Component {
 							<View style={styles.divider} />
 							<View style={styles.descriptionContainer}>
 								<ReadMoreText
-									numberOfLines={6}
+									numberOfLines={8}
 									contentTextStyle={styles.description}
 									readMoreTextStyle={styles.readMoreText}
 								>
@@ -162,6 +162,7 @@ class PetDetailsScreen extends React.Component {
 					</View>
 				</ScrollView>
 				{this._renderFooter()}
+
 			</SafeAreaView>
 		);
 	}
@@ -187,14 +188,15 @@ const styles = StyleSheet.create({
 		paddingTop: Constants.statusBarHeight
 	},
 	petImageTopButtonsContainer: {
-		flex:1, 
-		alignItems: 'flex-start', 
+		// flex: 1,
+		position: 'absolute',
+		alignItems: 'flex-start',
 		justifyContent: 'flex-start',
 		paddingTop: 5
 	},
 	petImageBottomButtonsContainer: {
-		flex:1, 
-		alignItems: 'flex-end', 
+		flex: 1,
+		alignItems: 'flex-end',
 		justifyContent: 'flex-end',
 		flexDirection: 'row'
 	},

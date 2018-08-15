@@ -5,10 +5,6 @@ import PetListItem from './PetListItem';
 
 //class component
 export default class PetList extends Component {
-  _fetchData = () => {
-    this.props.fetchPets();
-  }
-
   _renderPet = ({ item, index }) => {
     return <PetListItem pet={item}
       onPress={() => this.props.navigation.navigate('PetDetails', {

@@ -5,7 +5,7 @@ import { AppLoading, Font, Asset } from 'expo';
 import { initializeAnimations } from './src/animations';
 import { createRootNavigator } from './src/navigation'
 
-const initialLaunch = false;
+const initialLaunch = true;
 
 export default class App extends React.Component {
   state = {

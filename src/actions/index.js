@@ -2,6 +2,7 @@ import {
     FETCH_PETS_START,
     FETCH_PETS_SUCCESS,
     FETCH_PETS_FAIL,
+    FETCH_MORE_PETS_SUCCESS,
     SET_ANIMAL_FILTER,
     SET_SIZE_FILTER,
     SET_BREED_FILTER,
@@ -12,7 +13,10 @@ import {
     FETCH_LOCATION_SUCCESS,
     CLEAR_LOCATION_INFO,
     ADD_PET_TO_FAVORITES,
-    REMOVE_PET_FROM_FAVORITES
+    REMOVE_PET_FROM_FAVORITES,
+    SET_OFFSET_FILTER,
+    FETCH_MORE_PETS_START,
+    CLEAR_PET_RECORDS
 } from './types';
 import { Location, Permissions } from 'expo';
 import { urlArgumentBuilder } from '../utils';
@@ -20,37 +24,97 @@ import { store } from '../store';
 import { apiKey, apiUrl } from '../api';
 
 // PetReducer.js Actions
-export const fetchPets = () => {
-    let url = apiUrl + buildUrl();
+export const fetchPets = (initialFetch = false, clearPetList = false) => {
     return (dispatch) => {
-        dispatch({ type: FETCH_PETS_START });
-        console.log('fetching with url: ' + url);
-        fetch(url)
-            .then((response) => response.json())
-            .then((responseData) => {
-                //1. TODO (FIXED): this line will result in error when fetching only 1 pet from api (eventually handle this case)
-                //2. TODO (FIXED): if component is unmounted before reaching this line you will get warning "can't call setstate (or forceupdate) on an unmounted component"
-                //this may be fixed by using redux since state is outside of this component
-                // this.setState({ pets: responseData.petfinder.pets.pet });
-                // this.setState({ finishedLoading: true });
-                //console.log(this.state.pets[0].id.$t)
-                let pets;
-                if (responseData.petfinder.pets.pet)
-                    pets = responseData.petfinder.pets.pet
-                else
-                    pets = {}
-                dispatch({
-                    type: FETCH_PETS_SUCCESS,
-                    payload: pets
-                })
+        if (initialFetch){
+            dispatch({
+                type: SET_OFFSET_FILTER,
+                payload: null
             })
-            .catch((err) => {
-                dispatch({
-                    type: FETCH_PETS_FAIL,
-                    payload: err
-                })
-            })
+        }
+        if(clearPetList){
+            dispatch({type: CLEAR_PET_RECORDS});
+        }
+
+        let url = apiUrl + buildUrl();
+        if (store.getState().filters.offset == null || initialFetch) {
+            fetchInitialPets(url, dispatch);
+        } else if (!store.getState().pets.isMorePetsLoading) {
+            fetchMorePets(url, dispatch);
+        }
     }
+}
+
+//Helper function for fetchPets
+//This function handles the first fetch for a given search
+//'fetchMorePets' handles subsequent fetches
+const fetchInitialPets = (url, dispatch) => {
+    dispatch({ type: FETCH_PETS_START });
+    console.log('fetching with url: ' + url);
+    fetch(url)
+        .then((response) => response.json())
+        .then((responseData) => {
+            //1. TODO (FIXED): this line will result in error when fetching only 1 pet from api (eventually handle this case)
+            //2. TODO (FIXED): if component is unmounted before reaching this line you will get warning "can't call setstate (or forceupdate) on an unmounted component"
+            //this may be fixed by using redux since state is outside of this component
+            // this.setState({ pets: responseData.petfinder.pets.pet });
+            // this.setState({ finishedLoading: true });
+            //console.log(this.state.pets[0].id.$t)
+            console.log('fetch pets success');
+            let pets;
+            if (responseData.petfinder.pets.pet)
+                pets = responseData.petfinder.pets.pet
+            else
+                pets = {}
+
+            dispatch({
+                type: SET_OFFSET_FILTER,
+                payload: responseData.petfinder.lastOffset.$t
+            })
+            dispatch({
+                type: FETCH_PETS_SUCCESS,
+                payload: pets
+            })
+        })
+        .catch((err) => {
+            dispatch({
+                type: FETCH_PETS_FAIL,
+                payload: err
+            })
+        })
+}
+
+//Helper function for fetchPets
+//This function handles the subsequent fetches for a given search
+//'fetchInitialPets' handles the first fetch
+const fetchMorePets = (url, dispatch) => {
+    console.log('fetching with url: ' + url);
+    dispatch({ type: FETCH_MORE_PETS_START })
+    fetch(url)
+        .then((response) => response.json())
+        .then((responseData) => {
+            console.log('fetch more pets success');
+            let pets;
+            if (responseData.petfinder.pets.pet)
+                pets = removeDuplicatePets(responseData.petfinder.pets.pet)
+            else
+                pets = {}
+
+            for (let i = 0; i < pets.length; i++) {
+                console.log(pets[i].id.$t)
+            }
+            dispatch({
+                type: SET_OFFSET_FILTER,
+                payload: responseData.petfinder.lastOffset.$t
+            })
+            dispatch({
+                type: FETCH_MORE_PETS_SUCCESS,
+                payload: pets
+            })
+        })
+        .catch((err) => {
+
+        })
 }
 
 // Helper function for fetchPets
@@ -75,11 +139,22 @@ const buildUrl = () => {
     });
 
     result.push(['key', apiKey]);
-    // console.log('this is about to be sent to urlArgumentBuilder');
-    // console.log(result);
     return urlArgumentBuilder(result);
 }
 
+
+//Helper function for fetchMorePets
+//Purpose: remove pets that have already been fetched from previous api calls
+//This is a PetFinder API backend issue where it sends previously sent pet records
+//TODO: find alternate method or switch apis
+const removeDuplicatePets = (fetchedPets) => {
+    currentPets = store.getState().pets.posts;
+    return fetchedPets.filter(firstArrayItem =>
+        !currentPets.some(
+            secondArrayItem => firstArrayItem.id.$t === secondArrayItem.id.$t
+        )
+    )
+}
 
 //FilterReducer.js Actions
 export const setAnimalFilter = (animal) => {
@@ -141,12 +216,6 @@ export const fetchLocation = () => {
             return;
         }
 
-        // let location = await Location.getCurrentPositionAsync({});
-        // const toSend = {
-        //     latitude: location.coords.latitude,
-        //     longitude: location.coords.longitude
-        // }
-
         Location.reverseGeocodeAsync(toSend)
             .then((res) => {
                 console.log(res)
@@ -175,24 +244,8 @@ export const clearLocationInfo = () => {
 }
 
 //FavoritesReducer.js actions
-// export const addPetToFavorites = (id) => {
-//     return {
-//         type: ADD_PET_TO_FAVORITES,
-//         payload: id
-//     }
-// }
-
-// export const removePetFromFavorites = (id) => {
-//     return {
-//         type: REMOVE_PET_FROM_FAVORITES,
-//         payload: id
-//     }
-// }
-
 export const addPetToFavorites = (id) => {
     return (dispatch) => {
-        // let petToAdd = store.getState.pets.posts.find(pet => pet.id.$t === id);
-        // console.log(petToAdd);
         let petToAdd = store.getState().pets.posts.find(pet => pet.id.$t === id);
         dispatch({
             type: ADD_PET_TO_FAVORITES,
@@ -202,7 +255,7 @@ export const addPetToFavorites = (id) => {
 }
 
 export const removePetFromFavorites = (id) => {
-    return{
+    return {
         type: REMOVE_PET_FROM_FAVORITES,
         payload: id
     }

@@ -58,9 +58,8 @@ class FilterScreen extends React.Component {
 		this.props.setSizeFilter(this.state.size);
 		this.props.setBreedFilter(this.state.breed);
 		this.props.setAgeFilter(this.state.age);
-		this.props.fetchPets();
+		this.props.fetchPets(true, true);
 		this.props.navigation.goBack();
-		// this.props.navigation.navigate('Pets');        
 	}
 
 	_onResetFilters = () => {
