@@ -134,6 +134,14 @@ const FavoritesNavigation = createStackNavigator({
             ),
         }),
     },
+    PetDetailsFromFavorites: {
+        screen: PetDetailsScreen,
+        navigationOptions: {
+            gestureResponseDistance: {
+                horizontal: 250
+            }
+        }
+    }
 });
 
 //Main navigator (Drawer)

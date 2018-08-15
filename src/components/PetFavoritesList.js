@@ -7,7 +7,7 @@ import PetListItem from './PetListItem';
 export default class PetList extends Component {
   _renderPet = ({ item, index }) => {
     return <PetListItem pet={item}
-      onPress={() => this.props.navigation.navigate('PetDetails', {
+      onPress={() => this.props.navigation.navigate('PetDetailsFromFavorites', {
         id: item.id.$t.toString(),
         name: item.name.$t,
         breed: item.breeds.breed.$t || item.animal.$t,

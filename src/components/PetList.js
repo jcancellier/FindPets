@@ -65,7 +65,7 @@ class PetList extends React.PureComponent {
 						onRefresh={() => this._fetchData()}
 						refreshing={this.props.isLoading}
 						onEndReached={this._onScrollEndReached}
-						onEndReachedThreshold={0}
+						onEndReachedThreshold={0.01}
 					//TODO: possibly enable this line to prevent console warning: 'virtualizedList ...etc'
 					// disableVirtualization={false}
 					/>

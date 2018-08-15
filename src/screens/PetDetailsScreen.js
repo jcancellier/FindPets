@@ -188,8 +188,7 @@ const styles = StyleSheet.create({
 		paddingTop: Constants.statusBarHeight
 	},
 	petImageTopButtonsContainer: {
-		// flex: 1,
-		position: 'absolute',
+		flex: 1,
 		alignItems: 'flex-start',
 		justifyContent: 'flex-start',
 		paddingTop: 5
@@ -211,7 +210,6 @@ const styles = StyleSheet.create({
 	},
 	description: {
 		fontSize: 15,
-		fontWeight: 'bold',
 		fontFamily: Fonts.primary
 	},
 	readMoreText: {
@@ -225,12 +223,10 @@ const styles = StyleSheet.create({
 	},
 	petName: {
 		fontSize: 30,
-		fontWeight: 'bold',
 		fontFamily: Fonts.primary
 	},
 	petBreed: {
 		color: Colors.flat.concrete,
-		fontWeight: 'bold',
 		fontSize: 20,
 		fontFamily: Fonts.primary
 	},

@@ -54,12 +54,10 @@ const styles = StyleSheet.create({
     },
     headerText: {
         fontSize: 30,
-        fontWeight: 'bold',
         fontFamily: Fonts.primary
     },
     subHeaderText: {
         color: Colors.flat.concrete,
-        fontWeight: 'bold',
         fontSize: 20,
         fontFamily: Fonts.primary
     },
