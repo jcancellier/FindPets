@@ -139,7 +139,8 @@ const FavoritesNavigation = createStackNavigator({
         navigationOptions: {
             gestureResponseDistance: {
                 horizontal: 250
-            }
+            },
+            header: null
         }
     }
 });
