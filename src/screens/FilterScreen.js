@@ -1,11 +1,11 @@
 import React from 'react';
-import { Alert, Text, TextInput, StyleSheet, View, ScrollView, TouchableOpacity } from 'react-native';
+import { Alert, TextInput, StyleSheet, View, ScrollView, TouchableOpacity } from 'react-native';
 import { Constants } from 'expo';
 import { connect } from 'react-redux';
 import RNPickerSelect from 'react-native-picker-select';
 import filterData from '../global/filterData.json';
 import { Fonts, Colors } from '../global';
-import { Button, ButtonSelect, LinkedText } from '../components/common';
+import { Button, ButtonSelect, LinkedText, Text } from '../components/common';
 import {
 	setAnimalFilter,
 	setSizeFilter,
@@ -205,7 +205,7 @@ class FilterScreen extends React.Component {
 						style={styles.submitButton}
 					>
 						Submit
-          </Button>
+          			</Button>
 				</View>
 			</ScrollView>
 		);

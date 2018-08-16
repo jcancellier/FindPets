@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
 	StyleSheet,
 	View,
-	Text,
 	TextInput,
 	TouchableOpacity,
 	KeyboardAvoidingView,
@@ -15,7 +14,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { BallIndicator } from 'react-native-indicators';
 import { Header } from 'react-navigation';
 import { Colors, Fonts } from '../global';
-import { LinkedText, Footer, Button } from '../components/common';
+import { LinkedText, Footer, Button, Text } from '../components/common';
 
 class SetLocationScreen extends Component {
 	constructor(props) {
@@ -134,7 +133,7 @@ const styles = StyleSheet.create({
 		fontSize: 20,
 		fontFamily: Fonts.primary,
 		color: Colors.flat.clouds,
-		alignSelf: 'center'
+		alignSelf: 'center',
 	},
 	getLocationButtonIcon: {
 		padding: 5,

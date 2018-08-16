@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { Text as StyledText } from '../components/common';
 import { connect } from 'react-redux';
 import PetFavoritesList from '../components/PetFavoritesList';
 import { Fonts, Colors } from '../global';
@@ -20,9 +21,9 @@ class FavoritesScreen extends React.Component {
                         style={noFavoritesStyles.findPetButton}
                         onPress={() => this.props.navigation.navigate('Pets')}
                     >
-                        <Text style={noFavoritesStyles.findPetButtonText}>
+                        <StyledText style={noFavoritesStyles.findPetButtonText}>
                             Find a pet to love
-                        </Text>
+                        </StyledText>
                     </TouchableOpacity>
                 </View>
             </View>
