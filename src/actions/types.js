@@ -23,3 +23,6 @@ export const CLEAR_LOCATION_INFO = "clear_location_info";
 //FavoritesReducer types
 export const ADD_PET_TO_FAVORITES = "add_pet_to_favorites";
 export const REMOVE_PET_FROM_FAVORITES = "remove_pet_from_favorites";
+
+//UserReducer types
+export const SET_INITIAL_LAUNCH = "set_initial_launch";

@@ -1,8 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { StyleSheet, View } from 'react-native';
+import {setInitialLaunch} from '../actions';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { Ionicons } from '@expo/vector-icons';
-import { Fonts, Colors } from '../global'
+import { Fonts, Colors } from '../global';
 
 const styles = StyleSheet.create({
   buttonCircle: {
@@ -58,7 +60,7 @@ const slides = [
   },
 ];
 
-export default class App extends React.Component {
+class OnBoardingScreen extends React.Component {
   _renderNextButton = () => {
     return (
       <View style={styles.buttonCircle}>
@@ -86,6 +88,7 @@ export default class App extends React.Component {
 
   _onDone = () => {
     this.props.navigation.navigate('Main');
+    this.props.setInitialLaunch(false);
   }
 
   render() {
@@ -99,4 +102,8 @@ export default class App extends React.Component {
     );
   }
 }
+
+export default connect(null, {
+  setInitialLaunch
+} )(OnBoardingScreen);
 

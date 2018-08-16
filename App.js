@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { store } from './src/store';
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from './src/store';
 import { AppLoading, Font, Asset } from 'expo';
 import { initializeAnimations } from './src/animations';
 import { createRootNavigator } from './src/navigation'
@@ -17,6 +18,11 @@ export default class App extends React.Component {
     console.log(store.getState());
   }
 
+  _renderMainNavigator() {
+    const RootNav = createRootNavigator(store.getState().user.initialLaunch);
+    return <RootNav />
+  }
+
   render() {
     if (!this.state.isLoadingComplete) {
       return (
@@ -27,10 +33,11 @@ export default class App extends React.Component {
         />
       );
     } else {
-      const RootNav = createRootNavigator(initialLaunch);
       return (
         <Provider store={store}>
-          <RootNav />
+          <PersistGate loading={<AppLoading />} persistor={persistor}>
+            {this._renderMainNavigator()}
+          </PersistGate>
         </Provider>
       );
     }

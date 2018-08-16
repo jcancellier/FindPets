@@ -16,7 +16,8 @@ import {
     REMOVE_PET_FROM_FAVORITES,
     SET_OFFSET_FILTER,
     FETCH_MORE_PETS_START,
-    CLEAR_PET_RECORDS
+    CLEAR_PET_RECORDS,
+    SET_INITIAL_LAUNCH
 } from './types';
 import { Location, Permissions } from 'expo';
 import { urlArgumentBuilder } from '../utils';
@@ -258,5 +259,13 @@ export const removePetFromFavorites = (id) => {
     return {
         type: REMOVE_PET_FROM_FAVORITES,
         payload: id
+    }
+}
+
+//UserReducer.js actions
+export const setInitialLaunch = (initialLaunch) => {
+    return {
+        type: SET_INITIAL_LAUNCH,
+        payload: initialLaunch
     }
 }
