@@ -5,6 +5,7 @@ import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import HeaderButtons from 'react-navigation-header-buttons'
 
 import { Fonts, Colors } from "../global";
+import styles from './styles';
 
 //Screens
 import MainScreen from '../screens/MainScreen';
@@ -28,11 +29,7 @@ const Primary = createStackNavigator({
                 borderBottomWidth: 0,
                 backgroundColor: Colors.primary
             },
-            headerTitleStyle: {
-                fontSize: 21,
-                fontFamily: Fonts.primary,
-                color: Colors.flat.clouds
-            },
+            headerTitleStyle: styles.headerTitleStyle,
             headerLeft: (
                 <HeaderButtons IconComponent={Ionicons} iconSize={27} color={Colors.flat.clouds}>
                     <HeaderButtons.Item title="drawer" iconName="md-menu" onPress={() => navigation.toggleDrawer()} />
@@ -58,11 +55,7 @@ const Primary = createStackNavigator({
                 borderBottomWidth: 0,
                 backgroundColor: Colors.primary
             },
-            headerTitleStyle: {
-                fontSize: 21,
-                fontFamily: Fonts.primary,
-                color: Colors.flat.clouds
-            },
+            headerTitleStyle: styles.headerTitleStyle,
             gesturesEnabled: false
         }
     },
@@ -78,11 +71,7 @@ const Primary = createStackNavigator({
                 borderBottomWidth: 0,
                 backgroundColor: Colors.primary
             },
-            headerTitleStyle: {
-                fontSize: 21,
-                fontFamily: Fonts.primary,
-                color: Colors.flat.clouds
-            },
+            headerTitleStyle: styles.headerTitleStyle,
             gesturesEnabled: false
         }
     }
@@ -122,11 +111,7 @@ const FavoritesNavigation = createStackNavigator({
                 borderBottomWidth: 0,
                 backgroundColor: Colors.primary
             },
-            headerTitleStyle: {
-                fontSize: 21,
-                fontFamily: Fonts.primary,
-                color: Colors.flat.clouds
-            },
+            headerTitleStyle: styles.headerTitleStyle,
             headerLeft: (
                 <HeaderButtons IconComponent={Ionicons} iconSize={27} color={Colors.flat.clouds}>
                     <HeaderButtons.Item title="drawer" iconName="md-menu" onPress={() => navigation.toggleDrawer()} />
@@ -170,7 +155,9 @@ const MainDrawerNavigator = createDrawerNavigator({
             inactiveTintColor: 'rgba(236,240,241,0.6)',
             labelStyle: {
                 fontFamily: Fonts.primary,
-                fontSize: 25
+                fontSize: 25,
+                includeFontPadding: false,
+                fontWeight: 'normal'
             }
         }
 });

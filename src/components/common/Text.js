@@ -3,7 +3,7 @@ import React from 'react';
 import { Text as RNText } from 'react-native';
 
 const Text = (props) => {
-    return <RNText style={[props.style, { includeFontPadding: false }]}>{props.children}</RNText>
+    return <RNText {...props} style={[props.style, { includeFontPadding: false }]} >{props.children}</RNText>
 }
 
 

@@ -57,7 +57,7 @@ class SetLocationScreen extends Component {
 	_renderSpinnerOrText = () => {
 		if (!this.props.isLoading) {
 			return (
-				<Text style={styles.cityAndCountryText}>{(this.props.city && this.props.country) ? `${this.props.city}, ${this.props.country}` : ''}</Text>
+				<Text style={styles.cityAndCountryText} numberOfLines={1}>{(this.props.city && this.props.country) ? `${this.props.city}, ${this.props.country}` : ''}</Text>
 			);
 		}
 		else {
@@ -98,8 +98,8 @@ class SetLocationScreen extends Component {
 								maxLength={5}
 								underlineColorAndroid='transparent'
 							/>
-							{this._renderSpinnerOrText()}
 						</View>
+						{this._renderSpinnerOrText()}
 					</View>
 					<Footer style={{ backgroundColor: 'white' }}>
 						<Button
