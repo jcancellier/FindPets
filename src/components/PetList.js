@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { View, FlatList, LayoutAnimation, Text, StyleSheet } from 'react-native';
+import React from 'react';
+import { View, FlatList, Text, StyleSheet } from 'react-native';
 import { Fonts } from '../global';
 import { connect } from 'react-redux';
 import * as Animatable from 'react-native-animatable';

@@ -32,8 +32,8 @@ class FavoritesScreen extends React.Component {
 
     _renderFavorites = () => {
         return (
-            <View style={{ flex: 1}}>
-                <PetFavoritesList navigation={this.props.navigation} pets={this.props.favorites}/>
+            <View style={{ flex: 1 }}>
+                <PetFavoritesList navigation={this.props.navigation} pets={this.props.favorites} />
             </View>
         )
     }

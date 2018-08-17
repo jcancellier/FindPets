@@ -1,1617 +1,1617 @@
 {
-    "animals": [
-        {
-            "label": "Barnyard",
-            "value": "barnyard"
-        },
-        {
-            "label": "Bird",
-            "value": "bird"
-        },
-        {
-            "label": "Cat",
-            "value": "cat"
-        },
-        {
-            "label": "Dog",
-            "value": "dog"
-        },
-        {
-            "label": "Horse",
-            "value": "horse"
-        },
-        {
-            "label": "Reptile",
-            "value": "reptile"
-        },
-        {
-            "label": "Smallfurry",
-            "value": "smallfurry"
-        }
-    ],
-    "sizes": [
-        {
-            "label": "S",
-            "value": "S"
-        },
-        {
-            "label": "M",
-            "value": "M"
-        },
-        {
-            "label": "L",
-            "value": "L"
-        },
-        {
-            "label": "XL",
-            "value": "XL"
-        }
-    ],
-    "ages" : [
-        {
-            "label": "Baby",
-            "value": "Baby"
-        },
-        {
-            "label": "Young",
-            "value": "Young"
-        },
-        {
-            "label": "Adult",
-            "value": "Adult"
-        },
-        {
-            "label": "Senior",
-            "value": "Senior"
-        }
-    ],
-    "breeds": {
-        "barnyard": [
-            {
-                "label": "Alpaca",
-                "value": "Alpaca"
-            },
-            {
-                "label": "Alpine",
-                "value": "Alpine"
-            },
-            {
-                "label": "Angora",
-                "value": "Angora"
-            },
-            {
-                "label": "Angus",
-                "value": "Angus"
-            },
-            {
-                "label": "Barbados",
-                "value": "Barbados"
-            },
-            {
-                "label": "Boer",
-                "value": "Boer"
-            },
-            {
-                "label": "Cow",
-                "value": "Cow"
-            },
-            {
-                "label": "Duroc",
-                "value": "Duroc"
-            },
-            {
-                "label": "Goat",
-                "value": "Goat"
-            },
-            {
-                "label": "Hampshire",
-                "value": "Hampshire"
-            },
-            {
-                "label": "Holstein",
-                "value": "Holstein"
-            },
-            {
-                "label": "Jersey",
-                "value": "Jersey"
-            },
-            {
-                "label": "LaMancha",
-                "value": "LaMancha"
-            },
-            {
-                "label": "Landrace",
-                "value": "Landrace"
-            },
-            {
-                "label": "Llama",
-                "value": "Llama"
-            },
-            {
-                "label": "Merino",
-                "value": "Merino"
-            },
-            {
-                "label": "Mouflan",
-                "value": "Mouflan"
-            },
-            {
-                "label": "Myotonic / Fainting",
-                "value": "Myotonic / Fainting"
-            },
-            {
-                "label": "Nigerian Dwarf",
-                "value": "Nigerian Dwarf"
-            },
-            {
-                "label": "Nubian",
-                "value": "Nubian"
-            },
-            {
-                "label": "Oberhasli",
-                "value": "Oberhasli"
-            },
-            {
-                "label": "Pig",
-                "value": "Pig"
-            },
-            {
-                "label": "Pot Bellied",
-                "value": "Pot Bellied"
-            },
-            {
-                "label": "Pygmy",
-                "value": "Pygmy"
-            },
-            {
-                "label": "Saanen",
-                "value": "Saanen"
-            },
-            {
-                "label": "Sheep",
-                "value": "Sheep"
-            },
-            {
-                "label": "Shetland",
-                "value": "Shetland"
-            },
-            {
-                "label": "Toggenburg",
-                "value": "Toggenburg"
-            },
-            {
-                "label": "Vietnamese Pot Bellied",
-                "value": "Vietnamese Pot Bellied"
-            },
-            {
-                "label": "Yorkshire",
-                "value": "Yorkshire"
-            }
-        ],
-        "bird": [
-            {
-                "label": "African Grey",
-                "value": "African Grey"
-            },
-            {
-                "label": "Amazon",
-                "value": "Amazon"
-            },
-            {
-                "label": "Brotogeris",
-                "value": "Brotogeris"
-            },
-            {
-                "label": "Budgie / Budgerigar",
-                "value": "Budgie / Budgerigar"
-            },
-            {
-                "label": "Button-Quail",
-                "value": "Button-Quail"
-            },
-            {
-                "label": "Caique",
-                "value": "Caique"
-            },
-            {
-                "label": "Canary",
-                "value": "Canary"
-            },
-            {
-                "label": "Chicken",
-                "value": "Chicken"
-            },
-            {
-                "label": "Cockatiel",
-                "value": "Cockatiel"
-            },
-            {
-                "label": "Cockatoo",
-                "value": "Cockatoo"
-            },
-            {
-                "label": "Conure",
-                "value": "Conure"
-            },
-            {
-                "label": "Dove",
-                "value": "Dove"
-            },
-            {
-                "label": "Duck",
-                "value": "Duck"
-            },
-            {
-                "label": "Eclectus",
-                "value": "Eclectus"
-            },
-            {
-                "label": "Emu",
-                "value": "Emu"
-            },
-            {
-                "label": "Finch",
-                "value": "Finch"
-            },
-            {
-                "label": "Goose",
-                "value": "Goose"
-            },
-            {
-                "label": "Guinea Fowl",
-                "value": "Guinea Fowl"
-            },
-            {
-                "label": "Kakariki",
-                "value": "Kakariki"
-            },
-            {
-                "label": "Lory / Lorikeet",
-                "value": "Lory / Lorikeet"
-            },
-            {
-                "label": "Lovebird",
-                "value": "Lovebird"
-            },
-            {
-                "label": "Macaw",
-                "value": "Macaw"
-            },
-            {
-                "label": "Ostrich",
-                "value": "Ostrich"
-            },
-            {
-                "label": "Parakeet (Other)",
-                "value": "Parakeet (Other)"
-            },
-            {
-                "label": "Parrot (Other)",
-                "value": "Parrot (Other)"
-            },
-            {
-                "label": "Parrotlet",
-                "value": "Parrotlet"
-            },
-            {
-                "label": "Peacock / Peafowl",
-                "value": "Peacock / Peafowl"
-            },
-            {
-                "label": "Pheasant",
-                "value": "Pheasant"
-            },
-            {
-                "label": "Pigeon",
-                "value": "Pigeon"
-            },
-            {
-                "label": "Pionus",
-                "value": "Pionus"
-            },
-            {
-                "label": "Poicephalus / Senegal",
-                "value": "Poicephalus / Senegal"
-            },
-            {
-                "label": "Quail",
-                "value": "Quail"
-            },
-            {
-                "label": "Quaker Parakeet",
-                "value": "Quaker Parakeet"
-            },
-            {
-                "label": "Rhea",
-                "value": "Rhea"
-            },
-            {
-                "label": "Ringneck / Psittacula",
-                "value": "Ringneck / Psittacula"
-            },
-            {
-                "label": "Rosella",
-                "value": "Rosella"
-            },
-            {
-                "label": "Swan",
-                "value": "Swan"
-            },
-            {
-                "label": "Toucan",
-                "value": "Toucan"
-            },
-            {
-                "label": "Turkey",
-                "value": "Turkey"
-            }
-        ],
-        "cat": [
-            {
-                "label": "Abyssinian",
-                "value": "Abyssinian"
-            },
-            {
-                "label": "American Curl",
-                "value": "American Curl"
-            },
-            {
-                "label": "American Shorthair",
-                "value": "American Shorthair"
-            },
-            {
-                "label": "American Wirehair",
-                "value": "American Wirehair"
-            },
-            {
-                "label": "Applehead Siamese",
-                "value": "Applehead Siamese"
-            },
-            {
-                "label": "Balinese",
-                "value": "Balinese"
-            },
-            {
-                "label": "Bengal",
-                "value": "Bengal"
-            },
-            {
-                "label": "Birman",
-                "value": "Birman"
-            },
-            {
-                "label": "Bobtail",
-                "value": "Bobtail"
-            },
-            {
-                "label": "Bombay",
-                "value": "Bombay"
-            },
-            {
-                "label": "British Shorthair",
-                "value": "British Shorthair"
-            },
-            {
-                "label": "Burmese",
-                "value": "Burmese"
-            },
-            {
-                "label": "Burmilla",
-                "value": "Burmilla"
-            },
-            {
-                "label": "Calico",
-                "value": "Calico"
-            },
-            {
-                "label": "Canadian Hairless",
-                "value": "Canadian Hairless"
-            },
-            {
-                "label": "Chartreux",
-                "value": "Chartreux"
-            },
-            {
-                "label": "Chausie",
-                "value": "Chausie"
-            },
-            {
-                "label": "Chinchilla",
-                "value": "Chinchilla"
-            },
-            {
-                "label": "Cornish Rex",
-                "value": "Cornish Rex"
-            },
-            {
-                "label": "Cymric",
-                "value": "Cymric"
-            },
-            {
-                "label": "Devon Rex",
-                "value": "Devon Rex"
-            },
-            {
-                "label": "Dilute Calico",
-                "value": "Dilute Calico"
-            },
-            {
-                "label": "Dilute Tortoiseshell",
-                "value": "Dilute Tortoiseshell"
-            },
-            {
-                "label": "Domestic Long Hair",
-                "value": "Domestic Long Hair"
-            },
-            {
-                "label": "Domestic Medium Hair",
-                "value": "Domestic Medium Hair"
-            },
-            {
-                "label": "Domestic Short Hair",
-                "value": "Domestic Short Hair"
-            },
-            {
-                "label": "Egyptian Mau",
-                "value": "Egyptian Mau"
-            },
-            {
-                "label": "Exotic Shorthair",
-                "value": "Exotic Shorthair"
-            },
-            {
-                "label": "Extra-Toes Cat / Hemingway Polydactyl",
-                "value": "Extra-Toes Cat / Hemingway Polydactyl"
-            },
-            {
-                "label": "Havana",
-                "value": "Havana"
-            },
-            {
-                "label": "Himalayan",
-                "value": "Himalayan"
-            },
-            {
-                "label": "Japanese Bobtail",
-                "value": "Japanese Bobtail"
-            },
-            {
-                "label": "Javanese",
-                "value": "Javanese"
-            },
-            {
-                "label": "Korat",
-                "value": "Korat"
-            },
-            {
-                "label": "LaPerm",
-                "value": "LaPerm"
-            },
-            {
-                "label": "Maine Coon",
-                "value": "Maine Coon"
-            },
-            {
-                "label": "Manx",
-                "value": "Manx"
-            },
-            {
-                "label": "Munchkin",
-                "value": "Munchkin"
-            },
-            {
-                "label": "Nebelung",
-                "value": "Nebelung"
-            },
-            {
-                "label": "Norwegian Forest Cat",
-                "value": "Norwegian Forest Cat"
-            },
-            {
-                "label": "Ocicat",
-                "value": "Ocicat"
-            },
-            {
-                "label": "Oriental Long Hair",
-                "value": "Oriental Long Hair"
-            },
-            {
-                "label": "Oriental Short Hair",
-                "value": "Oriental Short Hair"
-            },
-            {
-                "label": "Oriental Tabby",
-                "value": "Oriental Tabby"
-            },
-            {
-                "label": "Persian",
-                "value": "Persian"
-            },
-            {
-                "label": "Pixie-Bob",
-                "value": "Pixie-Bob"
-            },
-            {
-                "label": "Ragamuffin",
-                "value": "Ragamuffin"
-            },
-            {
-                "label": "Ragdoll",
-                "value": "Ragdoll"
-            },
-            {
-                "label": "Russian Blue",
-                "value": "Russian Blue"
-            },
-            {
-                "label": "Scottish Fold",
-                "value": "Scottish Fold"
-            },
-            {
-                "label": "Selkirk Rex",
-                "value": "Selkirk Rex"
-            },
-            {
-                "label": "Siamese",
-                "value": "Siamese"
-            },
-            {
-                "label": "Siberian",
-                "value": "Siberian"
-            },
-            {
-                "label": "Silver",
-                "value": "Silver"
-            },
-            {
-                "label": "Singapura",
-                "value": "Singapura"
-            },
-            {
-                "label": "Snowshoe",
-                "value": "Snowshoe"
-            },
-            {
-                "label": "Somali",
-                "value": "Somali"
-            },
-            {
-                "label": "Sphynx / Hairless Cat",
-                "value": "Sphynx / Hairless Cat"
-            },
-            {
-                "label": "Tabby",
-                "value": "Tabby"
-            },
-            {
-                "label": "Tiger",
-                "value": "Tiger"
-            },
-            {
-                "label": "Tonkinese",
-                "value": "Tonkinese"
-            },
-            {
-                "label": "Torbie",
-                "value": "Torbie"
-            },
-            {
-                "label": "Tortoiseshell",
-                "value": "Tortoiseshell"
-            },
-            {
-                "label": "Turkish Angora",
-                "value": "Turkish Angora"
-            },
-            {
-                "label": "Turkish Van",
-                "value": "Turkish Van"
-            },
-            {
-                "label": "Tuxedo",
-                "value": "Tuxedo"
-            }
-        ],
-        "dog": [
-            {
-                "label": "Affenpinscher",
-                "value": "Affenpinscher"
-            },
-            {
-                "label": "Afghan Hound",
-                "value": "Afghan Hound"
-            },
-            {
-                "label": "Airedale Terrier",
-                "value": "Airedale Terrier"
-            },
-            {
-                "label": "Akbash",
-                "value": "Akbash"
-            },
-            {
-                "label": "Akita",
-                "value": "Akita"
-            },
-            {
-                "label": "Alaskan Malamute",
-                "value": "Alaskan Malamute"
-            },
-            {
-                "label": "American Bulldog",
-                "value": "American Bulldog"
-            },
-            {
-                "label": "American Eskimo Dog",
-                "value": "American Eskimo Dog"
-            },
-            {
-                "label": "American Hairless Terrier",
-                "value": "American Hairless Terrier"
-            },
-            {
-                "label": "American Staffordshire Terrier",
-                "value": "American Staffordshire Terrier"
-            },
-            {
-                "label": "American Water Spaniel",
-                "value": "American Water Spaniel"
-            },
-            {
-                "label": "Anatolian Shepherd",
-                "value": "Anatolian Shepherd"
-            },
-            {
-                "label": "Appenzell Mountain Dog",
-                "value": "Appenzell Mountain Dog"
-            },
-            {
-                "label": "Australian Cattle Dog / Blue Heeler",
-                "value": "Australian Cattle Dog / Blue Heeler"
-            },
-            {
-                "label": "Australian Kelpie",
-                "value": "Australian Kelpie"
-            },
-            {
-                "label": "Australian Shepherd",
-                "value": "Australian Shepherd"
-            },
-            {
-                "label": "Australian Terrier",
-                "value": "Australian Terrier"
-            },
-            {
-                "label": "Basenji",
-                "value": "Basenji"
-            },
-            {
-                "label": "Basset Hound",
-                "value": "Basset Hound"
-            },
-            {
-                "label": "Beagle",
-                "value": "Beagle"
-            },
-            {
-                "label": "Bearded Collie",
-                "value": "Bearded Collie"
-            },
-            {
-                "label": "Beauceron",
-                "value": "Beauceron"
-            },
-            {
-                "label": "Bedlington Terrier",
-                "value": "Bedlington Terrier"
-            },
-            {
-                "label": "Belgian Shepherd / Laekenois",
-                "value": "Belgian Shepherd / Laekenois"
-            },
-            {
-                "label": "Belgian Shepherd / Malinois",
-                "value": "Belgian Shepherd / Malinois"
-            },
-            {
-                "label": "Belgian Shepherd / Sheepdog",
-                "value": "Belgian Shepherd / Sheepdog"
-            },
-            {
-                "label": "Belgian Shepherd / Tervuren",
-                "value": "Belgian Shepherd / Tervuren"
-            },
-            {
-                "label": "Bernese Mountain Dog",
-                "value": "Bernese Mountain Dog"
-            },
-            {
-                "label": "Bichon Frise",
-                "value": "Bichon Frise"
-            },
-            {
-                "label": "Black and Tan Coonhound",
-                "value": "Black and Tan Coonhound"
-            },
-            {
-                "label": "Black Labrador Retriever",
-                "value": "Black Labrador Retriever"
-            },
-            {
-                "label": "Black Mouth Cur",
-                "value": "Black Mouth Cur"
-            },
-            {
-                "label": "Black Russian Terrier",
-                "value": "Black Russian Terrier"
-            },
-            {
-                "label": "Bloodhound",
-                "value": "Bloodhound"
-            },
-            {
-                "label": "Blue Lacy",
-                "value": "Blue Lacy"
-            },
-            {
-                "label": "Bluetick Coonhound",
-                "value": "Bluetick Coonhound"
-            },
-            {
-                "label": "Boerboel",
-                "value": "Boerboel"
-            },
-            {
-                "label": "Bolognese",
-                "value": "Bolognese"
-            },
-            {
-                "label": "Border Collie",
-                "value": "Border Collie"
-            },
-            {
-                "label": "Border Terrier",
-                "value": "Border Terrier"
-            },
-            {
-                "label": "Borzoi",
-                "value": "Borzoi"
-            },
-            {
-                "label": "Boston Terrier",
-                "value": "Boston Terrier"
-            },
-            {
-                "label": "Bouvier des Flanders",
-                "value": "Bouvier des Flanders"
-            },
-            {
-                "label": "Boxer",
-                "value": "Boxer"
-            },
-            {
-                "label": "Boykin Spaniel",
-                "value": "Boykin Spaniel"
-            },
-            {
-                "label": "Briard",
-                "value": "Briard"
-            },
-            {
-                "label": "Brittany Spaniel",
-                "value": "Brittany Spaniel"
-            },
-            {
-                "label": "Brussels Griffon",
-                "value": "Brussels Griffon"
-            },
-            {
-                "label": "Bull Terrier",
-                "value": "Bull Terrier"
-            },
-            {
-                "label": "Bullmastiff",
-                "value": "Bullmastiff"
-            },
-            {
-                "label": "Cairn Terrier",
-                "value": "Cairn Terrier"
-            },
-            {
-                "label": "Canaan Dog",
-                "value": "Canaan Dog"
-            },
-            {
-                "label": "Cane Corso Mastiff",
-                "value": "Cane Corso Mastiff"
-            },
-            {
-                "label": "Carolina Dog",
-                "value": "Carolina Dog"
-            },
-            {
-                "label": "Catahoula Leopard Dog",
-                "value": "Catahoula Leopard Dog"
-            },
-            {
-                "label": "Cattle Dog",
-                "value": "Cattle Dog"
-            },
-            {
-                "label": "Caucasian Sheepdog / Caucasian Ovtcharka",
-                "value": "Caucasian Sheepdog / Caucasian Ovtcharka"
-            },
-            {
-                "label": "Cavalier King Charles Spaniel",
-                "value": "Cavalier King Charles Spaniel"
-            },
-            {
-                "label": "Chesapeake Bay Retriever",
-                "value": "Chesapeake Bay Retriever"
-            },
-            {
-                "label": "Chihuahua",
-                "value": "Chihuahua"
-            },
-            {
-                "label": "Chinese Crested Dog",
-                "value": "Chinese Crested Dog"
-            },
-            {
-                "label": "Chinese Foo Dog",
-                "value": "Chinese Foo Dog"
-            },
-            {
-                "label": "Chinook",
-                "value": "Chinook"
-            },
-            {
-                "label": "Chocolate Labrador Retriever",
-                "value": "Chocolate Labrador Retriever"
-            },
-            {
-                "label": "Chow Chow",
-                "value": "Chow Chow"
-            },
-            {
-                "label": "Cirneco dell'Etna",
-                "value": "Cirneco dell'Etna"
-            },
-            {
-                "label": "Clumber Spaniel",
-                "value": "Clumber Spaniel"
-            },
-            {
-                "label": "Cockapoo",
-                "value": "Cockapoo"
-            },
-            {
-                "label": "Cocker Spaniel",
-                "value": "Cocker Spaniel"
-            },
-            {
-                "label": "Collie",
-                "value": "Collie"
-            },
-            {
-                "label": "Coonhound",
-                "value": "Coonhound"
-            },
-            {
-                "label": "Corgi",
-                "value": "Corgi"
-            },
-            {
-                "label": "Coton de Tulear",
-                "value": "Coton de Tulear"
-            },
-            {
-                "label": "Curly-Coated Retriever",
-                "value": "Curly-Coated Retriever"
-            },
-            {
-                "label": "Dachshund",
-                "value": "Dachshund"
-            },
-            {
-                "label": "Dalmatian",
-                "value": "Dalmatian"
-            },
-            {
-                "label": "Dandi Dinmont Terrier",
-                "value": "Dandi Dinmont Terrier"
-            },
-            {
-                "label": "Doberman Pinscher",
-                "value": "Doberman Pinscher"
-            },
-            {
-                "label": "Dogo Argentino",
-                "value": "Dogo Argentino"
-            },
-            {
-                "label": "Dogue de Bordeaux",
-                "value": "Dogue de Bordeaux"
-            },
-            {
-                "label": "Dutch Shepherd",
-                "value": "Dutch Shepherd"
-            },
-            {
-                "label": "English Bulldog",
-                "value": "English Bulldog"
-            },
-            {
-                "label": "English Cocker Spaniel",
-                "value": "English Cocker Spaniel"
-            },
-            {
-                "label": "English Coonhound",
-                "value": "English Coonhound"
-            },
-            {
-                "label": "English Pointer",
-                "value": "English Pointer"
-            },
-            {
-                "label": "English Setter",
-                "value": "English Setter"
-            },
-            {
-                "label": "English Shepherd",
-                "value": "English Shepherd"
-            },
-            {
-                "label": "English Springer Spaniel",
-                "value": "English Springer Spaniel"
-            },
-            {
-                "label": "English Toy Spaniel",
-                "value": "English Toy Spaniel"
-            },
-            {
-                "label": "Entlebucher",
-                "value": "Entlebucher"
-            },
-            {
-                "label": "Eskimo Dog",
-                "value": "Eskimo Dog"
-            },
-            {
-                "label": "Feist",
-                "value": "Feist"
-            },
-            {
-                "label": "Field Spaniel",
-                "value": "Field Spaniel"
-            },
-            {
-                "label": "Fila Brasileiro",
-                "value": "Fila Brasileiro"
-            },
-            {
-                "label": "Finnish Lapphund",
-                "value": "Finnish Lapphund"
-            },
-            {
-                "label": "Finnish Spitz",
-                "value": "Finnish Spitz"
-            },
-            {
-                "label": "Flat-Coated Retriever",
-                "value": "Flat-Coated Retriever"
-            },
-            {
-                "label": "Fox Terrier",
-                "value": "Fox Terrier"
-            },
-            {
-                "label": "Foxhound",
-                "value": "Foxhound"
-            },
-            {
-                "label": "French Bulldog",
-                "value": "French Bulldog"
-            },
-            {
-                "label": "Galgo Spanish Greyhound",
-                "value": "Galgo Spanish Greyhound"
-            },
-            {
-                "label": "German Pinscher",
-                "value": "German Pinscher"
-            },
-            {
-                "label": "German Shepherd Dog",
-                "value": "German Shepherd Dog"
-            },
-            {
-                "label": "German Shorthaired Pointer",
-                "value": "German Shorthaired Pointer"
-            },
-            {
-                "label": "German Spitz",
-                "value": "German Spitz"
-            },
-            {
-                "label": "German Wirehaired Pointer",
-                "value": "German Wirehaired Pointer"
-            },
-            {
-                "label": "Giant Schnauzer",
-                "value": "Giant Schnauzer"
-            },
-            {
-                "label": "Glen of Imaal Terrier",
-                "value": "Glen of Imaal Terrier"
-            },
-            {
-                "label": "Golden Retriever",
-                "value": "Golden Retriever"
-            },
-            {
-                "label": "Gordon Setter",
-                "value": "Gordon Setter"
-            },
-            {
-                "label": "Great Dane",
-                "value": "Great Dane"
-            },
-            {
-                "label": "Great Pyrenees",
-                "value": "Great Pyrenees"
-            },
-            {
-                "label": "Greater Swiss Mountain Dog",
-                "value": "Greater Swiss Mountain Dog"
-            },
-            {
-                "label": "Greyhound",
-                "value": "Greyhound"
-            },
-            {
-                "label": "Hamiltonstovare",
-                "value": "Hamiltonstovare"
-            },
-            {
-                "label": "Harrier",
-                "value": "Harrier"
-            },
-            {
-                "label": "Havanese",
-                "value": "Havanese"
-            },
-            {
-                "label": "Hound",
-                "value": "Hound"
-            },
-            {
-                "label": "Hovawart",
-                "value": "Hovawart"
-            },
-            {
-                "label": "Husky",
-                "value": "Husky"
-            },
-            {
-                "label": "Ibizan Hound",
-                "value": "Ibizan Hound"
-            },
-            {
-                "label": "Icelandic Sheepdog",
-                "value": "Icelandic Sheepdog"
-            },
-            {
-                "label": "Illyrian Sheepdog",
-                "value": "Illyrian Sheepdog"
-            },
-            {
-                "label": "Irish Setter",
-                "value": "Irish Setter"
-            },
-            {
-                "label": "Irish Terrier",
-                "value": "Irish Terrier"
-            },
-            {
-                "label": "Irish Water Spaniel",
-                "value": "Irish Water Spaniel"
-            },
-            {
-                "label": "Irish Wolfhound",
-                "value": "Irish Wolfhound"
-            },
-            {
-                "label": "Italian Greyhound",
-                "value": "Italian Greyhound"
-            },
-            {
-                "label": "Italian Spinone",
-                "value": "Italian Spinone"
-            },
-            {
-                "label": "Jack Russell Terrier",
-                "value": "Jack Russell Terrier"
-            },
-            {
-                "label": "Jack Russell Terrier (Parson)",
-                "value": "Jack Russell Terrier (Parson)"
-            },
-            {
-                "label": "Japanese Chin",
-                "value": "Japanese Chin"
-            },
-            {
-                "label": "Jindo",
-                "value": "Jindo"
-            },
-            {
-                "label": "Kai Dog",
-                "value": "Kai Dog"
-            },
-            {
-                "label": "Karelian Bear Dog",
-                "value": "Karelian Bear Dog"
-            },
-            {
-                "label": "Keeshond",
-                "value": "Keeshond"
-            },
-            {
-                "label": "Kerry Blue Terrier",
-                "value": "Kerry Blue Terrier"
-            },
-            {
-                "label": "Kishu",
-                "value": "Kishu"
-            },
-            {
-                "label": "Klee Kai",
-                "value": "Klee Kai"
-            },
-            {
-                "label": "Komondor",
-                "value": "Komondor"
-            },
-            {
-                "label": "Kuvasz",
-                "value": "Kuvasz"
-            },
-            {
-                "label": "Kyi Leo",
-                "value": "Kyi Leo"
-            },
-            {
-                "label": "Labrador Retriever",
-                "value": "Labrador Retriever"
-            },
-            {
-                "label": "Lakeland Terrier",
-                "value": "Lakeland Terrier"
-            },
-            {
-                "label": "Lancashire Heeler",
-                "value": "Lancashire Heeler"
-            },
-            {
-                "label": "Leonberger",
-                "value": "Leonberger"
-            },
-            {
-                "label": "Lhasa Apso",
-                "value": "Lhasa Apso"
-            },
-            {
-                "label": "Lowchen",
-                "value": "Lowchen"
-            },
-            {
-                "label": "Maltese",
-                "value": "Maltese"
-            },
-            {
-                "label": "Manchester Terrier",
-                "value": "Manchester Terrier"
-            },
-            {
-                "label": "Maremma Sheepdog",
-                "value": "Maremma Sheepdog"
-            },
-            {
-                "label": "Mastiff",
-                "value": "Mastiff"
-            },
-            {
-                "label": "McNab",
-                "value": "McNab"
-            },
-            {
-                "label": "Miniature Pinscher",
-                "value": "Miniature Pinscher"
-            },
-            {
-                "label": "Miniature Schnauzer",
-                "value": "Miniature Schnauzer"
-            },
-            {
-                "label": "Mixed Breed",
-                "value": "Mixed Breed"
-            },
-            {
-                "label": "Mountain Cur",
-                "value": "Mountain Cur"
-            },
-            {
-                "label": "Mountain Dog",
-                "value": "Mountain Dog"
-            },
-            {
-                "label": "Munsterlander",
-                "value": "Munsterlander"
-            },
-            {
-                "label": "Neapolitan Mastiff",
-                "value": "Neapolitan Mastiff"
-            },
-            {
-                "label": "New Guinea Singing Dog",
-                "value": "New Guinea Singing Dog"
-            },
-            {
-                "label": "Newfoundland Dog",
-                "value": "Newfoundt=json&count=1&animal=dogland Dog"
-            },
-            {
-                "label": "Norfolk Terrier",
-                "value": "Norfolk Terrier"
-            },
-            {
-                "label": "Norwegian Buhund",
-                "value": "Norwegian Buhund"
-            },
-            {
-                "label": "Norwegian Elkhound",
-                "value": "Norwegian Elkhound"
-            },
-            {
-                "label": "Norwegian Lundehund",
-                "value": "Norwegian Lundehund"
-            },
-            {
-                "label": "Norwich Terrier",
-                "value": "Norwich Terrier"
-            },
-            {
-                "label": "Nova Scotia Duck Tolling Retriever",
-                "value": "Nova Scotia Duck Tolling Retriever"
-            },
-            {
-                "label": "Old English Sheepdog",
-                "value": "Old English Sheepdog"
-            },
-            {
-                "label": "Otterhound",
-                "value": "Otterhound"
-            },
-            {
-                "label": "Papillon",
-                "value": "Papillon"
-            },
-            {
-                "label": "Patterdale Terrier / Fell Terrier",
-                "value": "Patterdale Terrier / Fell Terrier"
-            },
-            {
-                "label": "Pekingese",
-                "value": "Pekingese"
-            },
-            {
-                "label": "Peruvian Inca Orchid",
-                "value": "Peruvian Inca Orchid"
-            },
-            {
-                "label": "Petit Basset Griffon Vendeen",
-                "value": "Petit Basset Griffon Vendeen"
-            },
-            {
-                "label": "Pharaoh Hound",
-                "value": "Pharaoh Hound"
-            },
-            {
-                "label": "Pit Bull Terrier",
-                "value": "Pit Bull Terrier"
-            },
-            {
-                "label": "Plott Hound",
-                "value": "Plott Hound"
-            },
-            {
-                "label": "Podengo Portugueso",
-                "value": "Podengo Portugueso"
-            },
-            {
-                "label": "Pointer",
-                "value": "Pointer"
-            },
-            {
-                "label": "Polish Lowland Sheepdog",
-                "value": "Polish Lowland Sheepdog"
-            },
-            {
-                "label": "Pomeranian",
-                "value": "Pomeranian"
-            },
-            {
-                "label": "Poodle",
-                "value": "Poodle"
-            },
-            {
-                "label": "Portuguese Water Dog",
-                "value": "Portuguese Water Dog"
-            },
-            {
-                "label": "Presa Canario",
-                "value": "Presa Canario"
-            },
-            {
-                "label": "Pug",
-                "value": "Pug"
-            },
-            {
-                "label": "Puli",
-                "value": "Puli"
-            },
-            {
-                "label": "Pumi",
-                "value": "Pumi"
-            },
-            {
-                "label": "Rat Terrier",
-                "value": "Rat Terrier"
-            },
-            {
-                "label": "Redbone Coonhound",
-                "value": "Redbone Coonhound"
-            },
-            {
-                "label": "Retriever",
-                "value": "Retriever"
-            },
-            {
-                "label": "Rhodesian Ridgeback",
-                "value": "Rhodesian Ridgeback"
-            },
-            {
-                "label": "Rottweiler",
-                "value": "Rottweiler"
-            },
-            {
-                "label": "Rough Collie",
-                "value": "Rough Collie"
-            },
-            {
-                "label": "Saint Bernard / St. Bernard",
-                "value": "Saint Bernard / St. Bernard"
-            },
-            {
-                "label": "Saluki",
-                "value": "Saluki"
-            },
-            {
-                "label": "Samoyed",
-                "value": "Samoyed"
-            },
-            {
-                "label": "Sarplaninac",
-                "value": "Sarplaninac"
-            },
-            {
-                "label": "Schipperke",
-                "value": "Schipperke"
-            },
-            {
-                "label": "Schnauzer",
-                "value": "Schnauzer"
-            },
-            {
-                "label": "Scottish Deerhound",
-                "value": "Scottish Deerhound"
-            },
-            {
-                "label": "Scottish Terrier Scottie",
-                "value": "Scottish Terrier Scottie"
-            },
-            {
-                "label": "Sealyham Terrier",
-                "value": "Sealyham Terrier"
-            },
-            {
-                "label": "Setter",
-                "value": "Setter"
-            },
-            {
-                "label": "Shar Pei",
-                "value": "Shar Pei"
-            },
-            {
-                "label": "Sheep Dog",
-                "value": "Sheep Dog"
-            },
-            {
-                "label": "Shepherd",
-                "value": "Shepherd"
-            },
-            {
-                "label": "Shetland Sheepdog Sheltie",
-                "value": "Shetland Sheepdog Sheltie"
-            },
-            {
-                "label": "Shiba Inu",
-                "value": "Shiba Inu"
-            },
-            {
-                "label": "Shih Tzu",
-                "value": "Shih Tzu"
-            },
-            {
-                "label": "Siberian Husky",
-                "value": "Siberian Husky"
-            },
-            {
-                "label": "Silky Terrier",
-                "value": "Silky Terrier"
-            },
-            {
-                "label": "Skye Terrier",
-                "value": "Skye Terrier"
-            },
-            {
-                "label": "Sloughi",
-                "value": "Sloughi"            
-            },
-            {
-                "label": "Smooth Collie",
-                "value": "Smooth Collie"
-            },
-            {
-                "label": "Smooth Fox Terrier",
-                "value": "Smooth Fox Terrier"
-            },
-            {
-                "label": "South Russian Ovtcharka",
-                "value": "South Russian Ovtcharka"
-            },
-            {
-                "label": "Spaniel",
-                "value": "Spaniel"
-            },
-            {
-                "label": "Spanish Water Dog",
-                "value": "Spanish Water Dog"
-            },
-            {
-                "label": "Spitz",
-                "value": "Spitz"
-            },
-            {
-                "label": "Staffordshire Bull Terrier",
-                "value": "Staffordshire Bull Terrier"
-            },
-            {
-                "label": "Standard Poodle",
-                "value": "Standard Poodle"
-            },
-            {
-                "label": "Standard Schnauzer",
-                "value": "Standard Schnauzer"
-            },
-            {
-                "label": "Sussex Spaniel",
-                "value": "Sussex Spaniel"
-            },
-            {
-                "label": "Swedish Vallhund",
-                "value": "Swedish Vallhund"
-            },
-            {
-                "label": "Terrier",
-                "value": "Terrier"
-            },
-            {
-                "label": "Thai Ridgeback",
-                "value": "Thai Ridgeback"
-            },
-            {
-                "label": "Tibetan Mastiff",
-                "value": "Tibetan Mastiff"
-            },
-            {
-                "label": "Tibetan Spaniel",
-                "value": "Tibetan Spaniel"
-            },
-            {
-                "label": "Tibetan Terrier",
-                "value": "Tibetan Terrier"
-            },
-            {
-                "label": "Tosa Inu",
-                "value": "Tosa Inu"
-            },
-            {
-                "label": "Toy Fox Terrier",
-                "value": "Toy Fox Terrier"
-            },
-            {
-                "label": "Treeing Walker Coonhound",
-                "value": "Treeing Walker Coonhound"
-            },
-            {
-                "label": "Vizsla",
-                "value": "Vizsla"
-            },
-            {
-                "label": "Weimaraner",
-                "value": "Weimaraner"
-            },
-            {
-                "label": "Welsh Corgi",
-                "value": "Welsh Corgi"
-            },
-            {
-                "label": "Welsh Springer Spaniel",
-                "value": "Welsh Springer Spaniel"
-            },
-            {
-                "label": "Welsh Terrier",
-                "value": "Welsh Terrier"
-            },
-            {
-                "label": "West Highland White Terrier Westie",
-                "value": "West Highland White Terrier Westie"
-            },
-            {
-                "label": "Wheaten Terrier",
-                "value": "Wheaten Terrier"
-            },
-            {
-                "label": "Whippet",
-                "value": "Whippet"
-            },
-            {
-                "label": "White German Shepherd",
-                "value": "White German Shepherd"
-            },
-            {
-                "label": "Wire Fox Terrier",
-                "value": "Wire Fox Terrier"
-            },
-            {
-                "label": "Wirehaired Dachshund",
-                "value": "Wirehaired Dachshund"
-            },
-            {
-                "label": "Wirehaired Pointing Griffon",
-                "value": "Wirehaired Pointing Griffon"
-            },
-            {
-                "label": "Wirehaired Terrier",
-                "value": "Wirehaired Terrier"
-            },
-            {
-                "label": "Xoloitzcuintle / Mexican Hairless",
-                "value": "Xoloitzcuintle / Mexican Hairless"
-            },
-            {
-                "label": "Yellow Labrador Retriever",
-                "value": "Yellow Labrador Retriever"
-            },
-            {
-                "label": "Yorkshire Terrier Yorkie",
-                "value": "Yorkshire Terrier Yorkie"
-            }
-        ],
-        "horse": [],
-        "reptile": [],
-        "smallfurry": []
-    }
+	"animals": [
+		{
+			"label": "Barnyard",
+			"value": "barnyard"
+		},
+		{
+			"label": "Bird",
+			"value": "bird"
+		},
+		{
+			"label": "Cat",
+			"value": "cat"
+		},
+		{
+			"label": "Dog",
+			"value": "dog"
+		},
+		{
+			"label": "Horse",
+			"value": "horse"
+		},
+		{
+			"label": "Reptile",
+			"value": "reptile"
+		},
+		{
+			"label": "Smallfurry",
+			"value": "smallfurry"
+		}
+	],
+	"sizes": [
+		{
+			"label": "S",
+			"value": "S"
+		},
+		{
+			"label": "M",
+			"value": "M"
+		},
+		{
+			"label": "L",
+			"value": "L"
+		},
+		{
+			"label": "XL",
+			"value": "XL"
+		}
+	],
+	"ages": [
+		{
+			"label": "Baby",
+			"value": "Baby"
+		},
+		{
+			"label": "Young",
+			"value": "Young"
+		},
+		{
+			"label": "Adult",
+			"value": "Adult"
+		},
+		{
+			"label": "Senior",
+			"value": "Senior"
+		}
+	],
+	"breeds": {
+		"barnyard": [
+			{
+				"label": "Alpaca",
+				"value": "Alpaca"
+			},
+			{
+				"label": "Alpine",
+				"value": "Alpine"
+			},
+			{
+				"label": "Angora",
+				"value": "Angora"
+			},
+			{
+				"label": "Angus",
+				"value": "Angus"
+			},
+			{
+				"label": "Barbados",
+				"value": "Barbados"
+			},
+			{
+				"label": "Boer",
+				"value": "Boer"
+			},
+			{
+				"label": "Cow",
+				"value": "Cow"
+			},
+			{
+				"label": "Duroc",
+				"value": "Duroc"
+			},
+			{
+				"label": "Goat",
+				"value": "Goat"
+			},
+			{
+				"label": "Hampshire",
+				"value": "Hampshire"
+			},
+			{
+				"label": "Holstein",
+				"value": "Holstein"
+			},
+			{
+				"label": "Jersey",
+				"value": "Jersey"
+			},
+			{
+				"label": "LaMancha",
+				"value": "LaMancha"
+			},
+			{
+				"label": "Landrace",
+				"value": "Landrace"
+			},
+			{
+				"label": "Llama",
+				"value": "Llama"
+			},
+			{
+				"label": "Merino",
+				"value": "Merino"
+			},
+			{
+				"label": "Mouflan",
+				"value": "Mouflan"
+			},
+			{
+				"label": "Myotonic / Fainting",
+				"value": "Myotonic / Fainting"
+			},
+			{
+				"label": "Nigerian Dwarf",
+				"value": "Nigerian Dwarf"
+			},
+			{
+				"label": "Nubian",
+				"value": "Nubian"
+			},
+			{
+				"label": "Oberhasli",
+				"value": "Oberhasli"
+			},
+			{
+				"label": "Pig",
+				"value": "Pig"
+			},
+			{
+				"label": "Pot Bellied",
+				"value": "Pot Bellied"
+			},
+			{
+				"label": "Pygmy",
+				"value": "Pygmy"
+			},
+			{
+				"label": "Saanen",
+				"value": "Saanen"
+			},
+			{
+				"label": "Sheep",
+				"value": "Sheep"
+			},
+			{
+				"label": "Shetland",
+				"value": "Shetland"
+			},
+			{
+				"label": "Toggenburg",
+				"value": "Toggenburg"
+			},
+			{
+				"label": "Vietnamese Pot Bellied",
+				"value": "Vietnamese Pot Bellied"
+			},
+			{
+				"label": "Yorkshire",
+				"value": "Yorkshire"
+			}
+		],
+		"bird": [
+			{
+				"label": "African Grey",
+				"value": "African Grey"
+			},
+			{
+				"label": "Amazon",
+				"value": "Amazon"
+			},
+			{
+				"label": "Brotogeris",
+				"value": "Brotogeris"
+			},
+			{
+				"label": "Budgie / Budgerigar",
+				"value": "Budgie / Budgerigar"
+			},
+			{
+				"label": "Button-Quail",
+				"value": "Button-Quail"
+			},
+			{
+				"label": "Caique",
+				"value": "Caique"
+			},
+			{
+				"label": "Canary",
+				"value": "Canary"
+			},
+			{
+				"label": "Chicken",
+				"value": "Chicken"
+			},
+			{
+				"label": "Cockatiel",
+				"value": "Cockatiel"
+			},
+			{
+				"label": "Cockatoo",
+				"value": "Cockatoo"
+			},
+			{
+				"label": "Conure",
+				"value": "Conure"
+			},
+			{
+				"label": "Dove",
+				"value": "Dove"
+			},
+			{
+				"label": "Duck",
+				"value": "Duck"
+			},
+			{
+				"label": "Eclectus",
+				"value": "Eclectus"
+			},
+			{
+				"label": "Emu",
+				"value": "Emu"
+			},
+			{
+				"label": "Finch",
+				"value": "Finch"
+			},
+			{
+				"label": "Goose",
+				"value": "Goose"
+			},
+			{
+				"label": "Guinea Fowl",
+				"value": "Guinea Fowl"
+			},
+			{
+				"label": "Kakariki",
+				"value": "Kakariki"
+			},
+			{
+				"label": "Lory / Lorikeet",
+				"value": "Lory / Lorikeet"
+			},
+			{
+				"label": "Lovebird",
+				"value": "Lovebird"
+			},
+			{
+				"label": "Macaw",
+				"value": "Macaw"
+			},
+			{
+				"label": "Ostrich",
+				"value": "Ostrich"
+			},
+			{
+				"label": "Parakeet (Other)",
+				"value": "Parakeet (Other)"
+			},
+			{
+				"label": "Parrot (Other)",
+				"value": "Parrot (Other)"
+			},
+			{
+				"label": "Parrotlet",
+				"value": "Parrotlet"
+			},
+			{
+				"label": "Peacock / Peafowl",
+				"value": "Peacock / Peafowl"
+			},
+			{
+				"label": "Pheasant",
+				"value": "Pheasant"
+			},
+			{
+				"label": "Pigeon",
+				"value": "Pigeon"
+			},
+			{
+				"label": "Pionus",
+				"value": "Pionus"
+			},
+			{
+				"label": "Poicephalus / Senegal",
+				"value": "Poicephalus / Senegal"
+			},
+			{
+				"label": "Quail",
+				"value": "Quail"
+			},
+			{
+				"label": "Quaker Parakeet",
+				"value": "Quaker Parakeet"
+			},
+			{
+				"label": "Rhea",
+				"value": "Rhea"
+			},
+			{
+				"label": "Ringneck / Psittacula",
+				"value": "Ringneck / Psittacula"
+			},
+			{
+				"label": "Rosella",
+				"value": "Rosella"
+			},
+			{
+				"label": "Swan",
+				"value": "Swan"
+			},
+			{
+				"label": "Toucan",
+				"value": "Toucan"
+			},
+			{
+				"label": "Turkey",
+				"value": "Turkey"
+			}
+		],
+		"cat": [
+			{
+				"label": "Abyssinian",
+				"value": "Abyssinian"
+			},
+			{
+				"label": "American Curl",
+				"value": "American Curl"
+			},
+			{
+				"label": "American Shorthair",
+				"value": "American Shorthair"
+			},
+			{
+				"label": "American Wirehair",
+				"value": "American Wirehair"
+			},
+			{
+				"label": "Applehead Siamese",
+				"value": "Applehead Siamese"
+			},
+			{
+				"label": "Balinese",
+				"value": "Balinese"
+			},
+			{
+				"label": "Bengal",
+				"value": "Bengal"
+			},
+			{
+				"label": "Birman",
+				"value": "Birman"
+			},
+			{
+				"label": "Bobtail",
+				"value": "Bobtail"
+			},
+			{
+				"label": "Bombay",
+				"value": "Bombay"
+			},
+			{
+				"label": "British Shorthair",
+				"value": "British Shorthair"
+			},
+			{
+				"label": "Burmese",
+				"value": "Burmese"
+			},
+			{
+				"label": "Burmilla",
+				"value": "Burmilla"
+			},
+			{
+				"label": "Calico",
+				"value": "Calico"
+			},
+			{
+				"label": "Canadian Hairless",
+				"value": "Canadian Hairless"
+			},
+			{
+				"label": "Chartreux",
+				"value": "Chartreux"
+			},
+			{
+				"label": "Chausie",
+				"value": "Chausie"
+			},
+			{
+				"label": "Chinchilla",
+				"value": "Chinchilla"
+			},
+			{
+				"label": "Cornish Rex",
+				"value": "Cornish Rex"
+			},
+			{
+				"label": "Cymric",
+				"value": "Cymric"
+			},
+			{
+				"label": "Devon Rex",
+				"value": "Devon Rex"
+			},
+			{
+				"label": "Dilute Calico",
+				"value": "Dilute Calico"
+			},
+			{
+				"label": "Dilute Tortoiseshell",
+				"value": "Dilute Tortoiseshell"
+			},
+			{
+				"label": "Domestic Long Hair",
+				"value": "Domestic Long Hair"
+			},
+			{
+				"label": "Domestic Medium Hair",
+				"value": "Domestic Medium Hair"
+			},
+			{
+				"label": "Domestic Short Hair",
+				"value": "Domestic Short Hair"
+			},
+			{
+				"label": "Egyptian Mau",
+				"value": "Egyptian Mau"
+			},
+			{
+				"label": "Exotic Shorthair",
+				"value": "Exotic Shorthair"
+			},
+			{
+				"label": "Extra-Toes Cat / Hemingway Polydactyl",
+				"value": "Extra-Toes Cat / Hemingway Polydactyl"
+			},
+			{
+				"label": "Havana",
+				"value": "Havana"
+			},
+			{
+				"label": "Himalayan",
+				"value": "Himalayan"
+			},
+			{
+				"label": "Japanese Bobtail",
+				"value": "Japanese Bobtail"
+			},
+			{
+				"label": "Javanese",
+				"value": "Javanese"
+			},
+			{
+				"label": "Korat",
+				"value": "Korat"
+			},
+			{
+				"label": "LaPerm",
+				"value": "LaPerm"
+			},
+			{
+				"label": "Maine Coon",
+				"value": "Maine Coon"
+			},
+			{
+				"label": "Manx",
+				"value": "Manx"
+			},
+			{
+				"label": "Munchkin",
+				"value": "Munchkin"
+			},
+			{
+				"label": "Nebelung",
+				"value": "Nebelung"
+			},
+			{
+				"label": "Norwegian Forest Cat",
+				"value": "Norwegian Forest Cat"
+			},
+			{
+				"label": "Ocicat",
+				"value": "Ocicat"
+			},
+			{
+				"label": "Oriental Long Hair",
+				"value": "Oriental Long Hair"
+			},
+			{
+				"label": "Oriental Short Hair",
+				"value": "Oriental Short Hair"
+			},
+			{
+				"label": "Oriental Tabby",
+				"value": "Oriental Tabby"
+			},
+			{
+				"label": "Persian",
+				"value": "Persian"
+			},
+			{
+				"label": "Pixie-Bob",
+				"value": "Pixie-Bob"
+			},
+			{
+				"label": "Ragamuffin",
+				"value": "Ragamuffin"
+			},
+			{
+				"label": "Ragdoll",
+				"value": "Ragdoll"
+			},
+			{
+				"label": "Russian Blue",
+				"value": "Russian Blue"
+			},
+			{
+				"label": "Scottish Fold",
+				"value": "Scottish Fold"
+			},
+			{
+				"label": "Selkirk Rex",
+				"value": "Selkirk Rex"
+			},
+			{
+				"label": "Siamese",
+				"value": "Siamese"
+			},
+			{
+				"label": "Siberian",
+				"value": "Siberian"
+			},
+			{
+				"label": "Silver",
+				"value": "Silver"
+			},
+			{
+				"label": "Singapura",
+				"value": "Singapura"
+			},
+			{
+				"label": "Snowshoe",
+				"value": "Snowshoe"
+			},
+			{
+				"label": "Somali",
+				"value": "Somali"
+			},
+			{
+				"label": "Sphynx / Hairless Cat",
+				"value": "Sphynx / Hairless Cat"
+			},
+			{
+				"label": "Tabby",
+				"value": "Tabby"
+			},
+			{
+				"label": "Tiger",
+				"value": "Tiger"
+			},
+			{
+				"label": "Tonkinese",
+				"value": "Tonkinese"
+			},
+			{
+				"label": "Torbie",
+				"value": "Torbie"
+			},
+			{
+				"label": "Tortoiseshell",
+				"value": "Tortoiseshell"
+			},
+			{
+				"label": "Turkish Angora",
+				"value": "Turkish Angora"
+			},
+			{
+				"label": "Turkish Van",
+				"value": "Turkish Van"
+			},
+			{
+				"label": "Tuxedo",
+				"value": "Tuxedo"
+			}
+		],
+		"dog": [
+			{
+				"label": "Affenpinscher",
+				"value": "Affenpinscher"
+			},
+			{
+				"label": "Afghan Hound",
+				"value": "Afghan Hound"
+			},
+			{
+				"label": "Airedale Terrier",
+				"value": "Airedale Terrier"
+			},
+			{
+				"label": "Akbash",
+				"value": "Akbash"
+			},
+			{
+				"label": "Akita",
+				"value": "Akita"
+			},
+			{
+				"label": "Alaskan Malamute",
+				"value": "Alaskan Malamute"
+			},
+			{
+				"label": "American Bulldog",
+				"value": "American Bulldog"
+			},
+			{
+				"label": "American Eskimo Dog",
+				"value": "American Eskimo Dog"
+			},
+			{
+				"label": "American Hairless Terrier",
+				"value": "American Hairless Terrier"
+			},
+			{
+				"label": "American Staffordshire Terrier",
+				"value": "American Staffordshire Terrier"
+			},
+			{
+				"label": "American Water Spaniel",
+				"value": "American Water Spaniel"
+			},
+			{
+				"label": "Anatolian Shepherd",
+				"value": "Anatolian Shepherd"
+			},
+			{
+				"label": "Appenzell Mountain Dog",
+				"value": "Appenzell Mountain Dog"
+			},
+			{
+				"label": "Australian Cattle Dog / Blue Heeler",
+				"value": "Australian Cattle Dog / Blue Heeler"
+			},
+			{
+				"label": "Australian Kelpie",
+				"value": "Australian Kelpie"
+			},
+			{
+				"label": "Australian Shepherd",
+				"value": "Australian Shepherd"
+			},
+			{
+				"label": "Australian Terrier",
+				"value": "Australian Terrier"
+			},
+			{
+				"label": "Basenji",
+				"value": "Basenji"
+			},
+			{
+				"label": "Basset Hound",
+				"value": "Basset Hound"
+			},
+			{
+				"label": "Beagle",
+				"value": "Beagle"
+			},
+			{
+				"label": "Bearded Collie",
+				"value": "Bearded Collie"
+			},
+			{
+				"label": "Beauceron",
+				"value": "Beauceron"
+			},
+			{
+				"label": "Bedlington Terrier",
+				"value": "Bedlington Terrier"
+			},
+			{
+				"label": "Belgian Shepherd / Laekenois",
+				"value": "Belgian Shepherd / Laekenois"
+			},
+			{
+				"label": "Belgian Shepherd / Malinois",
+				"value": "Belgian Shepherd / Malinois"
+			},
+			{
+				"label": "Belgian Shepherd / Sheepdog",
+				"value": "Belgian Shepherd / Sheepdog"
+			},
+			{
+				"label": "Belgian Shepherd / Tervuren",
+				"value": "Belgian Shepherd / Tervuren"
+			},
+			{
+				"label": "Bernese Mountain Dog",
+				"value": "Bernese Mountain Dog"
+			},
+			{
+				"label": "Bichon Frise",
+				"value": "Bichon Frise"
+			},
+			{
+				"label": "Black and Tan Coonhound",
+				"value": "Black and Tan Coonhound"
+			},
+			{
+				"label": "Black Labrador Retriever",
+				"value": "Black Labrador Retriever"
+			},
+			{
+				"label": "Black Mouth Cur",
+				"value": "Black Mouth Cur"
+			},
+			{
+				"label": "Black Russian Terrier",
+				"value": "Black Russian Terrier"
+			},
+			{
+				"label": "Bloodhound",
+				"value": "Bloodhound"
+			},
+			{
+				"label": "Blue Lacy",
+				"value": "Blue Lacy"
+			},
+			{
+				"label": "Bluetick Coonhound",
+				"value": "Bluetick Coonhound"
+			},
+			{
+				"label": "Boerboel",
+				"value": "Boerboel"
+			},
+			{
+				"label": "Bolognese",
+				"value": "Bolognese"
+			},
+			{
+				"label": "Border Collie",
+				"value": "Border Collie"
+			},
+			{
+				"label": "Border Terrier",
+				"value": "Border Terrier"
+			},
+			{
+				"label": "Borzoi",
+				"value": "Borzoi"
+			},
+			{
+				"label": "Boston Terrier",
+				"value": "Boston Terrier"
+			},
+			{
+				"label": "Bouvier des Flanders",
+				"value": "Bouvier des Flanders"
+			},
+			{
+				"label": "Boxer",
+				"value": "Boxer"
+			},
+			{
+				"label": "Boykin Spaniel",
+				"value": "Boykin Spaniel"
+			},
+			{
+				"label": "Briard",
+				"value": "Briard"
+			},
+			{
+				"label": "Brittany Spaniel",
+				"value": "Brittany Spaniel"
+			},
+			{
+				"label": "Brussels Griffon",
+				"value": "Brussels Griffon"
+			},
+			{
+				"label": "Bull Terrier",
+				"value": "Bull Terrier"
+			},
+			{
+				"label": "Bullmastiff",
+				"value": "Bullmastiff"
+			},
+			{
+				"label": "Cairn Terrier",
+				"value": "Cairn Terrier"
+			},
+			{
+				"label": "Canaan Dog",
+				"value": "Canaan Dog"
+			},
+			{
+				"label": "Cane Corso Mastiff",
+				"value": "Cane Corso Mastiff"
+			},
+			{
+				"label": "Carolina Dog",
+				"value": "Carolina Dog"
+			},
+			{
+				"label": "Catahoula Leopard Dog",
+				"value": "Catahoula Leopard Dog"
+			},
+			{
+				"label": "Cattle Dog",
+				"value": "Cattle Dog"
+			},
+			{
+				"label": "Caucasian Sheepdog / Caucasian Ovtcharka",
+				"value": "Caucasian Sheepdog / Caucasian Ovtcharka"
+			},
+			{
+				"label": "Cavalier King Charles Spaniel",
+				"value": "Cavalier King Charles Spaniel"
+			},
+			{
+				"label": "Chesapeake Bay Retriever",
+				"value": "Chesapeake Bay Retriever"
+			},
+			{
+				"label": "Chihuahua",
+				"value": "Chihuahua"
+			},
+			{
+				"label": "Chinese Crested Dog",
+				"value": "Chinese Crested Dog"
+			},
+			{
+				"label": "Chinese Foo Dog",
+				"value": "Chinese Foo Dog"
+			},
+			{
+				"label": "Chinook",
+				"value": "Chinook"
+			},
+			{
+				"label": "Chocolate Labrador Retriever",
+				"value": "Chocolate Labrador Retriever"
+			},
+			{
+				"label": "Chow Chow",
+				"value": "Chow Chow"
+			},
+			{
+				"label": "Cirneco dell'Etna",
+				"value": "Cirneco dell'Etna"
+			},
+			{
+				"label": "Clumber Spaniel",
+				"value": "Clumber Spaniel"
+			},
+			{
+				"label": "Cockapoo",
+				"value": "Cockapoo"
+			},
+			{
+				"label": "Cocker Spaniel",
+				"value": "Cocker Spaniel"
+			},
+			{
+				"label": "Collie",
+				"value": "Collie"
+			},
+			{
+				"label": "Coonhound",
+				"value": "Coonhound"
+			},
+			{
+				"label": "Corgi",
+				"value": "Corgi"
+			},
+			{
+				"label": "Coton de Tulear",
+				"value": "Coton de Tulear"
+			},
+			{
+				"label": "Curly-Coated Retriever",
+				"value": "Curly-Coated Retriever"
+			},
+			{
+				"label": "Dachshund",
+				"value": "Dachshund"
+			},
+			{
+				"label": "Dalmatian",
+				"value": "Dalmatian"
+			},
+			{
+				"label": "Dandi Dinmont Terrier",
+				"value": "Dandi Dinmont Terrier"
+			},
+			{
+				"label": "Doberman Pinscher",
+				"value": "Doberman Pinscher"
+			},
+			{
+				"label": "Dogo Argentino",
+				"value": "Dogo Argentino"
+			},
+			{
+				"label": "Dogue de Bordeaux",
+				"value": "Dogue de Bordeaux"
+			},
+			{
+				"label": "Dutch Shepherd",
+				"value": "Dutch Shepherd"
+			},
+			{
+				"label": "English Bulldog",
+				"value": "English Bulldog"
+			},
+			{
+				"label": "English Cocker Spaniel",
+				"value": "English Cocker Spaniel"
+			},
+			{
+				"label": "English Coonhound",
+				"value": "English Coonhound"
+			},
+			{
+				"label": "English Pointer",
+				"value": "English Pointer"
+			},
+			{
+				"label": "English Setter",
+				"value": "English Setter"
+			},
+			{
+				"label": "English Shepherd",
+				"value": "English Shepherd"
+			},
+			{
+				"label": "English Springer Spaniel",
+				"value": "English Springer Spaniel"
+			},
+			{
+				"label": "English Toy Spaniel",
+				"value": "English Toy Spaniel"
+			},
+			{
+				"label": "Entlebucher",
+				"value": "Entlebucher"
+			},
+			{
+				"label": "Eskimo Dog",
+				"value": "Eskimo Dog"
+			},
+			{
+				"label": "Feist",
+				"value": "Feist"
+			},
+			{
+				"label": "Field Spaniel",
+				"value": "Field Spaniel"
+			},
+			{
+				"label": "Fila Brasileiro",
+				"value": "Fila Brasileiro"
+			},
+			{
+				"label": "Finnish Lapphund",
+				"value": "Finnish Lapphund"
+			},
+			{
+				"label": "Finnish Spitz",
+				"value": "Finnish Spitz"
+			},
+			{
+				"label": "Flat-Coated Retriever",
+				"value": "Flat-Coated Retriever"
+			},
+			{
+				"label": "Fox Terrier",
+				"value": "Fox Terrier"
+			},
+			{
+				"label": "Foxhound",
+				"value": "Foxhound"
+			},
+			{
+				"label": "French Bulldog",
+				"value": "French Bulldog"
+			},
+			{
+				"label": "Galgo Spanish Greyhound",
+				"value": "Galgo Spanish Greyhound"
+			},
+			{
+				"label": "German Pinscher",
+				"value": "German Pinscher"
+			},
+			{
+				"label": "German Shepherd Dog",
+				"value": "German Shepherd Dog"
+			},
+			{
+				"label": "German Shorthaired Pointer",
+				"value": "German Shorthaired Pointer"
+			},
+			{
+				"label": "German Spitz",
+				"value": "German Spitz"
+			},
+			{
+				"label": "German Wirehaired Pointer",
+				"value": "German Wirehaired Pointer"
+			},
+			{
+				"label": "Giant Schnauzer",
+				"value": "Giant Schnauzer"
+			},
+			{
+				"label": "Glen of Imaal Terrier",
+				"value": "Glen of Imaal Terrier"
+			},
+			{
+				"label": "Golden Retriever",
+				"value": "Golden Retriever"
+			},
+			{
+				"label": "Gordon Setter",
+				"value": "Gordon Setter"
+			},
+			{
+				"label": "Great Dane",
+				"value": "Great Dane"
+			},
+			{
+				"label": "Great Pyrenees",
+				"value": "Great Pyrenees"
+			},
+			{
+				"label": "Greater Swiss Mountain Dog",
+				"value": "Greater Swiss Mountain Dog"
+			},
+			{
+				"label": "Greyhound",
+				"value": "Greyhound"
+			},
+			{
+				"label": "Hamiltonstovare",
+				"value": "Hamiltonstovare"
+			},
+			{
+				"label": "Harrier",
+				"value": "Harrier"
+			},
+			{
+				"label": "Havanese",
+				"value": "Havanese"
+			},
+			{
+				"label": "Hound",
+				"value": "Hound"
+			},
+			{
+				"label": "Hovawart",
+				"value": "Hovawart"
+			},
+			{
+				"label": "Husky",
+				"value": "Husky"
+			},
+			{
+				"label": "Ibizan Hound",
+				"value": "Ibizan Hound"
+			},
+			{
+				"label": "Icelandic Sheepdog",
+				"value": "Icelandic Sheepdog"
+			},
+			{
+				"label": "Illyrian Sheepdog",
+				"value": "Illyrian Sheepdog"
+			},
+			{
+				"label": "Irish Setter",
+				"value": "Irish Setter"
+			},
+			{
+				"label": "Irish Terrier",
+				"value": "Irish Terrier"
+			},
+			{
+				"label": "Irish Water Spaniel",
+				"value": "Irish Water Spaniel"
+			},
+			{
+				"label": "Irish Wolfhound",
+				"value": "Irish Wolfhound"
+			},
+			{
+				"label": "Italian Greyhound",
+				"value": "Italian Greyhound"
+			},
+			{
+				"label": "Italian Spinone",
+				"value": "Italian Spinone"
+			},
+			{
+				"label": "Jack Russell Terrier",
+				"value": "Jack Russell Terrier"
+			},
+			{
+				"label": "Jack Russell Terrier (Parson)",
+				"value": "Jack Russell Terrier (Parson)"
+			},
+			{
+				"label": "Japanese Chin",
+				"value": "Japanese Chin"
+			},
+			{
+				"label": "Jindo",
+				"value": "Jindo"
+			},
+			{
+				"label": "Kai Dog",
+				"value": "Kai Dog"
+			},
+			{
+				"label": "Karelian Bear Dog",
+				"value": "Karelian Bear Dog"
+			},
+			{
+				"label": "Keeshond",
+				"value": "Keeshond"
+			},
+			{
+				"label": "Kerry Blue Terrier",
+				"value": "Kerry Blue Terrier"
+			},
+			{
+				"label": "Kishu",
+				"value": "Kishu"
+			},
+			{
+				"label": "Klee Kai",
+				"value": "Klee Kai"
+			},
+			{
+				"label": "Komondor",
+				"value": "Komondor"
+			},
+			{
+				"label": "Kuvasz",
+				"value": "Kuvasz"
+			},
+			{
+				"label": "Kyi Leo",
+				"value": "Kyi Leo"
+			},
+			{
+				"label": "Labrador Retriever",
+				"value": "Labrador Retriever"
+			},
+			{
+				"label": "Lakeland Terrier",
+				"value": "Lakeland Terrier"
+			},
+			{
+				"label": "Lancashire Heeler",
+				"value": "Lancashire Heeler"
+			},
+			{
+				"label": "Leonberger",
+				"value": "Leonberger"
+			},
+			{
+				"label": "Lhasa Apso",
+				"value": "Lhasa Apso"
+			},
+			{
+				"label": "Lowchen",
+				"value": "Lowchen"
+			},
+			{
+				"label": "Maltese",
+				"value": "Maltese"
+			},
+			{
+				"label": "Manchester Terrier",
+				"value": "Manchester Terrier"
+			},
+			{
+				"label": "Maremma Sheepdog",
+				"value": "Maremma Sheepdog"
+			},
+			{
+				"label": "Mastiff",
+				"value": "Mastiff"
+			},
+			{
+				"label": "McNab",
+				"value": "McNab"
+			},
+			{
+				"label": "Miniature Pinscher",
+				"value": "Miniature Pinscher"
+			},
+			{
+				"label": "Miniature Schnauzer",
+				"value": "Miniature Schnauzer"
+			},
+			{
+				"label": "Mixed Breed",
+				"value": "Mixed Breed"
+			},
+			{
+				"label": "Mountain Cur",
+				"value": "Mountain Cur"
+			},
+			{
+				"label": "Mountain Dog",
+				"value": "Mountain Dog"
+			},
+			{
+				"label": "Munsterlander",
+				"value": "Munsterlander"
+			},
+			{
+				"label": "Neapolitan Mastiff",
+				"value": "Neapolitan Mastiff"
+			},
+			{
+				"label": "New Guinea Singing Dog",
+				"value": "New Guinea Singing Dog"
+			},
+			{
+				"label": "Newfoundland Dog",
+				"value": "Newfoundt=json&count=1&animal=dogland Dog"
+			},
+			{
+				"label": "Norfolk Terrier",
+				"value": "Norfolk Terrier"
+			},
+			{
+				"label": "Norwegian Buhund",
+				"value": "Norwegian Buhund"
+			},
+			{
+				"label": "Norwegian Elkhound",
+				"value": "Norwegian Elkhound"
+			},
+			{
+				"label": "Norwegian Lundehund",
+				"value": "Norwegian Lundehund"
+			},
+			{
+				"label": "Norwich Terrier",
+				"value": "Norwich Terrier"
+			},
+			{
+				"label": "Nova Scotia Duck Tolling Retriever",
+				"value": "Nova Scotia Duck Tolling Retriever"
+			},
+			{
+				"label": "Old English Sheepdog",
+				"value": "Old English Sheepdog"
+			},
+			{
+				"label": "Otterhound",
+				"value": "Otterhound"
+			},
+			{
+				"label": "Papillon",
+				"value": "Papillon"
+			},
+			{
+				"label": "Patterdale Terrier / Fell Terrier",
+				"value": "Patterdale Terrier / Fell Terrier"
+			},
+			{
+				"label": "Pekingese",
+				"value": "Pekingese"
+			},
+			{
+				"label": "Peruvian Inca Orchid",
+				"value": "Peruvian Inca Orchid"
+			},
+			{
+				"label": "Petit Basset Griffon Vendeen",
+				"value": "Petit Basset Griffon Vendeen"
+			},
+			{
+				"label": "Pharaoh Hound",
+				"value": "Pharaoh Hound"
+			},
+			{
+				"label": "Pit Bull Terrier",
+				"value": "Pit Bull Terrier"
+			},
+			{
+				"label": "Plott Hound",
+				"value": "Plott Hound"
+			},
+			{
+				"label": "Podengo Portugueso",
+				"value": "Podengo Portugueso"
+			},
+			{
+				"label": "Pointer",
+				"value": "Pointer"
+			},
+			{
+				"label": "Polish Lowland Sheepdog",
+				"value": "Polish Lowland Sheepdog"
+			},
+			{
+				"label": "Pomeranian",
+				"value": "Pomeranian"
+			},
+			{
+				"label": "Poodle",
+				"value": "Poodle"
+			},
+			{
+				"label": "Portuguese Water Dog",
+				"value": "Portuguese Water Dog"
+			},
+			{
+				"label": "Presa Canario",
+				"value": "Presa Canario"
+			},
+			{
+				"label": "Pug",
+				"value": "Pug"
+			},
+			{
+				"label": "Puli",
+				"value": "Puli"
+			},
+			{
+				"label": "Pumi",
+				"value": "Pumi"
+			},
+			{
+				"label": "Rat Terrier",
+				"value": "Rat Terrier"
+			},
+			{
+				"label": "Redbone Coonhound",
+				"value": "Redbone Coonhound"
+			},
+			{
+				"label": "Retriever",
+				"value": "Retriever"
+			},
+			{
+				"label": "Rhodesian Ridgeback",
+				"value": "Rhodesian Ridgeback"
+			},
+			{
+				"label": "Rottweiler",
+				"value": "Rottweiler"
+			},
+			{
+				"label": "Rough Collie",
+				"value": "Rough Collie"
+			},
+			{
+				"label": "Saint Bernard / St. Bernard",
+				"value": "Saint Bernard / St. Bernard"
+			},
+			{
+				"label": "Saluki",
+				"value": "Saluki"
+			},
+			{
+				"label": "Samoyed",
+				"value": "Samoyed"
+			},
+			{
+				"label": "Sarplaninac",
+				"value": "Sarplaninac"
+			},
+			{
+				"label": "Schipperke",
+				"value": "Schipperke"
+			},
+			{
+				"label": "Schnauzer",
+				"value": "Schnauzer"
+			},
+			{
+				"label": "Scottish Deerhound",
+				"value": "Scottish Deerhound"
+			},
+			{
+				"label": "Scottish Terrier Scottie",
+				"value": "Scottish Terrier Scottie"
+			},
+			{
+				"label": "Sealyham Terrier",
+				"value": "Sealyham Terrier"
+			},
+			{
+				"label": "Setter",
+				"value": "Setter"
+			},
+			{
+				"label": "Shar Pei",
+				"value": "Shar Pei"
+			},
+			{
+				"label": "Sheep Dog",
+				"value": "Sheep Dog"
+			},
+			{
+				"label": "Shepherd",
+				"value": "Shepherd"
+			},
+			{
+				"label": "Shetland Sheepdog Sheltie",
+				"value": "Shetland Sheepdog Sheltie"
+			},
+			{
+				"label": "Shiba Inu",
+				"value": "Shiba Inu"
+			},
+			{
+				"label": "Shih Tzu",
+				"value": "Shih Tzu"
+			},
+			{
+				"label": "Siberian Husky",
+				"value": "Siberian Husky"
+			},
+			{
+				"label": "Silky Terrier",
+				"value": "Silky Terrier"
+			},
+			{
+				"label": "Skye Terrier",
+				"value": "Skye Terrier"
+			},
+			{
+				"label": "Sloughi",
+				"value": "Sloughi"
+			},
+			{
+				"label": "Smooth Collie",
+				"value": "Smooth Collie"
+			},
+			{
+				"label": "Smooth Fox Terrier",
+				"value": "Smooth Fox Terrier"
+			},
+			{
+				"label": "South Russian Ovtcharka",
+				"value": "South Russian Ovtcharka"
+			},
+			{
+				"label": "Spaniel",
+				"value": "Spaniel"
+			},
+			{
+				"label": "Spanish Water Dog",
+				"value": "Spanish Water Dog"
+			},
+			{
+				"label": "Spitz",
+				"value": "Spitz"
+			},
+			{
+				"label": "Staffordshire Bull Terrier",
+				"value": "Staffordshire Bull Terrier"
+			},
+			{
+				"label": "Standard Poodle",
+				"value": "Standard Poodle"
+			},
+			{
+				"label": "Standard Schnauzer",
+				"value": "Standard Schnauzer"
+			},
+			{
+				"label": "Sussex Spaniel",
+				"value": "Sussex Spaniel"
+			},
+			{
+				"label": "Swedish Vallhund",
+				"value": "Swedish Vallhund"
+			},
+			{
+				"label": "Terrier",
+				"value": "Terrier"
+			},
+			{
+				"label": "Thai Ridgeback",
+				"value": "Thai Ridgeback"
+			},
+			{
+				"label": "Tibetan Mastiff",
+				"value": "Tibetan Mastiff"
+			},
+			{
+				"label": "Tibetan Spaniel",
+				"value": "Tibetan Spaniel"
+			},
+			{
+				"label": "Tibetan Terrier",
+				"value": "Tibetan Terrier"
+			},
+			{
+				"label": "Tosa Inu",
+				"value": "Tosa Inu"
+			},
+			{
+				"label": "Toy Fox Terrier",
+				"value": "Toy Fox Terrier"
+			},
+			{
+				"label": "Treeing Walker Coonhound",
+				"value": "Treeing Walker Coonhound"
+			},
+			{
+				"label": "Vizsla",
+				"value": "Vizsla"
+			},
+			{
+				"label": "Weimaraner",
+				"value": "Weimaraner"
+			},
+			{
+				"label": "Welsh Corgi",
+				"value": "Welsh Corgi"
+			},
+			{
+				"label": "Welsh Springer Spaniel",
+				"value": "Welsh Springer Spaniel"
+			},
+			{
+				"label": "Welsh Terrier",
+				"value": "Welsh Terrier"
+			},
+			{
+				"label": "West Highland White Terrier Westie",
+				"value": "West Highland White Terrier Westie"
+			},
+			{
+				"label": "Wheaten Terrier",
+				"value": "Wheaten Terrier"
+			},
+			{
+				"label": "Whippet",
+				"value": "Whippet"
+			},
+			{
+				"label": "White German Shepherd",
+				"value": "White German Shepherd"
+			},
+			{
+				"label": "Wire Fox Terrier",
+				"value": "Wire Fox Terrier"
+			},
+			{
+				"label": "Wirehaired Dachshund",
+				"value": "Wirehaired Dachshund"
+			},
+			{
+				"label": "Wirehaired Pointing Griffon",
+				"value": "Wirehaired Pointing Griffon"
+			},
+			{
+				"label": "Wirehaired Terrier",
+				"value": "Wirehaired Terrier"
+			},
+			{
+				"label": "Xoloitzcuintle / Mexican Hairless",
+				"value": "Xoloitzcuintle / Mexican Hairless"
+			},
+			{
+				"label": "Yellow Labrador Retriever",
+				"value": "Yellow Labrador Retriever"
+			},
+			{
+				"label": "Yorkshire Terrier Yorkie",
+				"value": "Yorkshire Terrier Yorkie"
+			}
+		],
+		"horse": [],
+		"reptile": [],
+		"smallfurry": []
+	}
 }

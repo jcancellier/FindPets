@@ -103,11 +103,6 @@ class PetDetailsScreen extends React.Component {
 	}
 
 	render() {
-		// const {id} = this
-		// const {name} = this
-		// const {breed} = this
-		// const {image} = this
-		// const {description} = this
 		return (
 			<SafeAreaView style={styles.safeAreaView}>
 				<ScrollView style={{ flex: 1 }}>
@@ -170,8 +165,6 @@ class PetDetailsScreen extends React.Component {
 
 const styles = StyleSheet.create({
 	container: {
-		//flex: 1,
-		//justifyContent: 'center',
 		alignItems: 'flex-start',
 		backgroundColor: Colors.flat.clouds
 	},
@@ -181,8 +174,6 @@ const styles = StyleSheet.create({
 	},
 	petImage: {
 		height: 400,
-		//allows image to fit the width of screen
-		//flex: 1,
 		width: width,
 		padding: 10,
 		paddingTop: Constants.statusBarHeight
@@ -200,7 +191,6 @@ const styles = StyleSheet.create({
 		flexDirection: 'row'
 	},
 	body: {
-		// margin: 7
 		alignSelf: 'stretch'
 	},
 	header: {

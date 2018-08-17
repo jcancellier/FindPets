@@ -26,7 +26,7 @@ export default class PetList extends Component {
           data={this.props.pets}
           renderItem={this._renderPet}
           keyExtractor={item => item.id.$t.toString()}
-        //TODO: possibly enable this line to prevent console warning: 'virtualizedList ...etc'
+        // TODO: possibly enable this line to prevent console warning: 'virtualizedList ...etc'
         // disableVirtualization={false}
         />
       </Animatable.View>

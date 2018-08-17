@@ -62,7 +62,7 @@ class SetLocationScreen extends Component {
 		}
 		else {
 			return (
-				<BallIndicator color={Colors.primary} size={16} style={styles.loadingLocationSpinner}/>
+				<BallIndicator color={Colors.primary} size={16} style={styles.loadingLocationSpinner} />
 			);
 		}
 	}
@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
 	},
 	loadingLocationSpinner: {
 		justifyContent: 'center',
-    alignItems: 'center',
+		alignItems: 'center',
 		flexDirection: 'row',
 		flex: 0
 	}

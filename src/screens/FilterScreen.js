@@ -71,19 +71,6 @@ class FilterScreen extends React.Component {
 		})
 	}
 
-	componentDidMount() {
-		// this.setState({breed: this.props.breed})
-		// if the component is using the optional `value` prop, the parent
-		// has the abililty to both set the initial value and also update it
-
-		//persists form state
-		// this.setState({
-		//     // animal: this.props.animal,
-		//     // size: this.props.size,
-		//     // breed: this.props.breed
-		// });
-	}
-
 	render() {
 		return (
 			<ScrollView
@@ -93,7 +80,6 @@ class FilterScreen extends React.Component {
 				<Text style={styles.inputLabel}>Animal</Text>
 				<RNPickerSelect
 					mode="dropdown"
-					// hideIcon={true}
 					placeholder={{
 						label: 'Any',
 						value: null,
@@ -113,9 +99,6 @@ class FilterScreen extends React.Component {
 						}
 						)
 					}}
-					// onUpArrow={() => {
-					//     this.inputRefs.name.focus();
-					// }}
 					onDownArrow={() => {
 						this.inputRefs.picker2.togglePicker();
 					}}
@@ -142,16 +125,13 @@ class FilterScreen extends React.Component {
 					onUpArrow={() => {
 						this.inputRefs.picker.togglePicker();
 					}}
-					// onDownArrow={() => {
-					//     this.inputRefs.picker3.togglePicker();
-					// }}
 					style={{ ...pickerSelectStyles }}
 					value={this.state.breed}
 					ref={(el) => {
 						this.inputRefs.picker2 = el;
 					}}
 				/>
-				
+
 				<View style={{ paddingVertical: 10 }} />
 
 				<Text style={styles.inputLabel}>Size</Text>
@@ -197,7 +177,7 @@ class FilterScreen extends React.Component {
 						style={styles.resetButton}
 					>
 						Reset
-                    </Button>
+          </Button>
 					<View style={{ paddingHorizontal: 10 }} />
 					<Button
 						onPress={this._onSubmitFilters}
@@ -205,7 +185,7 @@ class FilterScreen extends React.Component {
 						style={styles.submitButton}
 					>
 						Submit
-          			</Button>
+          </Button>
 				</View>
 			</ScrollView>
 		);
@@ -242,7 +222,6 @@ const styles = StyleSheet.create({
 	},
 	buttonsContainer: {
 		flexDirection: 'row',
-		// justifyContent: 'space-around'
 	}
 });
 

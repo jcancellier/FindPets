@@ -6,8 +6,6 @@ import { AppLoading, Font, Asset } from 'expo';
 import { initializeAnimations } from './src/animations';
 import { createRootNavigator } from './src/navigation'
 
-const initialLaunch = true;
-
 export default class App extends React.Component {
   state = {
     isLoadingComplete: false,
@@ -50,9 +48,7 @@ export default class App extends React.Component {
         require('./assets/city.png')
       ]),
       Font.loadAsync({
-        'somatic-rounded': require('./assets/fonts/Somatic-Rounded.otf'),
-        'bebas-neue': require('./assets/fonts/BebasNeue-Regular.ttf'),
-        'bariol': require('./assets/fonts/Bariol-Regular.otf')
+        'somatic-rounded': require('./assets/fonts/Somatic-Rounded.otf')
       })
     ]);
   };

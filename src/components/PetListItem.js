@@ -3,8 +3,6 @@ import { View, Text, StyleSheet, Image, TouchableWithoutFeedback, Dimensions } f
 import { Card } from './common';
 import { Fonts, Colors } from '../global'
 import * as Animatable from 'react-native-animatable';
-import { Transition } from 'react-navigation-fluid-transitions';
-import FullWidthImage from 'react-native-fullwidth-image';
 
 var { height, width } = Dimensions.get('window');
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { StyleSheet, View } from 'react-native';
-import {setInitialLaunch} from '../actions';
+import { setInitialLaunch } from '../actions';
 import AppIntroSlider from 'react-native-app-intro-slider';
 import { Ionicons } from '@expo/vector-icons';
 import { Fonts, Colors } from '../global';
@@ -105,5 +105,5 @@ class OnBoardingScreen extends React.Component {
 
 export default connect(null, {
   setInitialLaunch
-} )(OnBoardingScreen);
+})(OnBoardingScreen);
 

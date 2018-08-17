@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, LayoutAnimation } from 'react-native';
+import { Text } from 'react-native';
 import ReadMore from 'react-native-read-more-text';
 import { LinkedText } from './LinkedText';
 

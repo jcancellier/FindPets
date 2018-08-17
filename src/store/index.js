@@ -8,7 +8,7 @@ const persistConfig = {
   key: 'root',
   storage,
   whitelist: ['filters', 'user']
-} 
+}
 
 const persistedReducer = persistReducer(persistConfig, reducers);
 
@@ -18,6 +18,7 @@ let middleware = [ReduxThunk];
 //2nd argument is initial state
 //3rd argument is middleware (store enhancers)
 const store = createStore(persistedReducer, {}, applyMiddleware(...middleware));
+
 const persistor = persistStore(store);
 
 export { store, persistor };

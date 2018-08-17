@@ -27,14 +27,14 @@ import { apiKey, apiUrl } from '../api';
 // PetReducer.js Actions
 export const fetchPets = (initialFetch = false, clearPetList = false) => {
     return (dispatch) => {
-        if (initialFetch){
+        if (initialFetch) {
             dispatch({
                 type: SET_OFFSET_FILTER,
                 payload: null
             })
         }
-        if(clearPetList){
-            dispatch({type: CLEAR_PET_RECORDS});
+        if (clearPetList) {
+            dispatch({ type: CLEAR_PET_RECORDS });
         }
 
         let url = apiUrl + buildUrl();
@@ -123,7 +123,6 @@ const fetchMorePets = (url, dispatch) => {
 // urlArgumentBuilder from '../utils'
 // it transforms { "animal": dog, "breed": beagle}
 // to [["animal", "dog"], ["breed", "beagle"]];
-
 const buildUrl = () => {
     let filters = store.getState().filters;
 
