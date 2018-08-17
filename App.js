@@ -45,7 +45,8 @@ export default class App extends React.Component {
     return Promise.all([
       Asset.loadAsync([
         require('./assets/icons/location.png'),
-        require('./assets/city.png')
+        require('./assets/city.png'),
+        require('./assets/map.png')
       ]),
       Font.loadAsync({
         'somatic-rounded': require('./assets/fonts/Somatic-Rounded.otf')

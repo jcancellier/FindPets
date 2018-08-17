@@ -7,6 +7,7 @@ import {
 	KeyboardAvoidingView,
 	Image,
 	Keyboard,
+	ImageBackground
 } from 'react-native';
 import { connect } from 'react-redux';
 import { setZipcodeFilter, fetchPets, fetchLocation, clearLocationInfo } from '../actions';
@@ -70,7 +71,7 @@ class SetLocationScreen extends Component {
 	render() {
 		return (
 			<TouchableOpacity style={styles.container} activeOpacity={1.0} onPress={Keyboard.dismiss}>
-
+				<ImageBackground style={styles.container} source={require('../../assets/map.png')}>
 				<KeyboardAvoidingView
 					behavior="padding"
 					enabled
@@ -111,6 +112,7 @@ class SetLocationScreen extends Component {
 						</Button>
 					</Footer>
 				</KeyboardAvoidingView>
+				</ImageBackground>
 			</TouchableOpacity>
 		);
 	}
@@ -120,7 +122,6 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		justifyContent: 'center',
-		backgroundColor: Colors.flat.clouds
 	},
 	getLocationButton: {
 		backgroundColor: Colors.primary,

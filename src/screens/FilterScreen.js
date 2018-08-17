@@ -237,9 +237,6 @@ const pickerSelectStyles = StyleSheet.create({
 		backgroundColor: 'white',
 		color: 'black',
 		fontFamily: Fonts.primary
-	},
-	underline: {
-		borderTopWidth: 0
 	}
 });
 

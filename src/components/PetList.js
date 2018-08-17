@@ -83,6 +83,13 @@ class PetList extends React.PureComponent {
 					>
 						Try a different filter
 					</LinkedText>
+					<Text style={styles.orText}>or</Text>
+					<LinkedText
+						onPress={() => this.props.navigation.navigate('SetLocation')}
+						style={styles.linkedText}
+					>
+						Change your location
+					</LinkedText>
 				</CenteredView>
 			);
 		} else return null;
@@ -98,6 +105,10 @@ const styles = StyleSheet.create({
 		color: Colors.material.blue500,
 		fontFamily: Fonts.primary,
 		fontSize: 15
+	},
+	orText: {
+		fontSize: 15,
+		fontFamily: Fonts.primary
 	}
 })
 
