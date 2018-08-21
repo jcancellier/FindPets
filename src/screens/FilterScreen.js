@@ -1,11 +1,11 @@
 import React from 'react';
-import { Alert, TextInput, StyleSheet, View, ScrollView, TouchableOpacity } from 'react-native';
+import { Alert, TextInput, StyleSheet, View, ScrollView, SafeAreaView } from 'react-native';
 import { Constants } from 'expo';
 import { connect } from 'react-redux';
 import RNPickerSelect from 'react-native-picker-select';
 import filterData from '../global/filterData.json';
 import { Fonts, Colors } from '../global';
-import { Button, ButtonSelect, LinkedText, Text } from '../components/common';
+import { Button, ButtonSelect, LinkedText, Text, Footer } from '../components/common';
 import {
 	setAnimalFilter,
 	setSizeFilter,
@@ -73,135 +73,143 @@ class FilterScreen extends React.Component {
 
 	render() {
 		return (
-			<ScrollView
-				style={styles.container}
-				ref={(r) => this.scrollViewRef = r}
-			>
-				<Text style={styles.inputLabel}>Animal</Text>
-				<RNPickerSelect
-					mode="dropdown"
-					placeholder={{
-						label: 'Any',
-						value: null,
-					}}
-					items={this.state.animals}
-					onValueChange={(value) => {
-						this.setState({
-							animal: value,
-						}, () => {
-							if (this.state.animal && this.state.animal != null) {
+			<SafeAreaView style={styles.safeAreaViewContainer}>
+				<View style={styles.container}>
+					<ScrollView
+						style={styles.scrollViewContainer}
+						ref={(r) => this.scrollViewRef = r}
+					>
+						<Text style={styles.inputLabel}>Animal</Text>
+						<RNPickerSelect
+							mode="dropdown"
+							placeholder={{
+								label: 'Any',
+								value: null,
+							}}
+							items={this.state.animals}
+							onValueChange={(value) => {
 								this.setState({
-									breeds: [...filterData.breeds[this.state.animal]],
+									animal: value,
+								}, () => {
+									if (this.state.animal && this.state.animal != null) {
+										this.setState({
+											breeds: [...filterData.breeds[this.state.animal]],
+										});
+									} else {
+										this.setState({ breeds: [], breed: null });
+									}
+								}
+								)
+							}}
+							onDownArrow={() => {
+								this.inputRefs.picker2.togglePicker();
+							}}
+							style={{ ...pickerSelectStyles }}
+							value={this.state.animal}
+							ref={(el) => {
+								this.inputRefs.picker = el;
+							}}
+						/>
+						<View style={{ paddingVertical: 10 }} />
+
+						<Text style={styles.inputLabel}>Breed</Text>
+						<RNPickerSelect
+							placeholder={{
+								label: 'Any',
+								value: null,
+							}}
+							items={this.state.breeds}
+							onValueChange={(value) => {
+								this.setState({
+									breed: value
+								})
+							}}
+							onUpArrow={() => {
+								this.inputRefs.picker.togglePicker();
+							}}
+							style={{ ...pickerSelectStyles }}
+							value={this.state.breed}
+							ref={(el) => {
+								this.inputRefs.picker2 = el;
+							}}
+						/>
+						<View style={{ paddingVertical: 10 }} />
+
+						<Text style={styles.inputLabel}>Size</Text>
+						<ButtonSelect
+							placeholder={{
+								label: 'Any',
+								value: null,
+							}}
+							onValueChange={(value) => {
+								this.setState({
+									size: value,
 								});
-							} else {
-								this.setState({ breeds: [], breed: null });
-							}
-						}
-						)
-					}}
-					onDownArrow={() => {
-						this.inputRefs.picker2.togglePicker();
-					}}
-					style={{ ...pickerSelectStyles }}
-					value={this.state.animal}
-					ref={(el) => {
-						this.inputRefs.picker = el;
-					}}
-				/>
-				<View style={{ paddingVertical: 10 }} />
+							}}
+							textStyle={{ fontFamily: Fonts.primary }}
+							items={this.state.sizes}
+							value={this.state.size}
+						/>
+						<View style={{ paddingVertical: 10 }} />
 
-				<Text style={styles.inputLabel}>Breed</Text>
-				<RNPickerSelect
-					placeholder={{
-						label: 'Any',
-						value: null,
-					}}
-					items={this.state.breeds}
-					onValueChange={(value) => {
-						this.setState({
-							breed: value
-						})
-					}}
-					onUpArrow={() => {
-						this.inputRefs.picker.togglePicker();
-					}}
-					style={{ ...pickerSelectStyles }}
-					value={this.state.breed}
-					ref={(el) => {
-						this.inputRefs.picker2 = el;
-					}}
-				/>
+						<Text style={styles.inputLabel}>Age</Text>
+						<ButtonSelect
+							placeholder={{
+								label: 'Any',
+								value: null,
+							}}
+							onValueChange={(value) => {
+								this.setState({
+									age: value,
+								});
+							}}
+							textStyle={{ fontFamily: Fonts.primary }}
+							items={this.state.ages}
+							value={this.state.age}
+						/>
+						<View style={{ paddingVertical: 15 }} />
 
-				<View style={{ paddingVertical: 10 }} />
-
-				<Text style={styles.inputLabel}>Size</Text>
-				<ButtonSelect
-					placeholder={{
-						label: 'Any',
-						value: null,
-					}}
-					onValueChange={(value) => {
-						this.setState({
-							size: value,
-						});
-					}}
-					textStyle={{ fontFamily: Fonts.primary }}
-					items={this.state.sizes}
-					value={this.state.size}
-				/>
-
-				<View style={{ paddingVertical: 10 }} />
-
-				<Text style={styles.inputLabel}>Age</Text>
-				<ButtonSelect
-					placeholder={{
-						label: 'Any',
-						value: null,
-					}}
-					onValueChange={(value) => {
-						this.setState({
-							age: value,
-						});
-					}}
-					textStyle={{ fontFamily: Fonts.primary }}
-					items={this.state.ages}
-					value={this.state.age}
-				/>
-
-				<View style={{ paddingVertical: 15 }} />
-
-				<View style={styles.buttonsContainer}>
-					<Button
-						onPress={this._onResetFilters}
-						textStyle={styles.resetButtonText}
-						style={styles.resetButton}
-					>
-						Reset
-          </Button>
-					<View style={{ paddingHorizontal: 10 }} />
-					<Button
-						onPress={this._onSubmitFilters}
-						textStyle={styles.submitButtonText}
-						style={styles.submitButton}
-					>
-						Submit
-          </Button>
+					</ScrollView>
+					<Footer style={styles.footer}>
+						<Button
+							onPress={this._onResetFilters}
+							textStyle={styles.resetButtonText}
+							style={styles.resetButton}
+						>
+							Reset
+          		</Button>
+						<View style={{ paddingHorizontal: 10 }} />
+						<Button
+							onPress={this._onSubmitFilters}
+							textStyle={styles.submitButtonText}
+							style={styles.submitButton}
+						>
+							Submit
+          		</Button>
+					</Footer>
 				</View>
-			</ScrollView>
+			</SafeAreaView>
 		);
 	}
 }
 
 const styles = StyleSheet.create({
+	safeAreaViewContainer: {
+		flex: 1
+	},
+	scrollViewContainer: {
+		flex: 1,
+		paddingHorizontal: 10,
+	},
 	container: {
 		flex: 1,
 		paddingTop: Constants.statusBarHeight,
-		paddingHorizontal: 10,
 	},
 	inputLabel: {
 		fontFamily: Fonts.primary,
 		fontSize: 20,
-		paddingBottom: 5
+		paddingBottom: 5,
+		marginLeft: 2
 	},
 	submitButtonText: {
 		fontFamily: Fonts.primary,
@@ -222,6 +230,9 @@ const styles = StyleSheet.create({
 	},
 	buttonsContainer: {
 		flexDirection: 'row',
+	},
+	footer: {
+		flex: 0.08
 	}
 });
 
@@ -232,8 +243,8 @@ const pickerSelectStyles = StyleSheet.create({
 		paddingHorizontal: 10,
 		paddingBottom: 12,
 		borderWidth: 0.5,
-		borderColor: 'gray',
-		borderRadius: 4,
+		borderColor: 'rgba(0,0,0,0.2)',
+		borderRadius: 5,
 		backgroundColor: 'white',
 		color: 'black',
 		fontFamily: Fonts.primary
