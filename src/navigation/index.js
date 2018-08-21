@@ -97,8 +97,8 @@ const SharedTransition = createStackNavigator({
 );
 
 //Stack Navigator (only Favorites Screen)
-const FavoritesNavigation = createStackNavigator({
-	First: {
+const FavoritesScreenStack = createStackNavigator({
+	Screen: {
 		screen: FavoritesScreen,
 		navigationOptions: ({ navigation }) => ({
 			title: 'Favorites',
@@ -117,6 +117,15 @@ const FavoritesNavigation = createStackNavigator({
 				</HeaderButtons>
 			),
 		}),
+	}
+})
+
+const FavoritesStack = createStackNavigator({
+	First: {
+		screen: FavoritesScreenStack,
+		navigationOptions: {
+			header: null
+		}
 	},
 	PetDetailsFromFavorites: {
 		screen: PetDetailsScreen,
@@ -140,7 +149,7 @@ const MainDrawerNavigator = createDrawerNavigator({
 		},
 	},
 	Favorites: {
-		screen: FavoritesNavigation,
+		screen: FavoritesStack,
 		navigationOptions: {
 			// drawerLockMode: 'locked-closed',
 			title: 'Favorites',
