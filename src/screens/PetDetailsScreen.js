@@ -9,7 +9,8 @@ import {
 	Linking,
 	ImageBackground,
 	TouchableOpacity,
-	Share
+	Share,
+	Platform
 } from 'react-native';
 import { connect } from 'react-redux';
 import { addPetToFavorites, removePetFromFavorites } from '../actions';
@@ -119,11 +120,6 @@ class PetDetailsScreen extends React.Component {
 							style={styles.petImage}
 							source={image ? { uri: image } : require('../../assets/icons/no-photo.png')}
 						>
-							<View style={styles.petImageTopButtonsContainer}>
-								<TouchableOpacity onPress={this._handleBackButtonPress.bind(this)} style={styles.imageIconButton}>
-									<Ionicons name="md-arrow-back" size={22} color={Colors.flat.clouds} style={styles.backIcon} />
-								</TouchableOpacity>
-							</View>
 							<View style={styles.petImageBottomButtonsContainer}>
 								<ToggleIcon
 									activeIconName='ios-heart'
@@ -156,8 +152,12 @@ class PetDetailsScreen extends React.Component {
 						</View>
 					</View>
 				</ScrollView>
+				<View style={styles.headerButtonsContainer}>
+					<TouchableOpacity onPress={this._handleBackButtonPress.bind(this)} style={styles.imageIconButton}>
+						<Ionicons name={Platform.OS == "ios" ? "md-arrow-back" : "md-close"} size={22} color={Colors.flat.clouds} style={styles.backIcon} />
+					</TouchableOpacity>
+				</View>
 				{this._renderFooter()}
-
 			</SafeAreaView>
 		);
 	}
@@ -178,11 +178,10 @@ const styles = StyleSheet.create({
 		padding: 10,
 		paddingTop: Constants.statusBarHeight
 	},
-	petImageTopButtonsContainer: {
-		flex: 1,
-		alignItems: 'flex-start',
-		justifyContent: 'flex-start',
-		paddingTop: 5
+	headerButtonsContainer: {
+		paddingTop: Constants.statusBarHeight + 10,
+		position: 'absolute',
+		left: 10,
 	},
 	petImageBottomButtonsContainer: {
 		flex: 1,
