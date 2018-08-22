@@ -8,7 +8,8 @@ import {
 const INITIAL_STATE = {
   isLoading: false,
   city: '',
-  country: ''
+  country: '',
+  zipcode: ''
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -20,12 +21,13 @@ export default (state = INITIAL_STATE, action) => {
         ...state,
         isLoading: false,
         city: action.city,
-        country: action.country
+        country: action.country,
+        zipcode: action.zipcode
       }
     case FETCH_LOCATION_FAIL:
       return { ...state, isLoading: false }
     case CLEAR_LOCATION_INFO:
-      return { ...state, city: '', country: '' }
+      return { ...state, city: '', country: '', zipcode: '' }
     default:
       return state;
   }

@@ -227,11 +227,8 @@ export const fetchLocation = () => {
                 dispatch({
                     type: FETCH_LOCATION_SUCCESS,
                     city: res[0].city,
-                    country: res[0].region
-                })
-                dispatch({
-                    type: SET_ZIPCODE_FILTER,
-                    payload: res[0].postalCode
+                    country: res[0].region,
+                    zipcode: res[0].postalCode
                 })
             })
             .catch((err) => {

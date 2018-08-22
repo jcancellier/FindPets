@@ -28,11 +28,15 @@ class SetLocationScreen extends Component {
 	}
 
 	static navigationOptions = ({ navigation }) => {
+		const { params = {} } = navigation.state;
 		return {
 			headerLeft: (
 				<LinkedText
 					style={{ color: Colors.flat.clouds, fontSize: 16, paddingLeft: 10 }}
-					onPress={() => navigation.goBack()}
+					onPress={() => {
+						params.clearFetchedLocationInfo()
+						navigation.goBack()
+					}}
 				>
 					Cancel
 				</LinkedText>
@@ -41,9 +45,17 @@ class SetLocationScreen extends Component {
 	};
 
 	static getDerivedStateFromProps(props, state) {
+		const zipcode = props.fetchedZipcode === '' ? props.zipcode : props.fetchedZipcode;
 		return {
-			zipcode: props.zipcode
+			zipcode: zipcode
 		}
+	}
+
+	componentDidMount() {
+		this.props.navigation.setParams({
+			clearFetchedLocationInfo: this.props.clearLocationInfo
+		})
+		this.props.clearLocationInfo();
 	}
 
 	_onSaveLocationPress = () => {
@@ -51,7 +63,6 @@ class SetLocationScreen extends Component {
 		this.props.fetchPets(true, true);
 		this.props.clearLocationInfo();
 		this.props.navigation.goBack();
-
 	}
 
 	_renderSpinnerOrText = () => {
@@ -71,46 +82,46 @@ class SetLocationScreen extends Component {
 		return (
 			<TouchableOpacity style={styles.container} activeOpacity={1.0} onPress={Keyboard.dismiss}>
 				<ImageBackground style={styles.container} source={require('../../assets/map.png')}>
-				<KeyboardAvoidingView
-					behavior="padding"
-					enabled
-					keyboardVerticalOffset={Header.HEIGHT}
-					style={styles.container}
-				>
-					<View style={styles.header} >
-						<Image source={require('../../assets/icons/location.png')} style={styles.locationIcon} />
-					</View>
-					<View style={styles.body}>
-						<View>
-							<TouchableOpacity
-								style={styles.getLocationButton}
-								onPress={this.props.fetchLocation}
-							>
-								<Ionicons name='md-pin' size={20} color={Colors.flat.clouds} style={styles.getLocationButtonIcon} />
-								<Text style={styles.getLocationButtonText}>Get Location</Text>
-							</TouchableOpacity>
-							<TextInput
-								style={styles.zipcodeInput}
-								placeholder='Zip Code'
-								onChangeText={(zipcode) => this.setState({ zipcode })}
-								value={this.state.zipcode}
-								keyboardType='number-pad'
-								maxLength={5}
-								underlineColorAndroid='transparent'
-							/>
+					<KeyboardAvoidingView
+						behavior="padding"
+						enabled
+						keyboardVerticalOffset={Header.HEIGHT}
+						style={styles.container}
+					>
+						<View style={styles.header} >
+							<Image source={require('../../assets/icons/location.png')} style={styles.locationIcon} />
 						</View>
-						{this._renderSpinnerOrText()}
-					</View>
-					<Footer style={{ backgroundColor: 'white' }}>
-						<Button
-							textStyle={styles.saveLocationButtonText}
-							style={styles.saveLocationButton}
-							onPress={this._onSaveLocationPress}
-						>
-							Save Location
+						<View style={styles.body}>
+							<View>
+								<TouchableOpacity
+									style={styles.getLocationButton}
+									onPress={this.props.fetchLocation}
+								>
+									<Ionicons name='md-pin' size={20} color={Colors.flat.clouds} style={styles.getLocationButtonIcon} />
+									<Text style={styles.getLocationButtonText}>Get Location</Text>
+								</TouchableOpacity>
+								<TextInput
+									style={styles.zipcodeInput}
+									placeholder='Zip Code'
+									onChangeText={(zipcode) => this.setState({ zipcode })}
+									value={this.state.zipcode}
+									keyboardType='number-pad'
+									maxLength={5}
+									underlineColorAndroid='transparent'
+								/>
+							</View>
+							{this._renderSpinnerOrText()}
+						</View>
+						<Footer style={{ backgroundColor: 'white' }}>
+							<Button
+								textStyle={styles.saveLocationButtonText}
+								style={styles.saveLocationButton}
+								onPress={this._onSaveLocationPress}
+							>
+								Save Location
 						</Button>
-					</Footer>
-				</KeyboardAvoidingView>
+						</Footer>
+					</KeyboardAvoidingView>
 				</ImageBackground>
 			</TouchableOpacity>
 		);
@@ -190,6 +201,7 @@ const styles = StyleSheet.create({
 const mapStateToProps = (state) => {
 	return {
 		zipcode: state.filters.location,
+		fetchedZipcode: state.location.zipcode,
 		city: state.location.city,
 		country: state.location.country,
 		isLoading: state.location.isLoading
