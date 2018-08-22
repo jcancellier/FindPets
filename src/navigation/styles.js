@@ -6,6 +6,13 @@ const styles = {
 		color: Colors.flat.clouds,
 		includeFontPadding: false,
 		fontWeight: 'normal'
+	},
+	headerStyle: {
+		shadowOpacity: 0.4,
+		shadowOffset: { width: 0, height: 1 },
+		shadowRadius: 5,
+		borderBottomWidth: 0,
+		backgroundColor: Colors.primary
 	}
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { StatusBar } from 'react-native';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './src/store';
 import { AppLoading, Font, Asset } from 'expo';
@@ -12,6 +13,7 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
+    StatusBar.setBarStyle('dark-content');
     initializeAnimations();
     console.log(store.getState());
   }
@@ -33,9 +35,9 @@ export default class App extends React.Component {
     } else {
       return (
         <Provider store={store}>
-          <PersistGate loading={<AppLoading />} persistor={persistor}>
+          {/* <PersistGate loading={<AppLoading />} persistor={persistor}> */}
             {this._renderMainNavigator()}
-          </PersistGate>
+          {/* </PersistGate> */}
         </Provider>
       );
     }

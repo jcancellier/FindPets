@@ -23,11 +23,7 @@ const Primary = createStackNavigator({
 			title: 'Pet Locator',
 			headerStyle: {
 				//TODO: Add android shadows
-				shadowOpacity: 0.4,
-				shadowOffset: { width: 0, height: 1 },
-				shadowRadius: 5,
-				borderBottomWidth: 0,
-				backgroundColor: Colors.primary
+				...styles.headerStyle
 			},
 			headerTitleStyle: styles.headerTitleStyle,
 			headerLeft: (
@@ -49,11 +45,7 @@ const Primary = createStackNavigator({
 			title: 'Filter',
 			headerStyle: {
 				//TODO: Add android shadows
-				shadowOpacity: 0.4,
-				shadowOffset: { width: 0, height: 1 },
-				shadowRadius: 5,
-				borderBottomWidth: 0,
-				backgroundColor: Colors.primary
+				...styles.headerStyle
 			},
 			headerTitleStyle: styles.headerTitleStyle,
 			gesturesEnabled: false
@@ -82,12 +74,7 @@ const Primary = createStackNavigator({
 const SharedTransition = createStackNavigator({
 	First: { screen: Primary },
 	PetDetails: {
-		screen: PetDetailsScreen,
-		navigationOptions: {
-			gestureResponseDistance: {
-				horizontal: 250
-			}
-		}
+		screen: PetDetailsScreen
 	}
 }, {
 		// mode: 'modal',
@@ -105,11 +92,7 @@ const FavoritesScreenStack = createStackNavigator({
 			title: 'Favorites',
 			headerStyle: {
 				//TODO: Add android shadows
-				shadowOpacity: 0.4,
-				shadowOffset: { width: 0, height: 1 },
-				shadowRadius: 5,
-				borderBottomWidth: 0,
-				backgroundColor: Colors.primary
+				...styles.headerStyle
 			},
 			headerTitleStyle: styles.headerTitleStyle,
 			headerLeft: (
