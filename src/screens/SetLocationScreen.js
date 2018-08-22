@@ -47,7 +47,6 @@ class SetLocationScreen extends Component {
 	}
 
 	_onSaveLocationPress = () => {
-		console.log(this.props.navigation)
 		this.props.setZipcodeFilter(this.state.zipcode);
 		this.props.fetchPets(true, true);
 		this.props.clearLocationInfo();

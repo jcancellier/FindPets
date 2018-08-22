@@ -11,6 +11,7 @@ export const SET_ANIMAL_FILTER = "set_animal_filter";
 export const SET_SIZE_FILTER = "set_size_filter";
 export const SET_BREED_FILTER = "set_breed_filter";
 export const SET_AGE_FILTER = "set_age_filter";
+export const SET_SEX_FILTER = "set_sex_filter";
 export const SET_ZIPCODE_FILTER = "set_zipcode_filter";
 export const SET_OFFSET_FILTER = "set_offset_filter";
 export const FETCH_LOCATION_START = "fetch_location_start";

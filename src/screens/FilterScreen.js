@@ -4,13 +4,14 @@ import { Constants } from 'expo';
 import { connect } from 'react-redux';
 import RNPickerSelect from 'react-native-picker-select';
 import filterData from '../global/filterData.json';
-import { Fonts, Colors } from '../global';
+import { Fonts, Colors, Styles } from '../global';
 import { Button, ButtonSelect, LinkedText, Text, Footer } from '../components/common';
 import {
 	setAnimalFilter,
 	setSizeFilter,
 	setBreedFilter,
 	setAgeFilter,
+	setSexFilter,
 	fetchPets
 } from '../actions';
 
@@ -49,6 +50,10 @@ class FilterScreen extends React.Component {
 			age: props.age,
 			ages: [
 				...filterData["ages"],
+			],
+			sex: props.sex,
+			sexes: [
+				...filterData["sexes"]
 			]
 		};
 	}
@@ -58,6 +63,7 @@ class FilterScreen extends React.Component {
 		this.props.setSizeFilter(this.state.size);
 		this.props.setBreedFilter(this.state.breed);
 		this.props.setAgeFilter(this.state.age);
+		this.props.setSexFilter(this.state.sex);
 		this.props.fetchPets(true, true);
 		this.props.navigation.goBack();
 	}
@@ -67,7 +73,8 @@ class FilterScreen extends React.Component {
 			animal: null,
 			size: null,
 			breed: null,
-			age: null
+			age: null,
+			sex: null
 		})
 	}
 
@@ -167,6 +174,23 @@ class FilterScreen extends React.Component {
 							items={this.state.ages}
 							value={this.state.age}
 						/>
+						<View style={{ paddingVertical: 10 }} />
+
+						<Text style={styles.inputLabel}>Gender</Text>
+						<ButtonSelect
+							placeholder={{
+								label: 'Any',
+								value: null,
+							}}
+							onValueChange={(value) => {
+								this.setState({
+									sex: value,
+								});
+							}}
+							textStyle={{ fontFamily: Fonts.primary }}
+							items={this.state.sexes}
+							value={this.state.sex}
+						/>
 						<View style={{ paddingVertical: 15 }} />
 
 					</ScrollView>
@@ -223,10 +247,12 @@ const styles = StyleSheet.create({
 	submitButton: {
 		backgroundColor: Colors.material.green600,
 		borderRadius: 5,
+		...Styles.shadow
 	},
 	resetButton: {
 		backgroundColor: 'rgba(0,0,0,0.2)',
-		borderRadius: 5
+		borderRadius: 5,
+		...Styles.shadow
 	},
 	buttonsContainer: {
 		flexDirection: 'row',
@@ -247,7 +273,8 @@ const pickerSelectStyles = StyleSheet.create({
 		borderRadius: 5,
 		backgroundColor: 'white',
 		color: 'black',
-		fontFamily: Fonts.primary
+		fontFamily: Fonts.primary,
+		...Styles.shadow
 	}
 });
 
@@ -256,7 +283,8 @@ const mapStateToProps = (state) => {
 		animal: state.filters.animal,
 		size: state.filters.size,
 		breed: state.filters.breed,
-		age: state.filters.age
+		age: state.filters.age,
+		sex: state.filters.sex
 	}
 }
 
@@ -265,5 +293,6 @@ export default connect(mapStateToProps, {
 	setSizeFilter,
 	setBreedFilter,
 	setAgeFilter,
+	setSexFilter,
 	fetchPets
 })(FilterScreen);

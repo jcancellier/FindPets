@@ -6,11 +6,6 @@ import PetFavoritesList from '../components/PetFavoritesList';
 import { Fonts, Colors } from '../global';
 
 class FavoritesScreen extends React.Component {
-
-    componentDidMount() {
-        console.log(this.props.favorites.length)
-    }
-
     _renderNoFavorites = () => {
         return (
             <View style={noFavoritesStyles.container}>

@@ -17,7 +17,8 @@ import {
     SET_OFFSET_FILTER,
     FETCH_MORE_PETS_START,
     CLEAR_PET_RECORDS,
-    SET_INITIAL_LAUNCH
+    SET_INITIAL_LAUNCH,
+    SET_SEX_FILTER
 } from './types';
 import { Location, Permissions } from 'expo';
 import { urlArgumentBuilder } from '../utils';
@@ -101,9 +102,6 @@ const fetchMorePets = (url, dispatch) => {
             else
                 pets = {}
 
-            for (let i = 0; i < pets.length; i++) {
-                console.log(pets[i].id.$t)
-            }
             dispatch({
                 type: SET_OFFSET_FILTER,
                 payload: responseData.petfinder.lastOffset.$t
@@ -182,6 +180,13 @@ export const setAgeFilter = (age) => {
     return {
         type: SET_AGE_FILTER,
         payload: age
+    }
+}
+
+export const setSexFilter = (sex) => {
+    return {
+        type: SET_SEX_FILTER,
+        payload: sex
     }
 }
 

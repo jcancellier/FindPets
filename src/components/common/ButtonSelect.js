@@ -75,9 +75,11 @@ class ButtonSelect extends React.Component {
 
   render() {
     return (
-      <View style={buttonSelectStyles.container}>
-        <View style={buttonSelectStyles.buttonListContainer}>
-          {this._renderButtons()}
+      <View style={buttonSelectStyles.shadowContainer}>
+        <View style={buttonSelectStyles.container}>
+          <View style={buttonSelectStyles.buttonListContainer}>
+            {this._renderButtons()}
+          </View>
         </View>
       </View>
     );
@@ -88,7 +90,15 @@ const buttonSelectStyles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
     borderRadius: 10,
-    overflow: 'hidden'
+    overflow: 'hidden',
+  },
+  shadowContainer: {
+    shadowOffset: { width: 0, height: 3 },
+    shadowRadius: 3,
+    shadowOpacity: 0.1,
+    shadowColor: 'black',
+    elevation: 3,
+    borderRadius: 10,
   },
   buttonListContainer: {
     flexDirection: 'row',

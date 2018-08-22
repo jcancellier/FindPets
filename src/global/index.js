@@ -35,7 +35,18 @@ const Colors = {
 Colors.primary = Colors.material.red500;
 Colors.secondary = Colors.material.red300;
 
+const Styles = {
+	shadow: {
+		shadowOffset: { width: 0, height: 3 },
+		shadowRadius: 3,
+		shadowOpacity: 0.1,
+		shadowColor: 'black',
+		elevation: 3,
+	}
+}
+
 export {
 	Fonts,
 	Colors,
+	Styles
 }

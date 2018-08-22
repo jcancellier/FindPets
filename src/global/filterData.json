@@ -65,6 +65,16 @@
 			"value": "Senior"
 		}
 	],
+	"sexes": [
+		{
+			"label": "Male",
+			"value": "M"
+		},
+		{
+			"label": "Female",
+			"value": "F"
+		}
+	],
 	"breeds": {
 		"barnyard": [
 			{

@@ -94,7 +94,6 @@ class PetDetailsScreen extends React.Component {
 
 	_handleFavoriteButtonPress() {
 		this.setState((prevState) => { return { favoritesToggled: !prevState.favoritesToggled } }, () => {
-			console.log(this.state.favoritesToggled);
 			if (this.state.favoritesToggled) {
 				this.props.addPetToFavorites(id);
 			} else {

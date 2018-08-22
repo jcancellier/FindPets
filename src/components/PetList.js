@@ -40,7 +40,6 @@ class PetList extends React.PureComponent {
 	}
 
 	render() {
-		//console.log(store.getState());
 		//TODO: when searching for a pet and no pets are received back then the next time you search for an animal this if-statement crashes the app
 		// the error it gives is "undefined is not an object (evaluating 'this.props.pets.length'"
 		if (this.props.isLoading && this.props.pets.length == 0) {
