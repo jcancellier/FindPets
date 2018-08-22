@@ -10,7 +10,7 @@ import PetListItem from './PetListItem';
 import { fetchPets } from '../actions';
 
 //class component
-class PetList extends React.PureComponent {
+class PetList extends React.Component {
 
 	componentDidMount() {
 		this._fetchData();
@@ -21,6 +21,8 @@ class PetList extends React.PureComponent {
 	}
 
 	_onScrollEndReached = () => {
+		if(this.props.disableMorePetsFetch)
+			return;
 		if (!this.props.isMorePetsLoading)
 			this.props.fetchPets(false)
 	}
@@ -116,7 +118,8 @@ const mapStateToProps = (state) => {
 	return {
 		isLoading: state.pets.isLoading,
 		pets: state.pets.posts,
-		isMorePetsLoading: state.pets.isMorePetsLoading
+		isMorePetsLoading: state.pets.isMorePetsLoading,
+		disableMorePetsFetch: state.pets.morePetsFetchEmpty
 	}
 }
 

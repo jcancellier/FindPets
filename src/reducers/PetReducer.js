@@ -10,13 +10,14 @@ import {
 const INITIAL_STATE = {
 	posts: [],
 	isLoading: false,
-	isMorePetsLoading: false
+	isMorePetsLoading: false,
+	morePetsFetchEmpty: false
 };
 
 export default (state = INITIAL_STATE, action) => {
 	switch (action.type) {
 		case FETCH_PETS_START:
-			return { ...state, isLoading: true };
+			return { ...state, isLoading: true, morePetsFetchEmpty: false };
 		case FETCH_PETS_SUCCESS:
 			return { ...state, posts: action.payload, isLoading: false }
 		case FETCH_PETS_FAIL:
@@ -25,7 +26,16 @@ export default (state = INITIAL_STATE, action) => {
 			console.log('fetched more pets START');
 			return { ...state, isMorePetsLoading: true }
 		case FETCH_MORE_PETS_SUCCESS:
-			return { ...state, posts: [...state.posts, ...action.payload], isMorePetsLoading: false }
+			console.log("size of more pets: " + action.payload.length)
+			return { 
+				...state, 
+				posts: [
+					...state.posts, 
+					...action.payload
+				], 
+				isMorePetsLoading: false,
+				morePetsFetchEmpty: action.payload.length == 0 ? true : false
+			}
 		case CLEAR_PET_RECORDS:
 			return { ...state, posts: [] }
 		default:
