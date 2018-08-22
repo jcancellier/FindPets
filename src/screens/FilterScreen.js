@@ -247,12 +247,10 @@ const styles = StyleSheet.create({
 	submitButton: {
 		backgroundColor: Colors.material.green600,
 		borderRadius: 5,
-		...Styles.shadow
 	},
 	resetButton: {
 		backgroundColor: 'rgba(0,0,0,0.2)',
 		borderRadius: 5,
-		...Styles.shadow
 	},
 	buttonsContainer: {
 		flexDirection: 'row',
