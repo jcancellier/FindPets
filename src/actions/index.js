@@ -199,8 +199,10 @@ export const setZipcodeFilter = (zipcode) => {
 
 export const fetchLocation = () => {
     return async (dispatch) => {
-        //TODO: handle location retrieval on app start
+        
         dispatch({ type: FETCH_LOCATION_START })
+
+        // Check permissions for location retrieval
         let { status } = await Permissions.askAsync(Permissions.LOCATION);
         if (status !== 'granted') {
             alert('Permission to access location was denied.\nEnable location services in settings');
@@ -208,6 +210,7 @@ export const fetchLocation = () => {
             return;
         }
 
+        // Get user's geolocation
         let toSend;
         try {
             let location = await Location.getCurrentPositionAsync({});
@@ -221,6 +224,7 @@ export const fetchLocation = () => {
             return;
         }
 
+        // Convert user's geolocation to city, country, zipcode, etc...
         Location.reverseGeocodeAsync(toSend)
             .then((res) => {
                 console.log(res)
