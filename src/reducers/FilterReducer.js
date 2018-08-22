@@ -14,7 +14,7 @@ const INITIAL_STATE = {
 	breed: '',
 	age: null,
 	sex: null,
-	location: '93307',
+	location: '',
 	format: "json",
 	count: 50,
 	offset: 0

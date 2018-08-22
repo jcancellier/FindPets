@@ -10,12 +10,13 @@ import {
 	ImageBackground
 } from 'react-native';
 import { connect } from 'react-redux';
-import { setZipcodeFilter, fetchPets, fetchLocation, clearLocationInfo } from '../actions';
+import { setZipcodeFilter, fetchPets, fetchLocation, clearLocationInfo, setInitialLaunch } from '../actions';
 import { Ionicons } from '@expo/vector-icons';
 import { BallIndicator } from 'react-native-indicators';
 import { Header } from 'react-navigation';
 import { Colors, Fonts } from '../global';
 import { LinkedText, Footer, Button, Text } from '../components/common';
+import NavigationStyles from '../navigation/styles';
 
 class SetLocationScreen extends Component {
 	constructor(props) {
@@ -27,22 +28,36 @@ class SetLocationScreen extends Component {
 		}
 	}
 
-	static navigationOptions = ({ navigation }) => {
-		const { params = {} } = navigation.state;
-		return {
-			headerLeft: (
-				<LinkedText
-					style={{ color: Colors.flat.clouds, fontSize: 16, paddingLeft: 10 }}
-					onPress={() => {
-						params.clearFetchedLocationInfo()
-						navigation.goBack()
-					}}
-				>
-					Cancel
-				</LinkedText>
-			)
-		};
-	};
+	// static navigationOptions = ({ navigation }) => {
+	// 	const { params = {} } = navigation.state;
+	// 	return {
+	// 		headerLeft: (
+	// 			<LinkedText
+	// 				style={{ color: Colors.flat.clouds, fontSize: 16, paddingLeft: 10 }}
+	// 				onPress={() => {
+	// 					params.clearFetchedLocationInfo()
+	// 					navigation.goBack()
+	// 				}}
+	// 			>
+	// 				Cancel
+	// 			</LinkedText>
+	// 		)
+	// 	};
+	// };
+
+	static navigationOptions = {
+		title: 'Set Location',
+		headerStyle: {
+			//TODO: Add android shadows
+			shadowOpacity: 0.4,
+			shadowOffset: { width: 0, height: 1 },
+			shadowRadius: 5,
+			borderBottomWidth: 0,
+			backgroundColor: Colors.primary
+		},
+		headerTitleStyle: NavigationStyles.headerTitleStyle,
+		gesturesEnabled: false
+	}
 
 	static getDerivedStateFromProps(props, state) {
 		const zipcode = props.fetchedZipcode === '' ? props.zipcode : props.fetchedZipcode;
@@ -62,7 +77,11 @@ class SetLocationScreen extends Component {
 		this.props.setZipcodeFilter(this.state.zipcode);
 		this.props.fetchPets(true, true);
 		this.props.clearLocationInfo();
-		this.props.navigation.goBack();
+		if(this.props.initialLaunch)
+			this.props.navigation.navigate('Main');
+		else
+			this.props.navigation.goBack();
+		this.props.setInitialLaunch(false);
 	}
 
 	_renderSpinnerOrText = () => {
@@ -204,7 +223,8 @@ const mapStateToProps = (state) => {
 		fetchedZipcode: state.location.zipcode,
 		city: state.location.city,
 		country: state.location.country,
-		isLoading: state.location.isLoading
+		isLoading: state.location.isLoading,
+		initialLaunch: state.user.initialLaunch
 	}
 }
 
@@ -212,5 +232,6 @@ export default connect(mapStateToProps, {
 	setZipcodeFilter,
 	fetchPets,
 	fetchLocation,
-	clearLocationInfo
+	clearLocationInfo,
+	setInitialLaunch
 })(SetLocationScreen);

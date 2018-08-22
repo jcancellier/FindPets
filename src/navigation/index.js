@@ -3,6 +3,7 @@ import { createStackNavigator, createDrawerNavigator, createSwitchNavigator } fr
 import { Ionicons } from '@expo/vector-icons';
 import HeaderButtons from 'react-navigation-header-buttons'
 
+import { LinkedText } from '../components/common';
 import { Fonts, Colors } from "../global";
 import styles from './styles';
 
@@ -60,19 +61,19 @@ const Primary = createStackNavigator({
 	},
 	SetLocation: {
 		screen: SetLocationScreen,
-		navigationOptions: {
-			title: 'Set Location',
-			headerStyle: {
-				//TODO: Add android shadows
-				shadowOpacity: 0.4,
-				shadowOffset: { width: 0, height: 1 },
-				shadowRadius: 5,
-				borderBottomWidth: 0,
-				backgroundColor: Colors.primary
-			},
-			headerTitleStyle: styles.headerTitleStyle,
-			gesturesEnabled: false
-		}
+		navigationOptions: ({ navigation }) => ({
+				headerLeft: (
+					<LinkedText
+						style={{ color: Colors.flat.clouds, fontSize: 16, paddingLeft: 10 }}
+						onPress={() => {
+							navigation.state.params.clearFetchedLocationInfo()
+							navigation.goBack()
+						}}
+					>
+						Cancel
+				</LinkedText>
+				)
+		})
 	}
 }, {
 		mode: 'modal',
@@ -138,6 +139,24 @@ const FavoritesStack = createStackNavigator({
 	}
 });
 
+//InitialLaunch stack
+const InitialLaunchStack = createStackNavigator({
+	Onboarding: {
+		screen: OnboardingScreen,
+		navigationOptions: {
+			header: null,
+		}
+	},
+	SetLocationInitialLaunch: {
+		screen: SetLocationScreen,
+		navigationOptions: {
+			headerLeft: null
+		}
+	}
+}, {
+		mode: 'modal'
+	})
+
 //Main navigator (Drawer)
 const MainDrawerNavigator = createDrawerNavigator({
 	Main: {
@@ -170,10 +189,12 @@ const MainDrawerNavigator = createDrawerNavigator({
 		}
 	});
 
+
+
 export const createRootNavigator = (initialLaunch = true) => {
 	return createSwitchNavigator(
 		{
-			Onboarding: OnboardingScreen,
+			Onboarding: InitialLaunchStack,
 			Main: MainDrawerNavigator
 		},
 		{

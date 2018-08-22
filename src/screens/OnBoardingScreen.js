@@ -87,8 +87,7 @@ class OnBoardingScreen extends React.Component {
   };
 
   _onDone = () => {
-    this.props.navigation.navigate('Main');
-    this.props.setInitialLaunch(false);
+    this.props.navigation.navigate('SetLocationInitialLaunch');
   }
 
   render() {
