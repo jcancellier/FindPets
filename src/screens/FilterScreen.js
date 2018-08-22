@@ -86,6 +86,8 @@ class FilterScreen extends React.Component {
 						style={styles.scrollViewContainer}
 						ref={(r) => this.scrollViewRef = r}
 					>
+						<View style={{ paddingVertical: 8 }} />
+
 						<Text style={styles.inputLabel}>Animal</Text>
 						<RNPickerSelect
 							mode="dropdown"
@@ -223,11 +225,10 @@ const styles = StyleSheet.create({
 	},
 	scrollViewContainer: {
 		flex: 1,
-		paddingHorizontal: 10,
+		paddingHorizontal: 10
 	},
 	container: {
 		flex: 1,
-		paddingTop: Constants.statusBarHeight,
 	},
 	inputLabel: {
 		fontFamily: Fonts.primary,
