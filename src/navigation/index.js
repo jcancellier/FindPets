@@ -151,7 +151,7 @@ const MainDrawerNavigator = createDrawerNavigator({
 	Favorites: {
 		screen: FavoritesStack,
 		navigationOptions: {
-			// drawerLockMode: 'locked-closed',
+			drawerLockMode: 'locked-closed',
 			title: 'Favorites',
 			drawerIcon: (<Ionicons name="ios-heart" size={23} color={Colors.flat.clouds} />),
 		},
