@@ -9,3 +9,4 @@ export * from './ReadMoreText';
 export * from './Footer';
 export * from './ToggleIcon';
 export * from './Text';
+export * from './Fab';
