@@ -11,7 +11,7 @@ import { fetchPets } from '../actions';
 import Fab from './common/Fab';
 
 //class component
-class PetList extends React.Component {
+class PetList extends React.PureComponent {
 
 	scrollOffset = 0;
 
