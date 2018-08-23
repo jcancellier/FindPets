@@ -8,9 +8,16 @@ import { CenteredView, LinkedText } from '../components/common';
 import { Colors } from '../global'
 import PetListItem from './PetListItem';
 import { fetchPets } from '../actions';
+import Fab from './common/Fab';
 
 //class component
-class PetList extends React.Component {
+class PetList extends React.PureComponent {
+
+	scrollOffset = 0;
+
+	state={
+		fabVisible: false,
+	}
 
 	componentDidMount() {
 		this._fetchData();
@@ -20,8 +27,46 @@ class PetList extends React.Component {
 		this.props.fetchPets(true);
 	}
 
+	_onScrollStart = (event) => {
+		// console.log(event.nativeEvent.contentOffset.y);
+		// this.setState({scrollPosition: event.nativeEvent.contentOffset.y})
+		// if(event.nativeEvent.contentOffset.y > 100 && this.state.fabVisible == false){
+		// 	this.fab.show();
+		// 	console.log('showing fab')
+		// }
+		// else if(event.nativeEvent.contentOffset.y <=100 && this.state.fabVisible == true){
+		// 	this.fab.hide();
+		// 	console.log('showing fab')
+		// }
+		const currentOffset = event.nativeEvent.contentOffset.y;
+		if(currentOffset > 0 && currentOffset < 100) {
+			console.log('hide it!!!!');
+			if(this.state.fabVisible){
+				this.fab.hide()
+				return;
+			}
+		}
+
+
+    const dif = currentOffset - (this.scrollOffset || 0);
+
+    if (Math.abs(dif) < 3) {
+      console.log('unclear');
+    } else if (dif < 0) {
+			console.log('up');
+			if(this.state.fabVisible == false && currentOffset >= 100)
+				this.fab.show()
+    } else{
+			console.log('down');
+			if(this.state.fabVisible)
+				this.fab.hide()
+    }
+
+    this.scrollOffset = currentOffset;
+	}
+
 	_onScrollEndReached = () => {
-		if(this.props.disableMorePetsFetch)
+		if (this.props.disableMorePetsFetch)
 			return;
 		if (!this.props.isMorePetsLoading)
 			this.props.fetchPets(false)
@@ -39,6 +84,17 @@ class PetList extends React.Component {
 				phone: item.contact.phone.$t
 			})}
 		/>;
+	}
+
+	_scrollListToTop = () => {
+		this.list.scrollToIndex({
+			animated: true,
+			index: 0,
+			viewOffset: 0,
+			viewPosition: 0
+		})
+		if(this.state.fabVisible)
+			this.fab.hide();
 	}
 
 	render() {
@@ -66,9 +122,18 @@ class PetList extends React.Component {
 						onRefresh={() => this._fetchData()}
 						refreshing={this.props.isLoading}
 						onEndReached={this._onScrollEndReached}
-						onEndReachedThreshold={0.01}
+						onEndReachedThreshold={0.5}
+						ref={(ref) => this.list = ref}
+						onScrollBeginDrag={this._onScrollStart}
+						onScrollEndDrag={this._onScrollStart}
+						scrollEventThrottle={0}
 					//TODO: possibly enable this line to prevent console warning: 'virtualizedList ...etc'
 					// disableVirtualization={false}
+					/>
+					<Fab
+						ref={(ref) => this.fab = ref}
+						onPress={this._scrollListToTop}
+						onVisibilityChanged={(visible) => this.setState({fabVisible: visible})}
 					/>
 				</Animatable.View>
 			);
