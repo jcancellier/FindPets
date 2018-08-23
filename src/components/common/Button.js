@@ -10,14 +10,14 @@ const Button = (props) => {
 			onPress={props.onPress}
 			style={
 				[
-					props.selected ? styles.buttonSelected : styles.buttonNotSelected,
 					styles.button,
-					props.selected ? props.selectedStyle : props.style,
+					props.disabled ? styles.buttonDisabled : styles.buttonEnabled,
+					props.disabled ? props.disabledStyle : props.style,
 					props.renderRightBorder ? { borderRightWidth: StyleSheet.hairlineWidth } : null
 				]
 			}
-			disabled={props.selected}>
-			<Text style={[styles.text, props.textStyle, props.selected ? styles.textSelected : null]} numberOfLines={1} adjustsFontSizeToFit>
+			disabled={props.disabled}>
+			<Text style={[styles.text, props.disabled ? styles.textDisabled : null, props.textStyle,]} numberOfLines={1} adjustsFontSizeToFit>
 				{props.children}
 			</Text>
 		</TouchableOpacity>
@@ -30,10 +30,10 @@ const styles = StyleSheet.create({
 		borderColor: 'rgba(0,0,0,0.2)',
 		justifyContent: 'center'
 	},
-	buttonSelected: {
+	buttonEnabled: {
 		backgroundColor: Colors.primary,
 	},
-	buttonNotSelected: {
+	buttonDisabled: {
 		backgroundColor: 'white'
 	},
 	text: {
@@ -44,10 +44,10 @@ const styles = StyleSheet.create({
 		paddingLeft: 3,
 		paddingRight: 3
 	},
-	textSelected: {
+	textDisabled: {
 		color: Colors.flat.clouds
 	},
-	textNotSelected: {
+	textEnabled: {
 	}
 });
 

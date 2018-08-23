@@ -132,9 +132,9 @@ class SetLocationScreen extends Component {
 							<Button
 								textStyle={styles.saveLocationButtonText}
 								style={styles.saveLocationButtonEnabled}
-								selectedStyle={styles.saveLocationButtonDisabled}
+								disabledStyle={styles.saveLocationButtonDisabled}
 								onPress={this._onSaveLocationPress}
-								selected={!this._validateZipcode()}
+								disabled={!this._validateZipcode()}
 							>
 								Save Location
 						</Button>

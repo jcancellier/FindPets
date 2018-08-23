@@ -6,6 +6,4 @@ const Text = (props) => {
     return <RNText {...props} style={[props.style, { includeFontPadding: false }]} >{props.children}</RNText>
 }
 
-
-
 export { Text };
