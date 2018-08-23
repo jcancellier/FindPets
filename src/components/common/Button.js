@@ -12,7 +12,7 @@ const Button = (props) => {
 				[
 					props.selected ? styles.buttonSelected : styles.buttonNotSelected,
 					styles.button,
-					props.style,
+					props.selected ? props.selectedStyle : props.style,
 					props.renderRightBorder ? { borderRightWidth: StyleSheet.hairlineWidth } : null
 				]
 			}

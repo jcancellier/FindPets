@@ -3,7 +3,8 @@ import { View, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import { Text as StyledText } from '../components/common';
 import { connect } from 'react-redux';
 import PetFavoritesList from '../components/PetFavoritesList';
-import { Fonts, Colors } from '../global';
+import { Fonts, Colors, Styles as GlobalStyles } from '../global';
+
 
 class FavoritesScreen extends React.Component {
     _renderNoFavorites = () => {
@@ -65,7 +66,9 @@ const noFavoritesStyles = StyleSheet.create({
     },
     findPetButton: {
         backgroundColor: Colors.primary,
-        borderRadius: 5
+        borderRadius: 5,
+        ...GlobalStyles.shadow,
+        shadowOpacity: 0.3
     },
     findPetButtonText: {
         fontFamily: Fonts.primary,

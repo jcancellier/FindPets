@@ -15,7 +15,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { BallIndicator } from 'react-native-indicators';
 import { Header } from 'react-navigation';
 import { Colors, Fonts } from '../global';
-import { LinkedText, Footer, Button, Text } from '../components/common';
+import { Footer, Button, Text } from '../components/common';
 import NavigationStyles from '../navigation/styles';
 
 class SetLocationScreen extends Component {
@@ -27,23 +27,6 @@ class SetLocationScreen extends Component {
 			country: ''
 		}
 	}
-
-	// static navigationOptions = ({ navigation }) => {
-	// 	const { params = {} } = navigation.state;
-	// 	return {
-	// 		headerLeft: (
-	// 			<LinkedText
-	// 				style={{ color: Colors.flat.clouds, fontSize: 16, paddingLeft: 10 }}
-	// 				onPress={() => {
-	// 					params.clearFetchedLocationInfo()
-	// 					navigation.goBack()
-	// 				}}
-	// 			>
-	// 				Cancel
-	// 			</LinkedText>
-	// 		)
-	// 	};
-	// };
 
 	static navigationOptions = {
 		title: 'Set Location',
@@ -60,7 +43,13 @@ class SetLocationScreen extends Component {
 	}
 
 	static getDerivedStateFromProps(props, state) {
-		const zipcode = props.fetchedZipcode === '' ? props.zipcode : props.fetchedZipcode;
+		console.log('deriving props');
+		let zipcode = props.fetchedZipcode === '' ? props.zipcode : props.fetchedZipcode;
+
+		// prevent showing previous zipcode while fetching (if textInput is empty)
+		if(props.isLoading) 
+			zipcode = ''
+
 		return {
 			zipcode: zipcode
 		}
@@ -95,6 +84,14 @@ class SetLocationScreen extends Component {
 				<BallIndicator color={Colors.primary} size={16} style={styles.loadingLocationSpinner} />
 			);
 		}
+	}
+
+	_validateZipcode = () => {
+		if(typeof this.state.zipcode !== 'undefined'){
+			if(this.state.zipcode.length == 5)
+				return true;
+		}
+		return false;
 	}
 
 	render() {
@@ -134,8 +131,10 @@ class SetLocationScreen extends Component {
 						<Footer style={{ backgroundColor: 'white' }}>
 							<Button
 								textStyle={styles.saveLocationButtonText}
-								style={styles.saveLocationButton}
+								style={styles.saveLocationButtonEnabled}
+								selectedStyle={styles.saveLocationButtonDisabled}
 								onPress={this._onSaveLocationPress}
+								selected={!this._validateZipcode()}
 							>
 								Save Location
 						</Button>
@@ -195,8 +194,12 @@ const styles = StyleSheet.create({
 		flex: 1,
 		alignItems: 'center',
 	},
-	saveLocationButton: {
+	saveLocationButtonEnabled: {
 		backgroundColor: Colors.material.green600,
+		borderRadius: 5
+	},
+	saveLocationButtonDisabled: {
+		backgroundColor: 'rgba(0,0,0,0.4)',
 		borderRadius: 5
 	},
 	saveLocationButtonText: {
