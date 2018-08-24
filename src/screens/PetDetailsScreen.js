@@ -127,9 +127,10 @@ class PetDetailsScreen extends React.Component {
 									activeOpacity={Colors.material.red500}
 									inactiveOpacity={Colors.flat.clouds}
 									onPress={this._handleFavoriteButtonPress.bind(this)}
+									style={styles.heartIconButton}
 								/>
 								<TouchableOpacity onPress={this._handleShareButtonPress} style={[styles.imageIconButton, styles.shareIconButton]}>
-									<Feather name="share" size={20} color={Colors.flat.clouds} style={styles.shareIcon} />
+									<Ionicons name="md-share" size={20} color={Colors.flat.clouds} />
 								</TouchableOpacity>
 							</View>
 						</ImageBackground>
@@ -152,8 +153,8 @@ class PetDetailsScreen extends React.Component {
 					</View>
 				</ScrollView>
 				<View style={styles.headerButtonsContainer}>
-					<TouchableOpacity onPress={this._handleBackButtonPress.bind(this)} style={styles.imageIconButton}>
-						<Ionicons name={Platform.OS == "ios" ? "md-arrow-back" : "md-close"} size={22} color={Colors.flat.clouds} style={styles.backIcon} />
+					<TouchableOpacity onPress={this._handleBackButtonPress.bind(this)} style={[styles.imageIconButton, styles.backIconButton]}>
+						<Ionicons name={Platform.OS == "ios" ? "md-arrow-back" : "md-close"} size={22} color={Colors.flat.clouds} />
 					</TouchableOpacity>
 				</View>
 				{this._renderFooter()}
@@ -254,14 +255,22 @@ const styles = StyleSheet.create({
 		alignItems: 'center'
 	},
 	shareIconButton: {
-		marginLeft: 10
+		marginLeft: 10,
+		alignItems: 'center',
+		justifyContent: 'center',
+		borderRadius: 19,
+		width: 38,
+		height: 38
 	},
-	shareIcon: {
-		padding: 8,
+	backIconButton: {
+		width: 45,
+		height: 45,
+		borderRadius: 45/2
 	},
-	backIcon: {
-		padding: 8,
-		paddingHorizontal: 13
+	heartIconButton: {
+		width: 38,
+		height: 38,
+		borderRadius: 19
 	}
 });
 
