@@ -3,7 +3,7 @@ import { View, FlatList, Text, StyleSheet } from 'react-native';
 import { Fonts } from '../global';
 import { connect } from 'react-redux';
 import * as Animatable from 'react-native-animatable';
-import { DotIndicator } from 'react-native-indicators';
+import { DotIndicator, PacmanIndicator } from 'react-native-indicators';
 import { CenteredView, LinkedText } from '../components/common';
 import { Colors } from '../global'
 import PetListItem from './PetListItem';
@@ -15,7 +15,7 @@ class PetList extends React.PureComponent {
 
 	scrollOffset = 0;
 
-	state={
+	state = {
 		fabVisible: false,
 	}
 
@@ -39,30 +39,30 @@ class PetList extends React.PureComponent {
 		// 	console.log('showing fab')
 		// }
 		const currentOffset = event.nativeEvent.contentOffset.y;
-		if(currentOffset > 0 && currentOffset < 100) {
+		if (currentOffset > 0 && currentOffset < 1000) {
 			console.log('hide it!!!!');
-			if(this.state.fabVisible){
+			if (this.state.fabVisible) {
 				this.fab.hide()
 				return;
 			}
 		}
 
 
-    const dif = currentOffset - (this.scrollOffset || 0);
+		const dif = currentOffset - (this.scrollOffset || 0);
 
-    if (Math.abs(dif) < 3) {
-      console.log('unclear');
-    } else if (dif < 0) {
-			console.log('up');
-			if(this.state.fabVisible == false && currentOffset >= 100)
+		if (Math.abs(dif) < 3) {
+			//unclear
+		} else if (dif < 0) {
+			// scrolling up
+			if (this.state.fabVisible == false && currentOffset >= 1000)
 				this.fab.show()
-    } else{
-			console.log('down');
-			if(this.state.fabVisible)
+		} else {
+			//scrolling down
+			if (this.state.fabVisible)
 				this.fab.hide()
-    }
+		}
 
-    this.scrollOffset = currentOffset;
+		this.scrollOffset = currentOffset;
 	}
 
 	_onScrollEndReached = () => {
@@ -93,9 +93,16 @@ class PetList extends React.PureComponent {
 			viewOffset: 0,
 			viewPosition: 0
 		})
-		if(this.state.fabVisible)
+		if (this.state.fabVisible)
 			this.fab.hide();
 	}
+
+	_renderListFooter = () => {
+		if (this.props.isMorePetsLoading)
+			return <PacmanIndicator color={Colors.primary} />
+		return null;
+	}
+
 
 	render() {
 		//TODO: when searching for a pet and no pets are received back then the next time you search for an animal this if-statement crashes the app
@@ -117,7 +124,7 @@ class PetList extends React.PureComponent {
 					<FlatList
 						data={this.props.pets}
 						renderItem={this._renderPet}
-						extraData={this.props.pets}
+						extraData={[this.props.pets, this.props.isMorePetsLoading]}
 						keyExtractor={item => item.id.$t.toString()}
 						onRefresh={() => this._fetchData()}
 						refreshing={this.props.isLoading}
@@ -127,13 +134,14 @@ class PetList extends React.PureComponent {
 						onScrollBeginDrag={this._onScrollStart}
 						onScrollEndDrag={this._onScrollStart}
 						scrollEventThrottle={0}
+						ListFooterComponent={this._renderListFooter()}
 					//TODO: possibly enable this line to prevent console warning: 'virtualizedList ...etc'
 					// disableVirtualization={false}
 					/>
 					<Fab
 						ref={(ref) => this.fab = ref}
 						onPress={this._scrollListToTop}
-						onVisibilityChanged={(visible) => this.setState({fabVisible: visible})}
+						onVisibilityChanged={(visible) => this.setState({ fabVisible: visible })}
 					/>
 				</Animatable.View>
 			);
