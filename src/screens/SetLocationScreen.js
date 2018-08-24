@@ -47,8 +47,8 @@ class SetLocationScreen extends Component {
 		let zipcode = props.fetchedZipcode === '' ? props.zipcode : props.fetchedZipcode;
 
 		// prevent showing previous zipcode while fetching (if textInput is empty)
-		if(props.isLoading) 
-			zipcode = ''
+		// if(props.isLoading) 
+		// 	zipcode = ''
 
 		return {
 			zipcode: zipcode
