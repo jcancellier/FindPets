@@ -224,7 +224,6 @@ const styles = StyleSheet.create({
 		flex: 1
 	},
 	scrollViewContainer: {
-		flex: 1,
 		paddingHorizontal: 10
 	},
 	container: {
@@ -257,7 +256,6 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 	},
 	footer: {
-		flex: 0.08
 	}
 });
 
