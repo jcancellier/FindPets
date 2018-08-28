@@ -129,7 +129,7 @@ class PetList extends React.PureComponent {
 						onRefresh={() => this._fetchData()}
 						refreshing={this.props.isLoading}
 						onEndReached={this._onScrollEndReached}
-						onEndReachedThreshold={0.5}
+						onEndReachedThreshold={100}
 						ref={(ref) => this.list = ref}
 						onScrollBeginDrag={this._onScrollStart}
 						onScrollEndDrag={this._onScrollStart}
