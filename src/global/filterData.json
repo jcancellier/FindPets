@@ -1620,8 +1620,455 @@
 				"value": "Yorkshire Terrier Yorkie"
 			}
 		],
-		"horse": [],
-		"reptile": [],
-		"smallfurry": []
+		"horse": [
+			{
+				"label": "Appaloosa",
+				"value": "Appaloosa"
+			},
+			{
+				"label": "Arabian",
+				"value": "Arabian"
+			},
+			{
+				"label": "Belgian",
+				"value": "Belgian"
+			},
+			{
+				"label": "Clydesdale",
+				"value": "Clydesdale"
+			},
+			{
+				"label": "Connemara",
+				"value": "Connemara"
+			},
+			{
+				"label": "Curly Horse",
+				"value": "Curly Horse"
+			},
+			{
+				"label": "Donkey",
+				"value": "Donkey"
+			},
+			{
+				"label": "Draft",
+				"value": "Draft"
+			},
+			{
+				"label": "Friesian",
+				"value": "Friesian"
+			},
+			{
+				"label": "Gaited",
+				"value": "Gaited"
+			},
+			{
+				"label": "Grade",
+				"value": "Grade"
+			},
+			{
+				"label": "Haflinger",
+				"value": "Haflinger"
+			},
+			{
+				"label": "Icelandic Horse",
+				"value": "Icelandic Horse"
+			},
+			{
+				"label": "Lipizzan",
+				"value": "Lipizzan"
+			},
+			{
+				"label": "Miniature Horse",
+				"value": "Miniature Horse"
+			},
+			{
+				"label": "Missouri Foxtrotter",
+				"value": "Missouri Foxtrotter"
+			},
+			{
+				"label": "Morgan",
+				"value": "Morgan"
+			},
+			{
+				"label": "Mule",
+				"value": "Mule"
+			},
+			{
+				"label": "Mustang",
+				"value": "Mustang"
+			},
+			{
+				"label": "Paint / Pinto",
+				"value": "Paint / Pinto"
+			},
+			{
+				"label": "Palomino",
+				"value": "Palomino"
+			},
+			{
+				"label": "Paso Fino",
+				"value": "Paso Fino"
+			},
+			{
+				"label": "Percheron",
+				"value": "Percheron"
+			},
+			{
+				"label": "Peruvian Paso",
+				"value": "Peruvian Paso"
+			},
+			{
+				"label": "Pony",
+				"value": "Pony"
+			},
+			{
+				"label": "Pony of the Americas",
+				"value": "Pony of the Americas"
+			},
+			{
+				"label": "Quarterhorse",
+				"value": "Quarterhorse"
+			},
+			{
+				"label": "Rocky Mountain Horse",
+				"value": "Rocky Mountain Horse"
+			},
+			{
+				"label": "Saddlebred",
+				"value": "Saddlebred"
+			},
+			{
+				"label": "Shetland Pony",
+				"value": "Shetland Pony"
+			},
+			{
+				"label": "Standardbred",
+				"value": "Standardbred"
+			},
+			{
+				"label": "Tennessee Walker",
+				"value": "Tennessee Walker"
+			},
+			{
+				"label": "Thoroughbred",
+				"value": "Thoroughbred"
+			},
+			{
+				"label": "Warmblood",
+				"value": "Warmblood"
+			}
+		],
+		"reptile": [
+			{
+				"label": "Asian Box",
+				"value": "Asian Box"
+			},
+			{
+				"label": "Ball Python",
+				"value": "Ball Python"
+			},
+			{
+				"label": "Bearded Dragon",
+				"value": "Bearded Dragon"
+			},
+			{
+				"label": "Boa",
+				"value": "Boa"
+			},
+			{
+				"label": "Boa Constrictor",
+				"value": "Boa Constrictor"
+			},
+			{
+				"label": "Box",
+				"value": "Box"
+			},
+			{
+				"label": "Bull",
+				"value": "Bull"
+			},
+			{
+				"label": "Bullfrog",
+				"value": "Bullfrog"
+			},
+			{
+				"label": "Burmese Python",
+				"value": "Burmese Python"
+			},
+			{
+				"label": "Chameleon",
+				"value": "Chameleon"
+			},
+			{
+				"label": "Corn / Rat",
+				"value": "Corn / Rat"
+			},
+			{
+				"label": "Eastern Box",
+				"value": "Eastern Box"
+			},
+			{
+				"label": "Fire Salamander",
+				"value": "Fire Salamander"
+			},
+			{
+				"label": "Fire-Bellied",
+				"value": "Fire-Bellied"
+			},
+			{
+				"label": "Fire-Bellied Newt",
+				"value": "Fire-Bellied Newt"
+			},
+			{
+				"label": "Florida Box",
+				"value": "Florida Box"
+			},
+			{
+				"label": "Freshwater Fish",
+				"value": "Freshwater Fish"
+			},
+			{
+				"label": "Frog",
+				"value": "Frog"
+			},
+			{
+				"label": "Garter / Ribbon",
+				"value": "Garter / Ribbon"
+			},
+			{
+				"label": "Gecko",
+				"value": "Gecko"
+			},
+			{
+				"label": "Goldfish",
+				"value": "Goldfish"
+			},
+			{
+				"label": "Hermit Crab",
+				"value": "Hermit Crab"
+			},
+			{
+				"label": "Horned Frog",
+				"value": "Horned Frog"
+			},
+			{
+				"label": "Iguana",
+				"value": "Iguana"
+			},
+			{
+				"label": "King / Milk",
+				"value": "King / Milk"
+			},
+			{
+				"label": "Leopard",
+				"value": "Leopard"
+			},
+			{
+				"label": "Leopard Frog",
+				"value": "Leopard Frog"
+			},
+			{
+				"label": "Lizard",
+				"value": "Lizard"
+			},
+			{
+				"label": "Mississippi Map Turtle",
+				"value": "Mississippi Map Turtle"
+			},
+			{
+				"label": "Monitor",
+				"value": "Monitor"
+			},
+			{
+				"label": "Mud",
+				"value": "Mud"
+			},
+			{
+				"label": "Musk",
+				"value": "Musk"
+			},
+			{
+				"label": "Oregon Newt",
+				"value": "Oregon Newt"
+			},
+			{
+				"label": "Ornamental Box",
+				"value": "Ornamental Box"
+			},
+			{
+				"label": "Other",
+				"value": "Other"
+			},
+			{
+				"label": "Paddle Tailed Newt",
+				"value": "Paddle Tailed Newt"
+			},
+			{
+				"label": "Painted",
+				"value": "Painted"
+			},
+			{
+				"label": "Python",
+				"value": "Python"
+			},
+			{
+				"label": "Red Foot",
+				"value": "Red Foot"
+			},
+			{
+				"label": "Red-Eared Slider",
+				"value": "Red-Eared Slider"
+			},
+			{
+				"label": "Russian",
+				"value": "Russian"
+			},
+			{
+				"label": "Saltwater Fish",
+				"value": "Saltwater Fish"
+			},
+			{
+				"label": "Scorpion",
+				"value": "Scorpion"
+			},
+			{
+				"label": "Snake",
+				"value": "Snake"
+			},
+			{
+				"label": "Snapping",
+				"value": "Snapping"
+			},
+			{
+				"label": "Soft Shell",
+				"value": "Soft Shell"
+			},
+			{
+				"label": "Southern",
+				"value": "Southern"
+			},
+			{
+				"label": "Sulcata",
+				"value": "Sulcata"
+			},
+			{
+				"label": "Tarantula",
+				"value": "Tarantula"
+			},
+			{
+				"label": "Three-Toed Box",
+				"value": "Three-Toed Box"
+			},
+			{
+				"label": "Tiger Salamander",
+				"value": "Tiger Salamander"
+			},
+			{
+				"label": "Toad",
+				"value": "Toad"
+			},
+			{
+				"label": "Tortoise",
+				"value": "Tortoise"
+			},
+			{
+				"label": "Tree Frog",
+				"value": "Tree Frog"
+			},
+			{
+				"label": "Turtle",
+				"value": "Turtle"
+			},
+			{
+				"label": "Uromastyx",
+				"value": "Uromastyx"
+			},
+			{
+				"label": "Water Dragon",
+				"value": "Water Dragon"
+			},
+			{
+				"label": "Yellow-Bellied Slider",
+				"value": "Yellow-Bellied Slider"
+			}
+		],
+		"smallfurry": [
+			{
+				"label": "Abyssinian",
+				"value": "Abyssinian"
+			},
+			{
+				"label": "Chinchilla",
+				"value": "Chinchilla"
+			},
+			{
+				"label": "Degu",
+				"value": "Degu"
+			},
+			{
+				"label": "Dwarf Hamster",
+				"value": "Dwarf Hamster"
+			},
+			{
+				"label": "Ferret",
+				"value": "Ferret"
+			},
+			{
+				"label": "Gerbil",
+				"value": "Gerbil"
+			},
+			{
+				"label": "Guinea Pig",
+				"value": "Guinea Pig"
+			},
+			{
+				"label": "Hamster",
+				"value": "Hamster"
+			},
+			{
+				"label": "Hedgehog",
+				"value": "Hedgehog"
+			},
+			{
+				"label": "Mouse",
+				"value": "Mouse"
+			},
+			{
+				"label": "Peruvian",
+				"value": "Peruvian"
+			},
+			{
+				"label": "Prairie Dog",
+				"value": "Prairie Dog"
+			},
+			{
+				"label": "Rat",
+				"value": "Rat"
+			},
+			{
+				"label": "Rex",
+				"value": "Rex"
+			},
+			{
+				"label": "Short-Haired",
+				"value": "Short-Haired"
+			},
+			{
+				"label": "Silkie / Sheltie",
+				"value": "Silkie / Sheltie"
+			},
+			{
+				"label": "Skunk",
+				"value": "Skunk"
+			},
+			{
+				"label": "Sugar Glider",
+				"value": "Sugar Glider"
+			},
+			{
+				"label": "Teddy",
+				"value": "Teddy"
+			}
+		]
 	}
 }
