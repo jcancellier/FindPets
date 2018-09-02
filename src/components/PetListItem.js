@@ -9,12 +9,16 @@ var { height, width } = Dimensions.get('window');
 //functional component
 class PetListItem extends React.PureComponent {
     handleViewRef = ref => this.view = ref;
-    
+
     //Zooms item out on click
     zoomOut = () => this.view.zoomOut(75)
-    
+
     //Zooms item in on clickRelease
     zoomIn = () => this.view.zoomIn(75);//this.view.zoomIn(75)
+
+    componentDidMount() {
+        console.log(height);
+    }
 
     render() {
         return (
@@ -27,9 +31,9 @@ class PetListItem extends React.PureComponent {
                     <Card>
                         <View style={styles.cardContainer}>
                             <Image
-                                    style={styles.petImage}
-                                    source={this.props.pet.media.photos ? { uri: this.props.pet.media.photos.photo[2].$t } : require('../../assets/icons/no-photo.png')}
-                                />
+                                style={styles.petImage}
+                                source={this.props.pet.media.photos ? { uri: this.props.pet.media.photos.photo[2].$t } : require('../../assets/icons/no-photo.png')}
+                            />
                             {/* <FullWidthImage
                                 ratio={3/4}
                                 source={this.props.pet.media.photos ? { uri: this.props.pet.media.photos.photo[2].$t } : require('../../assets/icons/no-photo.png')}
@@ -70,7 +74,7 @@ const styles = StyleSheet.create({
         marginRight: 10,
     },
     petImage: {
-        height: 275,
+        height: height * .412,
         //allows image to fit the width of screen
         flex: 1,
         width: null,
@@ -83,7 +87,7 @@ const styles = StyleSheet.create({
     cardContainer: {
         borderRadius: 20,
         justifyContent: 'flex-start',
-        flexDirection: 'column',   
+        flexDirection: 'column',
         position: 'relative',
         overflow: 'hidden'
     },

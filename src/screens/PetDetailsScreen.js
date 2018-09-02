@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
 		backgroundColor: Colors.flat.clouds
 	},
 	petImage: {
-		height: 400,
+		height: height * 0.6,
 		width: width,
 		padding: 10,
 		paddingTop: Constants.statusBarHeight
@@ -265,7 +265,7 @@ const styles = StyleSheet.create({
 	backIconButton: {
 		width: 45,
 		height: 45,
-		borderRadius: 45/2
+		borderRadius: 45 / 2
 	},
 	heartIconButton: {
 		width: 38,
