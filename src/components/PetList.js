@@ -137,8 +137,15 @@ class PetList extends React.PureComponent {
 		// the error it gives is "undefined is not an object (evaluating 'this.props.pets.length'"
 		if (this.props.isLoading && this.props.pets.length == 0) {
 			return (
-				<View style={{ flex: 1, justifyContent: 'center' }}>
-					<DotIndicator count={5} color={Colors.primary} />
+				<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+					<DotIndicator count={5} color={Colors.primary} style={{ flex: 0, marginBottom: 10 }} />
+					<View style={styles.loadingTextContainer}>
+						{this.props.zipcode &&
+							<Text style={styles.loadingText}>
+								{`Searching near ${this.props.zipcode}`}
+							</Text>
+						}
+					</View>
 				</View>
 			);
 			//TODO
@@ -198,6 +205,13 @@ const styles = StyleSheet.create({
 	noPetsImage: {
 		width: 180,
 		height: 180
+	},
+	loadingText: {
+		fontFamily: Fonts.primary,
+		color: Colors.primary
+	},
+	loadingTextContainer: {
+		justifyContent: 'flex-start'
 	}
 })
 
@@ -207,7 +221,8 @@ const mapStateToProps = (state) => {
 		isLoading: state.pets.isLoading,
 		pets: state.pets.posts,
 		isMorePetsLoading: state.pets.isMorePetsLoading,
-		disableMorePetsFetch: state.pets.morePetsFetchEmpty
+		disableMorePetsFetch: state.pets.morePetsFetchEmpty,
+		zipcode: state.filters.location
 	}
 }
 
