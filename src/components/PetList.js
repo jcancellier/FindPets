@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, FlatList, Text, StyleSheet } from 'react-native';
+import { View, FlatList, Text, StyleSheet, Image } from 'react-native';
 import { Fonts } from '../global';
 import { connect } from 'react-redux';
 import * as Animatable from 'react-native-animatable';
@@ -103,6 +103,34 @@ class PetList extends React.PureComponent {
 		return null;
 	}
 
+	_renderNoContent = () => {
+		return (
+			<View style={{ flex: 1 }}>
+				<CenteredView>
+					<Image source={require('../../assets/icons/not-found.png')} style={styles.noPetsImage} />
+					<Text style={styles.noPetsText}>
+						No Pets Found :(
+					</Text>
+				</CenteredView>
+				<View style={{ justifyContent: 'flex-start', flex: 1, alignItems: 'center' }}>
+					<LinkedText
+						onPress={() => this.props.navigation.navigate('Filter')}
+						style={styles.linkedText}
+					>
+						Try a different filter
+					</LinkedText>
+					<Text style={styles.orText}>or</Text>
+					<LinkedText
+						onPress={() => this.props.navigation.navigate('SetLocation')}
+						style={styles.linkedText}
+					>
+						Change your location
+					</LinkedText>
+				</View>
+			</View>
+		);
+	}
+
 
 	render() {
 		//TODO: when searching for a pet and no pets are received back then the next time you search for an animal this if-statement crashes the app
@@ -147,24 +175,7 @@ class PetList extends React.PureComponent {
 			);
 		} else if (!this.props.isLoading) {
 			return (
-				<CenteredView>
-					<Text style={styles.noPetsText}>
-						No Pets Found :(
-          </Text>
-					<LinkedText
-						onPress={() => this.props.navigation.navigate('Filter')}
-						style={styles.linkedText}
-					>
-						Try a different filter
-					</LinkedText>
-					<Text style={styles.orText}>or</Text>
-					<LinkedText
-						onPress={() => this.props.navigation.navigate('SetLocation')}
-						style={styles.linkedText}
-					>
-						Change your location
-					</LinkedText>
-				</CenteredView>
+				this._renderNoContent()
 			);
 		} else return null;
 	}
@@ -178,11 +189,15 @@ const styles = StyleSheet.create({
 	linkedText: {
 		color: Colors.material.blue500,
 		fontFamily: Fonts.primary,
-		fontSize: 15
+		fontSize: 18
 	},
 	orText: {
 		fontSize: 15,
 		fontFamily: Fonts.primary
+	},
+	noPetsImage: {
+		width: 180,
+		height: 180
 	}
 })
 
