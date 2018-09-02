@@ -50,7 +50,8 @@ export default class App extends React.Component {
         require('./assets/icons/dog.png'),
         require('./assets/icons/location.png'),
         require('./assets/icons/no-photo.png'),
-        require('./assets/icons/paw-heart.png')
+        require('./assets/icons/paw-heart.png'),
+        require('./assets/icons/not-found.png')
       ]),
       Font.loadAsync({
         'somatic-rounded': require('./assets/fonts/Somatic-Rounded.otf')
