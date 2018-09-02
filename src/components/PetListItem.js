@@ -16,10 +16,6 @@ class PetListItem extends React.PureComponent {
     //Zooms item in on clickRelease
     zoomIn = () => this.view.zoomIn(75);//this.view.zoomIn(75)
 
-    componentDidMount() {
-        console.log(height);
-    }
-
     render() {
         return (
             <TouchableWithoutFeedback
