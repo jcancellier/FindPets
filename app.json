@@ -25,7 +25,9 @@
       "supportsTablet": true
     },
     "android": {
-      "package": "com.jcancellier.petlocator"
+      "package": "com.jcancellier.petlocator",
+      "versionCode": 1,
+      "permissions": []
     }
   }
 }
