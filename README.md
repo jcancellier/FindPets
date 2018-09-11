@@ -2,7 +2,7 @@
 
 > A Pet Adoption mobile application built with React Native, Redux, and the PetFinder developer API
 
-## Currently available on the play store
+## Currently available on the Play Store
 <a href="https://play.google.com/store/apps/details?id=com.jcancellier.petlocator" target="_tab">
   <img 
        alt="Get it on Google Play" 
