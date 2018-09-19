@@ -1,8 +1,10 @@
 import React from 'react';
+import { StyleSheet, View, Linking } from 'react-native';
 import { connect } from 'react-redux';
-import { StyleSheet, View } from 'react-native';
 import { setInitialLaunch } from '../actions';
 import AppIntroSlider from 'react-native-app-intro-slider';
+import DefaultSlide from '../components/OnBoarding/DefaultSlide';
+import { LinkedText } from '../components/common';
 import { Ionicons } from '@expo/vector-icons';
 import { Fonts, Colors } from '../global';
 
@@ -24,6 +26,17 @@ const styles = StyleSheet.create({
   },
   text: {
     fontFamily: Fonts.primary
+  },
+  privacyPolicyText: {
+    color: Colors.material.red300,
+    fontSize: 10,
+    textDecorationLine: 'underline'
+  },
+  privacyPolicyTextButton: {
+    position: 'absolute',
+    alignSelf: 'flex-start',
+    paddingLeft: 10,
+    bottom: 5,
   }
 })
 
@@ -36,7 +49,7 @@ const slides = [
     imageStyle: styles.image,
     titleStyle: styles.title,
     textStyle: styles.text,
-    backgroundColor: Colors.primary // '#59b2ab'
+    backgroundColor: Colors.primary
   },
   {
     key: 'Favorites',
@@ -86,18 +99,33 @@ class OnBoardingScreen extends React.Component {
     );
   };
 
+  _renderItem = (props) => {
+    return <DefaultSlide {...props} />
+  }
+
   _onDone = () => {
     this.props.navigation.navigate('SetLocationInitialLaunch');
   }
 
   render() {
     return (
-      <AppIntroSlider
-        slides={slides}
-        renderDoneButton={this._renderDoneButton}
-        renderNextButton={this._renderNextButton}
-        onDone={this._onDone}
-      />
+      <View style={{ flex: 1 }}>
+        <AppIntroSlider
+          slides={slides}
+          renderItem={this._renderItem}
+          renderDoneButton={this._renderDoneButton}
+          renderNextButton={this._renderNextButton}
+          onDone={this._onDone}
+        />
+        <View style={styles.privacyPolicyTextButton}>
+          <LinkedText
+            style={styles.privacyPolicyText}
+            onPress={() => Linking.openURL('https://pet-locator-privacy-policy.firebaseapp.com')}
+          >
+            Privacy Policy
+          </LinkedText>
+        </View>
+      </View>
     );
   }
 }
